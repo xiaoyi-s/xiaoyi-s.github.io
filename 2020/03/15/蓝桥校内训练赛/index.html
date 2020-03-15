@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="c++ match," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="我的修仙路" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="蓝桥校内训练赛的总结 112double n &#x3D; 15.125;printf(&quot;%0lf&quot;,n*1024); 2有多少个约数可以用质因数定理，分解出来，比如 n &#x3D; pow(a,a1)pow(b,a2)…则它总共质因数有(a1+1)(a2+1)个，然而这道题没有这么复杂直接for就行了…… 123456789101112131415161718192021222324252627282930313">
+<meta property="og:type" content="article">
+<meta property="og:title" content="蓝桥校内训练赛">
+<meta property="og:url" content="http://yoursite.com/2020/03/15/%E8%93%9D%E6%A1%A5%E6%A0%A1%E5%86%85%E8%AE%AD%E7%BB%83%E8%B5%9B/index.html">
+<meta property="og:site_name" content="我的修仙路">
+<meta property="og:description" content="蓝桥校内训练赛的总结 112double n &#x3D; 15.125;printf(&quot;%0lf&quot;,n*1024); 2有多少个约数可以用质因数定理，分解出来，比如 n &#x3D; pow(a,a1)pow(b,a2)…则它总共质因数有(a1+1)(a2+1)个，然而这道题没有这么复杂直接for就行了…… 123456789101112131415161718192021222324252627282930313">
+<meta property="article:published_time" content="2020-03-15T08:45:18.300Z">
+<meta property="article:modified_time" content="2020-03-15T08:45:18.300Z">
+<meta property="article:author" content="风尘">
+<meta property="article:tag" content="c++ match">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/03/15/蓝桥校内训练赛/"/>
+
+
+
+
+
+  <title>蓝桥校内训练赛 | 我的修仙路</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">我的修仙路</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/15/%E8%93%9D%E6%A1%A5%E6%A0%A1%E5%86%85%E8%AE%AD%E7%BB%83%E8%B5%9B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="风尘">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/IMG_20180913_151944.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的修仙路">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">蓝桥校内训练赛</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-15T16:45:18+08:00">
+                2020-03-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>蓝桥校内训练赛的总结</p>
+<h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> n = <span class="number">15.125</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%0lf"</span>,n*<span class="number">1024</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="2"><a href="#2" class="headerlink" title="2"></a>2</h2><p>有多少个约数可以用质因数定理，分解出来，比如 n = pow(a,a1)<em>pow(b,a2)…则它总共质因数有(a1+1)</em>(a2+1)个，然而这道题没有这么复杂直接for就行了……</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sc(x) scanf(<span class="meta-string">"%lld"</span>,&amp;x);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pf printf</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(i,s,e) for(int i=s;i&lt;=e;i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> dep(i,e,s) for(int i=e;i&gt;=s;i--)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SIS std::ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);</span></span><br><span class="line"><span class="keyword">int</span> n,t,k,sum=<span class="number">1</span>,nn;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">10000</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pp</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i*i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(n%i==<span class="number">0</span>)</span><br><span class="line">			a[k++]=i;</span><br><span class="line">		<span class="keyword">while</span>(n%i==<span class="number">0</span>) n/=i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(n&gt;<span class="number">1</span>) a[k++]=n;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	SIS;</span><br><span class="line">	<span class="comment">//¼ÓËÙcin/cout</span></span><br><span class="line">	n=<span class="number">1200000</span>;</span><br><span class="line">	nn=<span class="number">1200000</span>;</span><br><span class="line">	pp(n);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;k;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		t=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(nn%a[i]==<span class="number">0</span>)&#123;</span><br><span class="line">	 		t++;nn/=a[i];		</span><br><span class="line">		&#125;</span><br><span class="line">		sum=sum*(t+<span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	pf(<span class="string">"%d\n"</span>,sum);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3"><a href="#3" class="headerlink" title="3"></a>3</h2><p>包含9直接判断就行了</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sc(x) scanf(<span class="meta-string">"%lld"</span>,&amp;x);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pf printf</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(i,s,e) for(int i=s;i&lt;=e;i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> dep(i,e,s) for(int i=e;i&gt;=s;i--)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SIS std::ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);</span></span><br><span class="line"><span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">pd</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(x&gt;<span class="number">0</span>)&#123;</span><br><span class="line">		<span class="keyword">int</span> t=x%<span class="number">10</span>;</span><br><span class="line">		x/=<span class="number">10</span>;</span><br><span class="line">		<span class="keyword">if</span>(t==<span class="number">9</span>)</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	SIS;</span><br><span class="line">	<span class="comment">//¼ÓËÙcin/cout</span></span><br><span class="line">	rep(i,<span class="number">1</span>,<span class="number">2019</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(pd(i))</span><br><span class="line">			sum++;</span><br><span class="line">	&#125;</span><br><span class="line">	pf(<span class="string">"%d\n"</span>,sum);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4"><a href="#4" class="headerlink" title="4"></a>4</h2><p>一看题我以为是道二叉树的题，然后想着二分……结果是个水题</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">"2018\n"</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="5"><a href="#5" class="headerlink" title="5"></a>5</h2><p>判断是不是数位递增的，可以先取出最后一个数，让其为最大，然后判断前一个数是不是比这个还大，如果前一个数比它大则不是数位递增，否则（else）就emmm直接将前一个数赋值为最大继续判断</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sc(x) scanf(<span class="meta-string">"%lld"</span>,&amp;x);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pf printf</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(i,s,e) for(int i=s;i&lt;=e;i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> dep(i,e,s) for(int i=e;i&gt;=s;i--)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SIS std::ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);</span></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">10</span>],sum,n;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">pd</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> mmax=x%<span class="number">10</span>;</span><br><span class="line">	x/=<span class="number">10</span>;</span><br><span class="line">	<span class="keyword">while</span>(x&gt;<span class="number">0</span>)&#123;</span><br><span class="line">		<span class="keyword">int</span> t=x%<span class="number">10</span>;</span><br><span class="line">		x/=<span class="number">10</span>;</span><br><span class="line">		<span class="keyword">if</span>(t&gt;mmax)</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			mmax=t;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	SIS;</span><br><span class="line">	<span class="comment">//?¨®?¨´cin/cout</span></span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	rep(i,<span class="number">1</span>,n)&#123;</span><br><span class="line">		<span class="keyword">if</span>(pd(i))</span><br><span class="line">			sum++;</span><br><span class="line">	&#125;</span><br><span class="line">	pf(<span class="string">"%d\n"</span>,sum);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="6"><a href="#6" class="headerlink" title="6"></a>6</h2><p>递增数列，数据太小了，直接暴力就行了，我一开始以为得用st表记录下每次查询结果来，一看数据，还是直接暴力吧……（所以看数据范围很主要）<del>猥琐</del> </p>
+<p>题解，直接判断该元素左边有没有比它小大，右边有没有比它大的，如果同时满足，则ok改元素可以，sum++;</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//F</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sc(x) scanf(<span class="meta-string">"%lld"</span>,&amp;x);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pf printf</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(i,s,e) for(int i=s;i&lt;=e;i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> dep(i,e,s) for(int i=e;i&gt;=s;i--)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SIS std::ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">1e4</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">int</span> a[maxn],n;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">pd</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(x==<span class="number">1</span> || x==n)</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">int</span> kk=a[x];</span><br><span class="line">	<span class="keyword">int</span> flag1=<span class="number">0</span>,flag2=<span class="number">0</span>;</span><br><span class="line">	dep(i,x<span class="number">-1</span>,<span class="number">1</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(a[i]&lt;kk)&#123;</span><br><span class="line">			flag1=<span class="number">1</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(flag1)</span><br><span class="line">		rep(i,x+<span class="number">1</span>,n)&#123;</span><br><span class="line">			<span class="keyword">if</span>(a[i]&gt;kk)&#123;</span><br><span class="line">				flag2=<span class="number">1</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="keyword">if</span>(flag1 &amp;&amp; flag2)</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	SIS;</span><br><span class="line">	<span class="comment">//¼ÓËÙcin/c## 标题out</span></span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	rep(i,<span class="number">1</span>,n)&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;a[i];</span><br><span class="line">	&#125;</span><br><span class="line">	rep(i,<span class="number">1</span>,n)&#123;</span><br><span class="line">		<span class="keyword">if</span>(pd(i))</span><br><span class="line">			sum++;</span><br><span class="line">	&#125;</span><br><span class="line">	pf(<span class="string">"%d\n"</span>,sum);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="7"><a href="#7" class="headerlink" title="7"></a>7</h2><p>记住规则，辅，元，辅，元，这样判断就行了，直接道最后一个，想法很简单</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sc(x) scanf(<span class="meta-string">"%lld"</span>,&amp;x);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pf printf</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(i,s,e) for(int i=s;i&lt;=e;i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> dep(i,e,s) for(int i=e;i&gt;=s;i--)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SIS std::ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">pd</span><span class="params">(<span class="keyword">char</span> c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(c==<span class="string">'a'</span> || c==<span class="string">'e'</span> || c==<span class="string">'i'</span> || c==<span class="string">'o'</span> || c==<span class="string">'u'</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	SIS;</span><br><span class="line">	<span class="comment">//¼ÓËÙcin/cout</span></span><br><span class="line">	<span class="built_in">string</span> s;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line">	<span class="keyword">int</span> pos,k,i;</span><br><span class="line">	<span class="keyword">int</span> flag1=<span class="number">0</span>,flag2=<span class="number">0</span>,flag3=<span class="number">0</span>,flag4=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;s.size();i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(!pd(s[i]))&#123;</span><br><span class="line">			pos=i;</span><br><span class="line">			flag1=<span class="number">1</span>;</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(i=pos+<span class="number">1</span>;i&lt;s.size();i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(pd(s[i]))&#123;</span><br><span class="line">			pos=i;</span><br><span class="line">			flag2=<span class="number">1</span>;</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(i=pos+<span class="number">1</span>;i&lt;s.size();i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(!(pd(s[i])))&#123;</span><br><span class="line">			pos=i;</span><br><span class="line">			flag3=<span class="number">1</span>;</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(i=pos+<span class="number">1</span>;i&lt;s.size();i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(pd(s[i]))&#123;</span><br><span class="line">			pos=i;</span><br><span class="line">			flag4=<span class="number">1</span>;</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(flag1 &amp;&amp; flag2 &amp;&amp; flag3 &amp;&amp; flag4 &amp;&amp; pos==s.size()<span class="number">-1</span>)</span><br><span class="line">		pf(<span class="string">"yes\n"</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		pf(<span class="string">"no\n"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="8"><a href="#8" class="headerlink" title="8"></a>8</h2><p>一道很水的bfs题，我以为类似连通块结果不是，反正都是水……<br>思路：<strong>每个月草地会更新一次，周围上下左右都张草，每次记录下（存下来）有草的地方即可，（剪枝小技巧，每次张草后改地方下次不用再张了，因为其四周已经是草了，可以节省算法复杂度）</strong>，然后这些个有草的地方四周都bfs一下就行了（也就是张个草）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sc(x) scanf(<span class="meta-string">"%lld"</span>,&amp;x);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pf printf</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(i,s,e) for(int i=s;i&lt;=e;i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> dep(i,e,s) for(int i=e;i&gt;=s;i--)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SIS std::ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">1010</span>;</span><br><span class="line"><span class="keyword">int</span> a[maxn][maxn],vis[maxn][maxn];</span><br><span class="line"><span class="keyword">int</span> n,m,k;</span><br><span class="line"><span class="keyword">int</span> dd[<span class="number">4</span>][<span class="number">2</span>]=&#123;&#123;<span class="number">0</span>,<span class="number">1</span>&#125;,&#123;<span class="number">0</span>,<span class="number">-1</span>&#125;,&#123;<span class="number">1</span>,<span class="number">0</span>&#125;,&#123;<span class="number">-1</span>,<span class="number">0</span>&#125;&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> xx;</span><br><span class="line">	<span class="keyword">int</span> yy;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(a[x][y]==<span class="number">2</span> &amp;&amp; !vis[x][y])&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> dx=x+dd[i][<span class="number">0</span>];</span><br><span class="line">			<span class="keyword">int</span> dy=y+dd[i][<span class="number">1</span>];</span><br><span class="line">			<span class="keyword">if</span>(dx&gt;=<span class="number">1</span> &amp;&amp; dx&lt;=n &amp;&amp;dy&gt;=<span class="number">1</span> &amp;&amp; dy&lt;=m)</span><br><span class="line">			&#123;</span><br><span class="line">				a[dx][dy]=<span class="number">2</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	vis[x][y]=<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	SIS;</span><br><span class="line">	<span class="comment">//¼ÓËÙcin/cout</span></span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</span><br><span class="line">	<span class="built_in">string</span> s;</span><br><span class="line">	rep(i,<span class="number">1</span>,n)&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line">		rep(j,<span class="number">1</span>,m)&#123;</span><br><span class="line">			<span class="keyword">if</span>(s[j<span class="number">-1</span>]==<span class="string">'g'</span>)</span><br><span class="line">				a[i][j]=<span class="number">2</span>;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				a[i][j]=<span class="number">1</span>;		</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;k;</span><br><span class="line">	<span class="keyword">while</span>(k--)&#123;</span><br><span class="line">		<span class="built_in">vector</span>&lt;node&gt; v;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=m;j++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>(a[i][j]==<span class="number">2</span> &amp;&amp; !vis[i][j])&#123;</span><br><span class="line">					node temp;temp.xx=i;temp.yy=j;</span><br><span class="line">					v.push_back(temp);					</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;v.size();i++)</span><br><span class="line">		&#123;</span><br><span class="line">			bfs(v[i].xx,v[i].yy);</span><br><span class="line">		&#125;	</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=m;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(a[i][j]==<span class="number">2</span>)</span><br><span class="line">				pf(<span class="string">"g"</span>);</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				pf(<span class="string">"."</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		pf(<span class="string">"\n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="9"><a href="#9" class="headerlink" title="9"></a>9</h2><p><strong>当时提交太快，好像细节忘处理了……<del>还好只是训练赛</del> ，骄兵必败啊</strong><br>思路：每次回溯到上一次，注意它能回溯的前提是每一项小于前两项的差的绝对值，所以可以根据这个条件一直回溯下去，直到i的值大于它两绝对值，之前好像做过类似的……</p>
+<p><strong>不过dfs可能会炸，所以可以根据这个打个表</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sc(x) scanf(<span class="meta-string">"%lld"</span>,&amp;x);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pf printf</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(i,s,e) for(int i=s;i&lt;=e;i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> dep(i,e,s) for(int i=e;i&gt;=s;i--)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SIS std::ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);</span></span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">1007</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod=<span class="number">10000</span>;</span><br><span class="line"><span class="keyword">int</span> a[maxn][maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(a[x][y]!=<span class="number">0</span>) <span class="keyword">return</span> a[x][y];</span><br><span class="line">	a[x][y]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;<span class="built_in">abs</span>(x-y);i++)</span><br><span class="line">		a[x][y]+=dfs(y,i);</span><br><span class="line">	<span class="keyword">return</span> a[x][y]%mod;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> sum;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	SIS;</span><br><span class="line">	<span class="comment">//¼ÓËÙcin/cout</span></span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	rep(i,<span class="number">1</span>,n)&#123;</span><br><span class="line">		sum+=dfs(n,i);</span><br><span class="line">		sum%=mod;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;sum&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>打表代码<br>打表是一种很有效的办法，处理数量不大的序列，之前貌似在东大camp碰到一个猥琐打表题……，忘补了，<strong>（所以切记，补题，补题）</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sc(x) scanf(<span class="meta-string">"%lld"</span>,&amp;x);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pf printf</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(i,s,e) for(int i=s;i&lt;=e;i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> dep(i,e,s) for(int i=e;i&gt;=s;i--)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SIS std::ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);</span></span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">1007</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod=<span class="number">10000</span>;</span><br><span class="line"><span class="keyword">int</span> a[maxn][maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(a[x][y]!=<span class="number">0</span>) <span class="keyword">return</span> a[x][y];</span><br><span class="line">	a[x][y]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;<span class="built_in">abs</span>(x-y);i++)</span><br><span class="line">		a[x][y]=(a[x][y]+dfs(y,i))%mod;</span><br><span class="line">	<span class="keyword">return</span> a[x][y]%mod;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> sum;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	SIS;</span><br><span class="line">	<span class="comment">//加速cin/cout</span></span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"a[1001]="</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"&#123;0,"</span>;</span><br><span class="line">	<span class="keyword">for</span>(n=<span class="number">1</span>;n&lt;=<span class="number">1000</span>;n++)</span><br><span class="line">	&#123;</span><br><span class="line">		sum=<span class="number">0</span>;</span><br><span class="line">		rep(i,<span class="number">1</span>,n)&#123;</span><br><span class="line">			sum=(sum+dfs(n,i))%mod;</span><br><span class="line">			sum%=mod;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(n%<span class="number">30</span>==<span class="number">0</span>)</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;sum&lt;&lt;<span class="string">","</span>;		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"&#125;"</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>打表ac代码</strong><br>复杂度o（1）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">1001</span>]=&#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">7</span>,<span class="number">14</span>,<span class="number">26</span>,<span class="number">53</span>,<span class="number">106</span>,<span class="number">220</span>,<span class="number">452</span>,<span class="number">946</span>,<span class="number">1967</span>,<span class="number">4128</span>,<span class="number">8638</span>,<span class="number">8144</span>,<span class="number">8068</span>,<span class="number">26</span>,<span class="number">8127</span>,<span class="number">3542</span>,<span class="number">3277</span>,<span class="number">3278</span>,<span class="number">7643</span>,<span class="number">5433</span>,<span class="number">5774</span>,<span class="number">8217</span>,<span class="number">4846</span>,<span class="number">687</span>,<span class="number">3097</span>,<span class="number">6887</span>,</span><br><span class="line"><span class="number">3556</span>,<span class="number">4840</span>,<span class="number">3454</span>,<span class="number">5378</span>,<span class="number">722</span>,<span class="number">2230</span>,<span class="number">767</span>,<span class="number">1447</span>,<span class="number">1839</span>,<span class="number">4776</span>,<span class="number">7618</span>,<span class="number">7831</span>,<span class="number">6222</span>,<span class="number">5236</span>,<span class="number">7802</span>,<span class="number">5696</span>,<span class="number">1835</span>,<span class="number">1102</span>,<span class="number">9537</span>,<span class="number">1605</span>,<span class="number">1227</span>,<span class="number">3034</span>,<span class="number">2159</span>,<span class="number">1613</span>,<span class="number">6811</span>,<span class="number">3941</span>,<span class="number">6794</span>,<span class="number">5960</span>,<span class="number">4903</span>,<span class="number">75</span>,</span><br><span class="line"><span class="number">2158</span>,<span class="number">349</span>,<span class="number">4258</span>,<span class="number">5189</span>,<span class="number">4717</span>,<span class="number">2894</span>,<span class="number">4193</span>,<span class="number">2890</span>,<span class="number">258</span>,<span class="number">2928</span>,<span class="number">6125</span>,<span class="number">2913</span>,<span class="number">1482</span>,<span class="number">8419</span>,<span class="number">7244</span>,<span class="number">1652</span>,<span class="number">3440</span>,<span class="number">2138</span>,<span class="number">9272</span>,<span class="number">4714</span>,<span class="number">3333</span>,<span class="number">3543</span>,<span class="number">8834</span>,<span class="number">6763</span>,<span class="number">9180</span>,<span class="number">1803</span>,<span class="number">4631</span>,<span class="number">6307</span>,<span class="number">9056</span>,<span class="number">3170</span>,</span><br><span class="line"><span class="number">8339</span>,<span class="number">6213</span>,<span class="number">1176</span>,<span class="number">3258</span>,<span class="number">272</span>,<span class="number">4257</span>,<span class="number">1893</span>,<span class="number">8020</span>,<span class="number">3682</span>,<span class="number">9531</span>,<span class="number">6961</span>,<span class="number">4145</span>,<span class="number">3086</span>,<span class="number">3455</span>,<span class="number">9057</span>,<span class="number">1346</span>,<span class="number">5768</span>,<span class="number">6907</span>,<span class="number">247</span>,<span class="number">2450</span>,<span class="number">4732</span>,<span class="number">8653</span>,<span class="number">8229</span>,<span class="number">842</span>,<span class="number">3346</span>,<span class="number">9671</span>,<span class="number">7106</span>,<span class="number">3561</span>,<span class="number">4952</span>,<span class="number">9539</span>,</span><br><span class="line"><span class="number">1791</span>,<span class="number">6208</span>,<span class="number">6083</span>,<span class="number">8838</span>,<span class="number">7474</span>,<span class="number">6854</span>,<span class="number">198</span>,<span class="number">7300</span>,<span class="number">8219</span>,<span class="number">5912</span>,<span class="number">8884</span>,<span class="number">3976</span>,<span class="number">9650</span>,<span class="number">4821</span>,<span class="number">7317</span>,<span class="number">9720</span>,<span class="number">5572</span>,<span class="number">3834</span>,<span class="number">6326</span>,<span class="number">2281</span>,<span class="number">34</span>,<span class="number">8409</span>,<span class="number">28</span>,<span class="number">445</span>,<span class="number">8155</span>,<span class="number">9846</span>,<span class="number">9944</span>,<span class="number">2504</span>,<span class="number">3954</span>,<span class="number">1639</span>,</span><br><span class="line"><span class="number">7243</span>,<span class="number">8502</span>,<span class="number">6926</span>,<span class="number">1609</span>,<span class="number">7449</span>,<span class="number">3769</span>,<span class="number">5695</span>,<span class="number">6683</span>,<span class="number">7531</span>,<span class="number">6275</span>,<span class="number">5827</span>,<span class="number">6184</span>,<span class="number">1982</span>,<span class="number">736</span>,<span class="number">9718</span>,<span class="number">2777</span>,<span class="number">7688</span>,<span class="number">6626</span>,<span class="number">7456</span>,<span class="number">961</span>,<span class="number">5556</span>,<span class="number">7573</span>,<span class="number">6886</span>,<span class="number">4543</span>,<span class="number">3957</span>,<span class="number">2859</span>,<span class="number">4666</span>,<span class="number">9795</span>,<span class="number">305</span>,<span class="number">9052</span>,</span><br><span class="line"><span class="number">5350</span>,<span class="number">9827</span>,<span class="number">5445</span>,<span class="number">6970</span>,<span class="number">2599</span>,<span class="number">7566</span>,<span class="number">2848</span>,<span class="number">2987</span>,<span class="number">5179</span>,<span class="number">1537</span>,<span class="number">2392</span>,<span class="number">6375</span>,<span class="number">9621</span>,<span class="number">7376</span>,<span class="number">3301</span>,<span class="number">1357</span>,<span class="number">6545</span>,<span class="number">7838</span>,<span class="number">9390</span>,<span class="number">4284</span>,<span class="number">2631</span>,<span class="number">1814</span>,<span class="number">2566</span>,<span class="number">7666</span>,<span class="number">1110</span>,<span class="number">5694</span>,<span class="number">7595</span>,<span class="number">5000</span>,<span class="number">1290</span>,<span class="number">4735</span>,</span><br><span class="line"><span class="number">5994</span>,<span class="number">9401</span>,<span class="number">6475</span>,<span class="number">9012</span>,<span class="number">5877</span>,<span class="number">2867</span>,<span class="number">7912</span>,<span class="number">3509</span>,<span class="number">5505</span>,<span class="number">885</span>,<span class="number">7490</span>,<span class="number">5622</span>,<span class="number">4374</span>,<span class="number">8721</span>,<span class="number">5134</span>,<span class="number">8788</span>,<span class="number">5430</span>,<span class="number">3869</span>,<span class="number">9852</span>,<span class="number">5762</span>,<span class="number">75</span>,<span class="number">5964</span>,<span class="number">262</span>,<span class="number">5565</span>,<span class="number">1599</span>,<span class="number">7525</span>,<span class="number">5388</span>,<span class="number">8612</span>,<span class="number">1143</span>,<span class="number">7938</span>,</span><br><span class="line"><span class="number">7580</span>,<span class="number">2953</span>,<span class="number">7901</span>,<span class="number">5629</span>,<span class="number">1456</span>,<span class="number">9852</span>,<span class="number">5216</span>,<span class="number">965</span>,<span class="number">3739</span>,<span class="number">7879</span>,<span class="number">1212</span>,<span class="number">9029</span>,<span class="number">9263</span>,<span class="number">9609</span>,<span class="number">1926</span>,<span class="number">8151</span>,<span class="number">1997</span>,<span class="number">6298</span>,<span class="number">5125</span>,<span class="number">5715</span>,<span class="number">4864</span>,<span class="number">3852</span>,<span class="number">604</span>,<span class="number">7652</span>,<span class="number">313</span>,<span class="number">6248</span>,<span class="number">4077</span>,<span class="number">3875</span>,<span class="number">3816</span>,<span class="number">7046</span>,</span><br><span class="line"><span class="number">9525</span>,<span class="number">3798</span>,<span class="number">6959</span>,<span class="number">9366</span>,<span class="number">2216</span>,<span class="number">4463</span>,<span class="number">6546</span>,<span class="number">6367</span>,<span class="number">614</span>,<span class="number">9477</span>,<span class="number">3176</span>,<span class="number">4098</span>,<span class="number">7162</span>,<span class="number">7535</span>,<span class="number">4696</span>,<span class="number">749</span>,<span class="number">2686</span>,<span class="number">8212</span>,<span class="number">9050</span>,<span class="number">255</span>,<span class="number">1389</span>,<span class="number">287</span>,<span class="number">1086</span>,<span class="number">9414</span>,<span class="number">9897</span>,<span class="number">2293</span>,<span class="number">31</span>,<span class="number">9121</span>,<span class="number">4682</span>,<span class="number">7084</span>,</span><br><span class="line"><span class="number">8951</span>,<span class="number">834</span>,<span class="number">1051</span>,<span class="number">2236</span>,<span class="number">3712</span>,<span class="number">6426</span>,<span class="number">8642</span>,<span class="number">185</span>,<span class="number">785</span>,<span class="number">8162</span>,<span class="number">6015</span>,<span class="number">658</span>,<span class="number">8923</span>,<span class="number">5741</span>,<span class="number">2551</span>,<span class="number">7629</span>,<span class="number">2095</span>,<span class="number">8882</span>,<span class="number">7695</span>,<span class="number">5629</span>,<span class="number">8684</span>,<span class="number">5116</span>,<span class="number">6362</span>,<span class="number">7701</span>,<span class="number">9441</span>,<span class="number">9403</span>,<span class="number">1108</span>,<span class="number">4395</span>,<span class="number">5688</span>,<span class="number">9466</span>,</span><br><span class="line"><span class="number">953</span>,<span class="number">9191</span>,<span class="number">4967</span>,<span class="number">7236</span>,<span class="number">6020</span>,<span class="number">3465</span>,<span class="number">8165</span>,<span class="number">872</span>,<span class="number">4530</span>,<span class="number">3353</span>,<span class="number">7859</span>,<span class="number">1422</span>,<span class="number">1504</span>,<span class="number">6366</span>,<span class="number">126</span>,<span class="number">1246</span>,<span class="number">1530</span>,<span class="number">1777</span>,<span class="number">8970</span>,<span class="number">4590</span>,<span class="number">2195</span>,<span class="number">6920</span>,<span class="number">9086</span>,<span class="number">689</span>,<span class="number">2163</span>,<span class="number">6035</span>,<span class="number">4961</span>,<span class="number">2055</span>,<span class="number">7699</span>,<span class="number">4121</span>,</span><br><span class="line"><span class="number">3971</span>,<span class="number">1824</span>,<span class="number">3707</span>,<span class="number">4405</span>,<span class="number">854</span>,<span class="number">6088</span>,<span class="number">6971</span>,<span class="number">1679</span>,<span class="number">1779</span>,<span class="number">7097</span>,<span class="number">5696</span>,<span class="number">2449</span>,<span class="number">2104</span>,<span class="number">3264</span>,<span class="number">796</span>,<span class="number">8595</span>,<span class="number">6183</span>,<span class="number">26</span>,<span class="number">5597</span>,<span class="number">7295</span>,<span class="number">5926</span>,<span class="number">9039</span>,<span class="number">4550</span>,<span class="number">9601</span>,<span class="number">5959</span>,<span class="number">3244</span>,<span class="number">7451</span>,<span class="number">5641</span>,<span class="number">2343</span>,<span class="number">6587</span>,</span><br><span class="line"><span class="number">3755</span>,<span class="number">4361</span>,<span class="number">3890</span>,<span class="number">446</span>,<span class="number">8187</span>,<span class="number">1979</span>,<span class="number">7000</span>,<span class="number">7094</span>,<span class="number">8658</span>,<span class="number">1647</span>,<span class="number">6090</span>,<span class="number">8332</span>,<span class="number">4407</span>,<span class="number">4570</span>,<span class="number">2340</span>,<span class="number">3057</span>,<span class="number">5029</span>,<span class="number">5424</span>,<span class="number">2736</span>,<span class="number">4844</span>,<span class="number">2771</span>,<span class="number">5782</span>,<span class="number">5912</span>,<span class="number">3745</span>,<span class="number">2504</span>,<span class="number">2782</span>,<span class="number">7247</span>,<span class="number">1393</span>,<span class="number">5403</span>,<span class="number">7175</span>,</span><br><span class="line"><span class="number">9903</span>,<span class="number">1723</span>,<span class="number">7600</span>,<span class="number">7021</span>,<span class="number">4566</span>,<span class="number">9778</span>,<span class="number">5188</span>,<span class="number">46</span>,<span class="number">8542</span>,<span class="number">7915</span>,<span class="number">5043</span>,<span class="number">4983</span>,<span class="number">519</span>,<span class="number">480</span>,<span class="number">8199</span>,<span class="number">1141</span>,<span class="number">73</span>,<span class="number">9316</span>,<span class="number">6248</span>,<span class="number">966</span>,<span class="number">3218</span>,<span class="number">6614</span>,<span class="number">6974</span>,<span class="number">5078</span>,<span class="number">9775</span>,<span class="number">7263</span>,<span class="number">6263</span>,<span class="number">7267</span>,<span class="number">1947</span>,<span class="number">5357</span>,</span><br><span class="line"><span class="number">286</span>,<span class="number">674</span>,<span class="number">3876</span>,<span class="number">1985</span>,<span class="number">4731</span>,<span class="number">1850</span>,<span class="number">512</span>,<span class="number">1493</span>,<span class="number">5310</span>,<span class="number">5443</span>,<span class="number">4183</span>,<span class="number">5963</span>,<span class="number">8642</span>,<span class="number">1389</span>,<span class="number">6320</span>,<span class="number">4264</span>,<span class="number">9565</span>,<span class="number">7348</span>,<span class="number">4378</span>,<span class="number">6192</span>,<span class="number">1300</span>,<span class="number">3393</span>,<span class="number">4794</span>,<span class="number">8323</span>,<span class="number">6063</span>,<span class="number">9651</span>,<span class="number">9368</span>,<span class="number">7899</span>,<span class="number">9053</span>,<span class="number">4933</span>,</span><br><span class="line"><span class="number">5140</span>,<span class="number">5604</span>,<span class="number">9114</span>,<span class="number">9299</span>,<span class="number">7603</span>,<span class="number">2485</span>,<span class="number">884</span>,<span class="number">7313</span>,<span class="number">4139</span>,<span class="number">9883</span>,<span class="number">1405</span>,<span class="number">9843</span>,<span class="number">7419</span>,<span class="number">1483</span>,<span class="number">2031</span>,<span class="number">8610</span>,<span class="number">4150</span>,<span class="number">3313</span>,<span class="number">6257</span>,<span class="number">3790</span>,<span class="number">1688</span>,<span class="number">994</span>,<span class="number">1357</span>,<span class="number">9660</span>,<span class="number">583</span>,<span class="number">5735</span>,<span class="number">1548</span>,<span class="number">7156</span>,<span class="number">9678</span>,<span class="number">8047</span>,</span><br><span class="line"><span class="number">3617</span>,<span class="number">9611</span>,<span class="number">7966</span>,<span class="number">7764</span>,<span class="number">5177</span>,<span class="number">7716</span>,<span class="number">4206</span>,<span class="number">7985</span>,<span class="number">6989</span>,<span class="number">6318</span>,<span class="number">5854</span>,<span class="number">8292</span>,<span class="number">9639</span>,<span class="number">687</span>,<span class="number">370</span>,<span class="number">3252</span>,<span class="number">7104</span>,<span class="number">5813</span>,<span class="number">758</span>,<span class="number">8219</span>,<span class="number">3809</span>,<span class="number">2506</span>,<span class="number">3605</span>,<span class="number">9340</span>,<span class="number">3559</span>,<span class="number">4118</span>,<span class="number">4757</span>,<span class="number">8229</span>,<span class="number">4258</span>,<span class="number">944</span>,</span><br><span class="line"><span class="number">1596</span>,<span class="number">4940</span>,<span class="number">622</span>,<span class="number">5832</span>,<span class="number">1270</span>,<span class="number">6948</span>,<span class="number">1744</span>,<span class="number">1125</span>,<span class="number">7895</span>,<span class="number">9348</span>,<span class="number">7601</span>,<span class="number">7426</span>,<span class="number">1975</span>,<span class="number">9611</span>,<span class="number">3722</span>,<span class="number">4143</span>,<span class="number">4979</span>,<span class="number">7904</span>,<span class="number">3221</span>,<span class="number">3817</span>,<span class="number">5755</span>,<span class="number">1798</span>,<span class="number">6549</span>,<span class="number">3463</span>,<span class="number">3190</span>,<span class="number">201</span>,<span class="number">6894</span>,<span class="number">6209</span>,<span class="number">3488</span>,<span class="number">670</span>,</span><br><span class="line"><span class="number">7643</span>,<span class="number">7020</span>,<span class="number">6164</span>,<span class="number">5583</span>,<span class="number">5036</span>,<span class="number">6309</span>,<span class="number">8644</span>,<span class="number">7961</span>,<span class="number">3465</span>,<span class="number">7795</span>,<span class="number">1486</span>,<span class="number">4535</span>,<span class="number">3111</span>,<span class="number">5252</span>,<span class="number">4049</span>,<span class="number">4253</span>,<span class="number">7515</span>,<span class="number">1517</span>,<span class="number">6148</span>,<span class="number">2438</span>,<span class="number">1296</span>,<span class="number">8826</span>,<span class="number">7924</span>,<span class="number">7761</span>,<span class="number">9126</span>,<span class="number">6951</span>,<span class="number">7110</span>,<span class="number">7549</span>,<span class="number">1170</span>,<span class="number">8533</span>,</span><br><span class="line"><span class="number">793</span>,<span class="number">1633</span>,<span class="number">6451</span>,<span class="number">6261</span>,<span class="number">5887</span>,<span class="number">8694</span>,<span class="number">6447</span>,<span class="number">8993</span>,<span class="number">6398</span>,<span class="number">1289</span>,<span class="number">2925</span>,<span class="number">2362</span>,<span class="number">3935</span>,<span class="number">6744</span>,<span class="number">1358</span>,<span class="number">1743</span>,<span class="number">3937</span>,<span class="number">9942</span>,<span class="number">3696</span>,<span class="number">1601</span>,<span class="number">8295</span>,<span class="number">3086</span>,<span class="number">2595</span>,<span class="number">9554</span>,<span class="number">8566</span>,<span class="number">1465</span>,<span class="number">2109</span>,<span class="number">3474</span>,<span class="number">3950</span>,<span class="number">9216</span>,</span><br><span class="line"><span class="number">8948</span>,<span class="number">2020</span>,<span class="number">3536</span>,<span class="number">943</span>,<span class="number">4934</span>,<span class="number">8377</span>,<span class="number">6171</span>,<span class="number">1243</span>,<span class="number">3525</span>,<span class="number">259</span>,<span class="number">3001</span>,<span class="number">4205</span>,<span class="number">4548</span>,<span class="number">4754</span>,<span class="number">2365</span>,<span class="number">8630</span>,<span class="number">4690</span>,<span class="number">7872</span>,<span class="number">5131</span>,<span class="number">3995</span>,<span class="number">2672</span>,<span class="number">728</span>,<span class="number">6532</span>,<span class="number">9785</span>,<span class="number">9379</span>,<span class="number">5865</span>,<span class="number">4774</span>,<span class="number">6660</span>,<span class="number">3721</span>,<span class="number">4451</span>,</span><br><span class="line"><span class="number">9085</span>,<span class="number">4771</span>,<span class="number">8008</span>,<span class="number">857</span>,<span class="number">9737</span>,<span class="number">5630</span>,<span class="number">4040</span>,<span class="number">3106</span>,<span class="number">5997</span>,<span class="number">4152</span>,<span class="number">8542</span>,<span class="number">3992</span>,<span class="number">3294</span>,<span class="number">5064</span>,<span class="number">2656</span>,<span class="number">5247</span>,<span class="number">635</span>,<span class="number">1521</span>,<span class="number">3026</span>,<span class="number">1502</span>,<span class="number">9396</span>,<span class="number">2171</span>,<span class="number">7188</span>,<span class="number">2425</span>,<span class="number">9758</span>,<span class="number">2640</span>,<span class="number">8648</span>,<span class="number">9454</span>,<span class="number">274</span>,<span class="number">9471</span>,</span><br><span class="line"><span class="number">8972</span>,<span class="number">9301</span>,<span class="number">911</span>,<span class="number">6023</span>,<span class="number">4155</span>,<span class="number">126</span>,<span class="number">7802</span>,<span class="number">2948</span>,<span class="number">5675</span>,<span class="number">6313</span>,<span class="number">69</span>,<span class="number">1374</span>,<span class="number">9925</span>,<span class="number">3685</span>,<span class="number">6901</span>,<span class="number">432</span>,<span class="number">1884</span>,<span class="number">4803</span>,<span class="number">8173</span>,<span class="number">9638</span>,<span class="number">3626</span>,<span class="number">695</span>,<span class="number">4286</span>,<span class="number">3836</span>,<span class="number">8670</span>,<span class="number">8834</span>,<span class="number">1444</span>,<span class="number">5187</span>,<span class="number">6281</span>,<span class="number">2482</span>,</span><br><span class="line"><span class="number">8801</span>,<span class="number">7656</span>,<span class="number">9066</span>,<span class="number">5138</span>,<span class="number">5160</span>,<span class="number">9857</span>,<span class="number">906</span>,<span class="number">5235</span>,<span class="number">7243</span>,<span class="number">5281</span>,<span class="number">5103</span>,<span class="number">5826</span>,<span class="number">5023</span>,<span class="number">3637</span>,<span class="number">5607</span>,<span class="number">1204</span>,<span class="number">5697</span>,<span class="number">3422</span>,<span class="number">1192</span>,<span class="number">8753</span>,<span class="number">6087</span>,<span class="number">2083</span>,<span class="number">3256</span>,<span class="number">8201</span>,<span class="number">9853</span>,<span class="number">1886</span>,<span class="number">3953</span>,<span class="number">4732</span>,<span class="number">7351</span>,<span class="number">6387</span>,</span><br><span class="line"><span class="number">9148</span>,<span class="number">2299</span>,<span class="number">4843</span>,<span class="number">3891</span>,<span class="number">3572</span>,<span class="number">874</span>,<span class="number">9873</span>,<span class="number">1235</span>,<span class="number">7323</span>,<span class="number">8860</span>,<span class="number">3439</span>,<span class="number">113</span>,<span class="number">5132</span>,<span class="number">6521</span>,<span class="number">1234</span>,<span class="number">7427</span>,<span class="number">4062</span>,<span class="number">1342</span>,<span class="number">2480</span>,<span class="number">641</span>,<span class="number">8802</span>,<span class="number">9788</span>,<span class="number">5336</span>,<span class="number">3649</span>,<span class="number">1301</span>,<span class="number">3268</span>,<span class="number">749</span>,<span class="number">1628</span>,<span class="number">9202</span>,<span class="number">2689</span>,</span><br><span class="line"><span class="number">3284</span>,<span class="number">9170</span>,<span class="number">5252</span>,<span class="number">1577</span>,<span class="number">1705</span>,<span class="number">5640</span>,<span class="number">2185</span>,<span class="number">2252</span>,<span class="number">4943</span>,<span class="number">271</span>,<span class="number">5117</span>,<span class="number">8699</span>,<span class="number">2743</span>,<span class="number">8221</span>,<span class="number">2119</span>,<span class="number">3851</span>,<span class="number">701</span>,<span class="number">2740</span>,<span class="number">4247</span>,<span class="number">7037</span>,<span class="number">9764</span>,<span class="number">4445</span>,<span class="number">5848</span>,<span class="number">6135</span>,<span class="number">6166</span>,<span class="number">5328</span>,<span class="number">2584</span>,<span class="number">1131</span>,<span class="number">3005</span>,<span class="number">8817</span>,</span><br><span class="line"><span class="number">2783</span>,<span class="number">7749</span>,<span class="number">6112</span>,<span class="number">5567</span>,<span class="number">9688</span>,<span class="number">2549</span>,<span class="number">7929</span>,<span class="number">8650</span>,<span class="number">60</span>,<span class="number">1896</span>,<span class="number">3998</span>,<span class="number">7345</span>,<span class="number">3352</span>,<span class="number">8990</span>,<span class="number">1143</span>,<span class="number">873</span>,<span class="number">1191</span>,<span class="number">5821</span>,<span class="number">9485</span>,<span class="number">5249</span>,<span class="number">3086</span>,<span class="number">8016</span>,<span class="number">9319</span>,<span class="number">4139</span>,<span class="number">3566</span>,<span class="number">8871</span>,<span class="number">7528</span>,<span class="number">7873</span>,<span class="number">4117</span>,<span class="number">1085</span>,</span><br><span class="line"><span class="number">7064</span>,<span class="number">8222</span>,<span class="number">5947</span>,<span class="number">4447</span>,<span class="number">1326</span>,<span class="number">5206</span>,<span class="number">12</span>,<span class="number">9703</span>,<span class="number">5711</span>,<span class="number">3951</span>,<span class="number">219</span>,<span class="number">6966</span>,<span class="number">3168</span>,<span class="number">2372</span>,<span class="number">9603</span>,<span class="number">9092</span>,<span class="number">1904</span>,<span class="number">1010</span>,<span class="number">2704</span>,<span class="number">2106</span>,<span class="number">7568</span>,<span class="number">3410</span>,<span class="number">296</span>,<span class="number">6825</span>,<span class="number">9781</span>,<span class="number">637</span>,<span class="number">4465</span>,<span class="number">7953</span>,<span class="number">6861</span>,<span class="number">2142</span>,</span><br><span class="line"><span class="number">2035</span>,<span class="number">9743</span>,<span class="number">1921</span>,<span class="number">3051</span>,<span class="number">7424</span>,<span class="number">7112</span>,<span class="number">7676</span>,<span class="number">5245</span>,<span class="number">9531</span>,<span class="number">2284</span>,<span class="number">4498</span>,<span class="number">6423</span>,<span class="number">6977</span>,<span class="number">3106</span>,<span class="number">1367</span>,<span class="number">5696</span>,<span class="number">2003</span>,<span class="number">1291</span>,<span class="number">3025</span>,<span class="number">76</span>,<span class="number">3147</span>,<span class="number">9094</span>,<span class="number">4580</span>,<span class="number">5097</span>,<span class="number">7390</span>,<span class="number">8637</span>,<span class="number">5853</span>,<span class="number">359</span>,<span class="number">3153</span>,<span class="number">4957</span>,</span><br><span class="line"><span class="number">6635</span>,<span class="number">5721</span>,<span class="number">3353</span>,<span class="number">2266</span>,<span class="number">3481</span>,<span class="number">7432</span>,<span class="number">3020</span>,<span class="number">7330</span>,<span class="number">1172</span>,<span class="number">5285</span>,<span class="number">1525</span>,<span class="number">2928</span>,<span class="number">5331</span>,<span class="number">8856</span>,<span class="number">2163</span>,<span class="number">5169</span>,<span class="number">1465</span>,<span class="number">4439</span>,<span class="number">1876</span>,<span class="number">7446</span>,<span class="number">2192</span>,<span class="number">5577</span>,<span class="number">726</span>,<span class="number">6599</span>,<span class="number">352</span>,<span class="number">3645</span>,<span class="number">7733</span>,<span class="number">8331</span>,<span class="number">5447</span>,<span class="number">8017</span>,</span><br><span class="line"><span class="number">5017</span>,<span class="number">7287</span>,<span class="number">6602</span>,<span class="number">7248</span>,<span class="number">6323</span>,<span class="number">4195</span>,<span class="number">9617</span>,<span class="number">2263</span>,<span class="number">4013</span>,<span class="number">450</span>,<span class="number">4073</span>,<span class="number">6131</span>,<span class="number">3569</span>,<span class="number">9019</span>,<span class="number">1858</span>,<span class="number">9827</span>,<span class="number">8118</span>,<span class="number">4972</span>,<span class="number">7422</span>,<span class="number">9666</span>,<span class="number">5760</span>,<span class="number">9213</span>,<span class="number">2817</span>,<span class="number">7952</span>,<span class="number">3948</span>,<span class="number">8683</span>,<span class="number">3645</span>,<span class="number">6402</span>,<span class="number">3264</span>,<span class="number">1919</span>,</span><br><span class="line"><span class="number">9276</span>,<span class="number">2519</span>,<span class="number">190</span>,<span class="number">766</span>,<span class="number">8940</span>,<span class="number">3413</span>,<span class="number">2644</span>,<span class="number">8048</span>,<span class="number">83</span>,<span class="number">9724</span>,<span class="number">7009</span>,<span class="number">3777</span>,<span class="number">9663</span>,<span class="number">2483</span>,<span class="number">5752</span>,<span class="number">4578</span>,<span class="number">8951</span>,<span class="number">5902</span>,<span class="number">2170</span>,<span class="number">9967</span>,<span class="number">894</span>,<span class="number">8556</span>,<span class="number">6049</span>,<span class="number">7254</span>,<span class="number">2746</span>,<span class="number">8962</span>,<span class="number">8317</span>,<span class="number">6848</span>,<span class="number">767</span>,<span class="number">7907</span>,</span><br><span class="line"><span class="number">1028</span>,<span class="number">9458</span>,<span class="number">6881</span>,<span class="number">4978</span>,<span class="number">6717</span>,<span class="number">8210</span>,<span class="number">3835</span>,<span class="number">1064</span>,<span class="number">7434</span>,<span class="number">746</span>,<span class="number">9449</span>&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;a[n]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="10"><a href="#10" class="headerlink" title="10"></a>10</h2><p>这是一个典型的贪心题，每次选m个，则一定是挑前m大的那几个数，但顺序不难打乱了。<br>这个题hash，vector，结构体数组好像都能过，我感觉还是set好用，代码特短。<br>思路：用两个vector容器存两个数组，然后一个存原始的数组，一个存排好序的数组（由大到小排序），然后将排好序的前m个元素放到set中，然后从原始数组中开始查找，看这个出现在set中没，如果出现则输出。<br>总复杂度，排序是nlogn，然后查找是logm，所以后面复杂度为nlogm，总复杂度为nlogn+nlogm，应该不会被tle吧，不是特别暴力</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sc(x) scanf(<span class="meta-string">"%lld"</span>,&amp;x);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pf printf</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(i,s,e) for(int i=s;i&lt;=e;i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> dep(i,e,s) for(int i=e;i&gt;=s;i--)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SIS std::ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v,st;</span><br><span class="line"><span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a&gt;b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	SIS;</span><br><span class="line">	<span class="comment">//加速cin/cout</span></span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</span><br><span class="line">	rep(i,<span class="number">1</span>,n)&#123;</span><br><span class="line">		<span class="keyword">int</span> t;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">		v.push_back(t);</span><br><span class="line">		st.push_back(t);</span><br><span class="line">	&#125;</span><br><span class="line">	sort(st.begin(),st.end(),cmp);</span><br><span class="line">	rep(i,<span class="number">0</span>,m<span class="number">-1</span>)&#123;</span><br><span class="line">		s.insert(st[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	rep(i,<span class="number">0</span>,n<span class="number">-1</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(s.count(v[i])==<span class="number">1</span>)</span><br><span class="line">			pf(<span class="string">"%d "</span>,v[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>*<em>小结：此次校内赛，让我昨晚cf卡c题那个痛苦稍微缓解了一下，<del>也证明了多打游戏手速会更快</del>这个划掉，然后这次第9题稍微卡了一下，说明回溯还是得练习练习，还有好几个题比如9，10好像都可以st表过，可惜我线段树，st表不是太会，还是得练习啊，多打游戏，热爱生活，我tcl…… *</em></p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您这么好看还看我的文章-------------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/c-match/" rel="tag"># c++ match</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+             
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+             
+               <a href="/2020/03/14/cf%20672%20div3%202020-3-12%20(1)/" rel="next" title="cf 672 div3 2020-3-12 (1)">
+                 cf 672 div3 2020-3-12 (1) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/IMG_20180913_151944.jpg"
+                alt="风尘" />
+            
+              <p class="site-author-name" itemprop="name">风尘</p>
+              <p class="site-description motion-element" itemprop="description">To show my love!</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7Carchive">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          <div id="music 163player">
+                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=480353&auto=1&height=66">
+                </iframe>
+          </div>
+      
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1"><span class="nav-number">1.</span> <span class="nav-text">1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2"><span class="nav-number">2.</span> <span class="nav-text">2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3"><span class="nav-number">3.</span> <span class="nav-text">3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4"><span class="nav-number">4.</span> <span class="nav-text">4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5"><span class="nav-number">5.</span> <span class="nav-text">5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6"><span class="nav-number">6.</span> <span class="nav-text">6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7"><span class="nav-number">7.</span> <span class="nav-text">7</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8"><span class="nav-number">8.</span> <span class="nav-text">8</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9"><span class="nav-number">9.</span> <span class="nav-text">9</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10"><span class="nav-number">10.</span> <span class="nav-text">10</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+ # <span class="with-love">
+  <span class="with-love" id="heart">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">风尘</span>
+
+  
+</div>
+
+<!--
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+-->
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+<!--
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+-->
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+  <!-- 雪花特效 -->
+  <script type="text/javascript">
+    var windowWidth = $(window).width();
+    if (windowWidth > 480) {
+      document.write('<script type="text/javascript" src="/js/src/snow.js"><\/script>');
+    }
+  </script>
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+
+<!-- 飘雪 -->
+<!-- <script type="text/javascript" src="//libs.baidu.com/jquery/1.8.3/jquery.min.js"></script> -->
+
