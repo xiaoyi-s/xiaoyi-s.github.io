@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-29T09:23:07.009Z</updated>
+  <updated>2020-03-29T09:27:25.011Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/2020/03/29/test/"/>
     <id>http://yoursite.com/2020/03/29/test/</id>
     <published>2020-03-29T05:02:18.704Z</published>
-    <updated>2020-03-29T09:23:07.009Z</updated>
+    <updated>2020-03-29T09:27:25.011Z</updated>
     
-    <content type="html"><![CDATA[<p>this is a article！</p><object data="./test/test.pdf" type="application/pdf" width="100%" height="877px">]]></content>
+    <content type="html"><![CDATA[<p>this is a article！</p><object data="./test/test.pdf" type="application/pdf" width="100%" height="877px">[点我，这里是PDF文档](test.pdf)]]></content>
     
     <summary type="html">
     
@@ -31,6 +31,8 @@
       
         &lt;p&gt;this is a article！&lt;/p&gt;
 &lt;object data=&quot;./test/test.pdf&quot; type=&quot;application/pdf&quot; width=&quot;100%&quot; height=&quot;877px&quot;&gt;
+[点我，这里是PDF文档](test.pdf)
+
 
       
     
