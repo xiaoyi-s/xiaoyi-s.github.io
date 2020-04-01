@@ -46,9 +46,9 @@
     <link href="http://yoursite.com/2020/03/29/%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%95%B0%E6%8D%AE%E6%8B%9F%E5%90%88/"/>
     <id>http://yoursite.com/2020/03/29/%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%95%B0%E6%8D%AE%E6%8B%9F%E5%90%88/</id>
     <published>2020-03-29T05:02:18.704Z</published>
-    <updated>2020-04-01T02:15:32.725Z</updated>
+    <updated>2020-04-01T02:19:01.939Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="多项式数据拟合"><a href="#多项式数据拟合" class="headerlink" title="多项式数据拟合"></a>多项式数据拟合</h2><p><strong>关于多项式拟合操作的一个文档，可以用于建模拟合数据，预测数据使用。</strong></p><object data="./多项式数据拟合/多项式数据拟合.pdf" type="application/pdf" width="100%" height="877px"><p>[点我，这里是PDF文档](% pdf 多项式数据拟合.pdf %)</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="多项式数据拟合"><a href="#多项式数据拟合" class="headerlink" title="多项式数据拟合"></a>多项式数据拟合</h2><p><strong>关于多项式拟合操作的一个文档，可以用于建模拟合数据，预测数据使用。</strong></p><object data="./多项式数据拟合/多项式数据拟合.pdf" type="application/pdf" width="100%" height="877px"><p>[点我，这里是PDF文档]<div class="row">    <embed src="多项式数据拟合.pdf" width="100%" height="550" type="application/pdf"></div></p>]]></content>
     
     <summary type="html">
     
