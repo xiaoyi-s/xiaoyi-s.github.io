@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.lug.ustc.edu.cn/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="c++ match," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="我的修仙路" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="Codeforces Round #634 (Div. 3)AA. Candies and Two Sisters(题目链接)A. Candies and Two Sisterstime limit per test1 secondmemory limit per test256 megabytesinputstandard inputoutputstandard outputThere are">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codeforces Round #634 (Div. 3)">
+<meta property="og:url" content="http://yoursite.com/2020/04/15/Codeforces%20Round%20#634%20(Div.%203)/index.html">
+<meta property="og:site_name" content="我的修仙路">
+<meta property="og:description" content="Codeforces Round #634 (Div. 3)AA. Candies and Two Sisters(题目链接)A. Candies and Two Sisterstime limit per test1 secondmemory limit per test256 megabytesinputstandard inputoutputstandard outputThere are">
+<meta property="article:published_time" content="2020-04-15T10:09:06.540Z">
+<meta property="article:modified_time" content="2020-04-15T10:09:51.433Z">
+<meta property="article:author" content="风尘">
+<meta property="article:tag" content="c++ match">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/04/15/Codeforces Round #634 (Div. 3)/"/>
+
+
+
+
+
+  <title>Codeforces Round #634 (Div. 3) | 我的修仙路</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">我的修仙路</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-书籍">
+          <a href="/book/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            书籍
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/15/Codeforces%20Round%20#634%20(Div.%203)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="风尘">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/IMG_20180913_151944.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的修仙路">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Codeforces Round #634 (Div. 3)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-15T18:09:06+08:00">
+                2020-04-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/04/15/Codeforces%20Round%20#634%20(Div.%203)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/15/Codeforces%20Round%20#634%20(Div.%203)/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  17
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Codeforces-Round-634-Div-3"><a href="#Codeforces-Round-634-Div-3" class="headerlink" title="Codeforces Round #634 (Div. 3)"></a>Codeforces Round #634 (Div. 3)</h2><h2 id="A"><a href="#A" class="headerlink" title="A"></a>A</h2><p><a href="https://codeforces.com/contest/1335/problem/A" target="_blank" rel="noopener">A. Candies and Two Sisters(题目链接)</a><br>A. Candies and Two Sisters<br>time limit per test1 second<br>memory limit per test256 megabytes<br>inputstandard input<br>outputstandard output<br>There are two sisters Alice and Betty. You have 𝑛 candies. You want to distribute these 𝑛 candies between two sisters in such a way that:</p>
+<p>Alice will get 𝑎 (𝑎&gt;0) candies;<br>Betty will get 𝑏 (𝑏&gt;0) candies;<br>each sister will get some integer number of candies;<br>Alice will get a greater amount of candies than Betty (i.e. 𝑎&gt;𝑏);<br>all the candies will be given to one of two sisters (i.e. 𝑎+𝑏=𝑛).<br>Your task is to calculate the number of ways to distribute exactly 𝑛 candies between sisters in a way described above. Candies are indistinguishable.</p>
+<p>Formally, find the number of ways to represent 𝑛 as the sum of 𝑛=𝑎+𝑏, where 𝑎 and 𝑏 are positive integers and 𝑎&gt;𝑏.</p>
+<p>You have to answer 𝑡 independent test cases.</p>
+<p>Input<br>The first line of the input contains one integer 𝑡 (1≤𝑡≤104) — the number of test cases. Then 𝑡 test cases follow.</p>
+<p>The only line of a test case contains one integer 𝑛 (1≤𝑛≤2⋅109) — the number of candies you have.</p>
+<p>Output<br>For each test case, print the answer — the number of ways to distribute exactly 𝑛 candies between two sisters in a way described in the problem statement. If there is no way to satisfy all the conditions, print 0.</p>
+<p>Example<br>inputCopy<br>6<br>7<br>1<br>2<br>3<br>2000000000<br>763243547<br>outputCopy<br>3<br>0<br>0<br>1<br>999999999<br>381621773<br>Note<br>For the test case of the example, the 3 possible ways to distribute candies are:</p>
+<p>𝑎=6, 𝑏=1;<br>𝑎=5, 𝑏=2;<br>𝑎=4, 𝑏=3.</p>
+<p>题意：分糖果，两个人分糖果，总共有n颗糖果，分给第一个人a颗，第二个人b颗，且a&gt;b, a+b=n，问总共有多少种分法。</p>
+<p>题解：如果&gt;2的话，为奇数的话输出n/2，为偶数输出n/2-1</p>
+<p>代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sc(x) scanf(<span class="meta-string">"%lld"</span>,&amp;x);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pf printf</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(i,s,e) for(int i=s;i&lt;=e;i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> dep(i,e,s) for(int i=e;i&gt;=s;i--)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf=~<span class="number">0u</span>&gt;&gt;<span class="number">2</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">1e5</span>+<span class="number">7</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SIS std::ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	SIS;</span><br><span class="line">	<span class="comment">//¼ÓËÙcin/cout</span></span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	ll n;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">	<span class="keyword">while</span>(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">		<span class="keyword">if</span>(n==<span class="number">1</span> || n==<span class="number">0</span> || n==<span class="number">2</span>)</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="number">0</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(n&amp;<span class="number">1</span>)</span><br><span class="line">				<span class="built_in">cout</span>&lt;&lt;n/<span class="number">2</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				<span class="built_in">cout</span>&lt;&lt;n/<span class="number">2</span><span class="number">-1</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="B"><a href="#B" class="headerlink" title="B"></a>B</h2><p><a href="https://codeforces.com/contest/1335/problem/B" target="_blank" rel="noopener">B. Construct the String(题目链接)</a><br>B. Construct the String<br>time limit per test2 seconds<br>memory limit per test256 megabytes<br>inputstandard input<br>outputstandard output<br>You are given three positive integers 𝑛, 𝑎 and 𝑏. You have to construct a string 𝑠 of length 𝑛 consisting of lowercase Latin letters such that each substring of length 𝑎 has exactly 𝑏 distinct letters. It is guaranteed that the answer exists.</p>
+<p>You have to answer 𝑡 independent test cases.</p>
+<p>Recall that the substring 𝑠[𝑙…𝑟] is the string 𝑠𝑙,𝑠𝑙+1,…,𝑠𝑟 and its length is 𝑟−𝑙+1. In this problem you are only interested in substrings of length 𝑎.</p>
+<p>Input<br>The first line of the input contains one integer 𝑡 (1≤𝑡≤2000) — the number of test cases. Then 𝑡 test cases follow.</p>
+<p>The only line of a test case contains three space-separated integers 𝑛, 𝑎 and 𝑏 (1≤𝑎≤𝑛≤2000,1≤𝑏≤min(26,𝑎)), where 𝑛 is the length of the required string, 𝑎 is the length of a substring and 𝑏 is the required number of distinct letters in each substring of length 𝑎.</p>
+<p>It is guaranteed that the sum of 𝑛 over all test cases does not exceed 2000 (∑𝑛≤2000).</p>
+<p>Output<br>For each test case, print the answer — such a string 𝑠 of length 𝑛 consisting of lowercase Latin letters that each substring of length 𝑎 has exactly 𝑏 distinct letters. If there are multiple valid answers, print any of them. It is guaranteed that the answer exists.</p>
+<p>Example<br>inputCopy<br>4<br>7 5 3<br>6 1 1<br>6 6 1<br>5 2 2<br>outputCopy<br>tleelte<br>qwerty<br>vvvvvv<br>abcde<br>Note<br>In the first test case of the example, consider all the substrings of length 5:</p>
+<p>“tleel”: it contains 3 distinct (unique) letters,<br>“leelt”: it contains 3 distinct (unique) letters,<br>“eelte”: it contains 3 distinct (unique) letters.</p>
+<p>构造题<br>题意：有一个n长度的字符串，要使得每a范围内只出现b个相同的字符。<br>输入n a b让你构造</p>
+<p>题解：前b个字符不同，然后a-b个重复最后一个，然后之后每次接着上面循环即可。<br>如 7 5 3<br>abccc a b即为答案。<br>如 8 5 3<br>abcccabc即为答案。</p>
+<p>代码：模拟上述步骤即可。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sc(x) scanf(<span class="meta-string">"%lld"</span>,&amp;x);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pf printf</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(i,s,e) for(int i=s;i&lt;=e;i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> dep(i,e,s) for(int i=e;i&gt;=s;i--)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf=~<span class="number">0u</span>&gt;&gt;<span class="number">2</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">1e5</span>+<span class="number">7</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SIS std::ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	SIS;</span><br><span class="line">	<span class="comment">//¼ÓËÙcin/cout</span></span><br><span class="line">	<span class="keyword">int</span> t,n,a,b;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">	<span class="keyword">while</span>(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;a&gt;&gt;b;</span><br><span class="line">		<span class="built_in">string</span> s;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;b;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">char</span> c=<span class="string">'a'</span>+i;</span><br><span class="line">			s=s+c;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;a-b;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">char</span> c=<span class="string">'a'</span>+b<span class="number">-1</span>;</span><br><span class="line">			s=s+c;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n-a;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			s=s+s[i];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;s&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><p><a href="https://codeforces.com/contest/1335/problem/C" target="_blank" rel="noopener">C. Two Teams Composing(题目链接)</a><br>C. Two Teams Composing<br>time limit per test2 seconds<br>memory limit per test256 megabytes<br>inputstandard input<br>outputstandard output<br>You have 𝑛 students under your control and you have to compose exactly two teams consisting of some subset of your students. Each student had his own skill, the 𝑖-th student skill is denoted by an integer 𝑎𝑖 (different students can have the same skills).</p>
+<p>So, about the teams. Firstly, these two teams should have the same size. Two more constraints:</p>
+<p>The first team should consist of students with distinct skills (i.e. all skills in the first team are unique).<br>The second team should consist of students with the same skills (i.e. all skills in the second team are equal).<br>Note that it is permissible that some student of the first team has the same skill as a student of the second team.</p>
+<p>Consider some examples (skills are given):</p>
+<p>[1,2,3], [4,4] is not a good pair of teams because sizes should be the same;<br>[1,1,2], [3,3,3] is not a good pair of teams because the first team should not contain students with the same skills;<br>[1,2,3], [3,4,4] is not a good pair of teams because the second team should contain students with the same skills;<br>[1,2,3], [3,3,3] is a good pair of teams;<br>[5], [6] is a good pair of teams.<br>Your task is to find the maximum possible size 𝑥 for which it is possible to compose a valid pair of teams, where each team size is 𝑥 (skills in the first team needed to be unique, skills in the second team should be the same between them). A student cannot be part of more than one team.</p>
+<p>You have to answer 𝑡 independent test cases.</p>
+<p>Input<br>The first line of the input contains one integer 𝑡 (1≤𝑡≤104) — the number of test cases. Then 𝑡 test cases follow.</p>
+<p>The first line of the test case contains one integer 𝑛 (1≤𝑛≤2⋅105) — the number of students. The second line of the test case contains 𝑛 integers 𝑎1,𝑎2,…,𝑎𝑛 (1≤𝑎𝑖≤𝑛), where 𝑎𝑖 is the skill of the 𝑖-th student. Different students can have the same skills.</p>
+<p>It is guaranteed that the sum of 𝑛 over all test cases does not exceed 2⋅105 (∑𝑛≤2⋅105).</p>
+<p>Output<br>For each test case, print the answer — the maximum possible size 𝑥 for which it is possible to compose a valid pair of teams, where each team size is 𝑥.</p>
+<p>Example<br>inputCopy<br>4<br>7<br>4 2 4 1 4 3 4<br>5<br>2 1 5 4 3<br>1<br>1<br>4<br>1 1 1 3<br>outputCopy<br>3<br>1<br>0<br>2<br>Note<br>In the first test case of the example, it is possible to construct two teams of size 3: the first team is [1,2,4] and the second team is [4,4,4]. Note, that there are some other ways to construct two valid teams of size 3.</p>
+<p>贪心题：<br>题意：给你一组序列，你要组成两个集合，集合一中所有的元素不同，集合二中所有的元素相同，且这两个集合的元素总个数得相同，问你集合最大元素总个数是多少。</p>
+<p>题解：用个map容器记录下每个数字出现的次数m，m记录个数最多的元素。然后记录下不同个数字母的总个数cnt，然后答案即为<br>max(min(m,cnt-1),min(m-1,cnt))<br>可以理解一下下上述两个状态，<br>min(m,cnt-1) 状态即为这m个元素构成了一个集合，剩下cnt-1种元素构成了一种元素。取min<br>min(m-1,cnt) 状态即为从m个元素抽出一个来，然后剩下m-1个元素构成一个集合，然后cnt个元素构成一个集合。取min</p>
+<p>代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sc(x) scanf(<span class="meta-string">"%lld"</span>,&amp;x);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pf printf</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(i,s,e) for(int i=s;i&lt;=e;i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> dep(i,e,s) for(int i=e;i&gt;=s;i--)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf=~<span class="number">0u</span>&gt;&gt;<span class="number">2</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">1e5</span>+<span class="number">7</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SIS std::ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	SIS;</span><br><span class="line">	<span class="comment">//¼ÓËÙcin/cout</span></span><br><span class="line">	<span class="keyword">int</span> t,n,a;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">	<span class="keyword">while</span>(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">		<span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; mp;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;a;</span><br><span class="line">			mp[a]++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> cnt=<span class="number">0</span>,m=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;::iterator it=mp.begin();it!=mp.end();it++)</span><br><span class="line">		&#123;</span><br><span class="line">			cnt++;</span><br><span class="line">			m=max(m,it-&gt;second);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;max(min(cnt<span class="number">-1</span>,m),min(cnt,m<span class="number">-1</span>))&lt;&lt;<span class="built_in">endl</span>;;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="D"><a href="#D" class="headerlink" title="D"></a>D</h2><p><a href="https://codeforces.com/contest/1335/problem/D" target="_blank" rel="noopener">D. Anti-Sudoku(题目链接)</a><br>D. Anti-Sudoku<br>time limit per test2 seconds<br>memory limit per test256 megabytes<br>inputstandard input<br>outputstandard output<br>You are given a correct solution of the sudoku puzzle. If you don’t know what is the sudoku, you can read about it here.</p>
+<p>The picture showing the correct sudoku solution:</p>
+<p>Blocks are bordered with bold black color.</p>
+<p>Your task is to change at most 9 elements of this field (i.e. choose some 1≤𝑖,𝑗≤9 and change the number at the position (𝑖,𝑗) to any other number in range [1;9]) to make it anti-sudoku. The anti-sudoku is the 9×9 field, in which:</p>
+<p>Any number in this field is in range [1;9];<br>each row contains at least two equal elements;<br>each column contains at least two equal elements;<br>each 3×3 block (you can read what is the block in the link above) contains at least two equal elements.<br>It is guaranteed that the answer exists.</p>
+<p>You have to answer 𝑡 independent test cases.</p>
+<p>Input<br>The first line of the input contains one integer 𝑡 (1≤𝑡≤104) — the number of test cases. Then 𝑡 test cases follow.</p>
+<p>Each test case consists of 9 lines, each line consists of 9 characters from 1 to 9 without any whitespaces — the correct solution of the sudoku puzzle.</p>
+<p>Output<br>For each test case, print the answer — the initial field with at most 9 changed elements so that the obtained field is anti-sudoku. If there are several solutions, you can print any. It is guaranteed that the answer exists.</p>
+<p>Example<br>inputCopy<br>1<br>154873296<br>386592714<br>729641835<br>863725149<br>975314628<br>412968357<br>631457982<br>598236471<br>247189563<br>outputCopy<br>154873396<br>336592714<br>729645835<br>863725145<br>979314628<br>412958357<br>631457992<br>998236471<br>247789563</p>
+<p>题意：<br>给你个9x9的数独块，数独块是已经成功了的数独块。现在要你搞反数独。<br>即每3x3块之间得有相同的元素，然后每一行，每一列都得有相同的元素<br>请你构造这样的块。</p>
+<p>题解：额，这个直接把每行的一个元素该成另一个元素就好了吧。我把每行的9改为了8，ac了。<br><strong>找元素用find就行了</strong></p>
+<p>代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sc(x) scanf(<span class="meta-string">"%lld"</span>,&amp;x);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pf printf</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(i,s,e) for(int i=s;i&lt;=e;i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> dep(i,e,s) for(int i=e;i&gt;=s;i--)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf=~<span class="number">0u</span>&gt;&gt;<span class="number">2</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">1e5</span>+<span class="number">7</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SIS std::ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);</span></span><br><span class="line"><span class="built_in">string</span> s[<span class="number">10</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	SIS;</span><br><span class="line">	<span class="comment">//¼ÓËÙcin/cout</span></span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">	<span class="keyword">while</span>(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">9</span>;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;s[i];</span><br><span class="line">			s[i][s[i].find(<span class="string">'9'</span>)]=<span class="string">'8'</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">9</span>;i++)</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;s[i]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="E1-E2"><a href="#E1-E2" class="headerlink" title="E1 E2"></a>E1 E2</h2><p><a href="https://codeforces.com/contest/1335/problem/E1" target="_blank" rel="noopener">E1. Three Blocks Palindrome</a><br>E1. Three Blocks Palindrome (easy version)<br>time limit per test3 seconds<br>memory limit per test256 megabytes<br>inputstandard input<br>outputstandard output<br>The only difference between easy and hard versions is constraints.</p>
+<p>You are given a sequence 𝑎 consisting of 𝑛 positive integers.</p>
+<p>Let’s define a three blocks palindrome as the sequence, consisting of at most two distinct elements (let these elements are 𝑎 and 𝑏, 𝑎 can be equal 𝑏) and is as follows: [𝑎,𝑎,…,𝑎𝑥,𝑏,𝑏,…,𝑏𝑦,𝑎,𝑎,…,𝑎𝑥]. There 𝑥,𝑦 are integers greater than or equal to 0. For example, sequences [], [2], [1,1], [1,2,1], [1,2,2,1] and [1,1,2,1,1] are three block palindromes but [1,2,3,2,1], [1,2,1,2,1] and [1,2] are not.</p>
+<p>Your task is to choose the maximum by length subsequence of 𝑎 that is a three blocks palindrome.</p>
+<p>You have to answer 𝑡 independent test cases.</p>
+<p>Recall that the sequence 𝑡 is a a subsequence of the sequence 𝑠 if 𝑡 can be derived from 𝑠 by removing zero or more elements without changing the order of the remaining elements. For example, if 𝑠=[1,2,1,3,1,2,1], then possible subsequences are: [1,1,1,1], [3] and [1,2,1,3,1,2,1], but not [3,2,3] and [1,1,1,1,2].</p>
+<p>Input<br>The first line of the input contains one integer 𝑡 (1≤𝑡≤2000) — the number of test cases. Then 𝑡 test cases follow.</p>
+<p>The first line of the test case contains one integer 𝑛 (1≤𝑛≤2000) — the length of 𝑎. The second line of the test case contains 𝑛 integers 𝑎1,𝑎2,…,𝑎𝑛 (1≤𝑎𝑖≤26), where 𝑎𝑖 is the 𝑖-th element of 𝑎. Note that the maximum value of 𝑎𝑖 can be up to 26.</p>
+<p>It is guaranteed that the sum of 𝑛 over all test cases does not exceed 2000 (∑𝑛≤2000).</p>
+<p>Output<br>For each test case, print the answer — the maximum possible length of some subsequence of 𝑎 that is a three blocks palindrome.</p>
+<p>Example<br>inputCopy<br>6<br>8<br>1 1 2 2 3 2 1 1<br>3<br>1 3 3<br>4<br>1 10 10 1<br>1<br>26<br>2<br>2 1<br>3<br>1 1 1<br>outputCopy<br>7<br>2<br>4<br>1<br>1<br>3</p>
+<p>这两题如果代码够优化不是很暴力的话，可以稍改一点点，同时过。</p>
+<p>题意：就是给你一个序列，然后你可以删除一些元素。然后使得它成为一个三元回文序列。[ x , y ,x ] x包含很多元素，y包含很多元素，x又包含很多元素。问你三元回文序列的最长长度为多少。</p>
+<p>题解：<br>对每个元素出现次数，即位置做好统计。<br>然后开始枚举数字1，出现的次数，二分查找，最左边和最右边出现这个数字的位置。然后这个数字之间的数字再做统计，就能计算出来最大的长度了，有点像dp。。但我感觉我写的是暴力。。</p>
+<p>代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">2010</span>];</span><br><span class="line"><span class="keyword">int</span> b[<span class="number">30</span>][<span class="number">2010</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        <span class="keyword">int</span> n;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) <span class="built_in">cin</span>&gt;&gt;a[i];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">26</span>;i++) b[i][<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=<span class="number">26</span>;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(a[i]==j) b[j][i]=b[j][i<span class="number">-1</span>]+<span class="number">1</span>;</span><br><span class="line">                <span class="keyword">else</span> b[j][i]=b[j][i<span class="number">-1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> ans=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">26</span>;i++)&#123;     <span class="comment">//Ã¶¾Ù26¸öÊý</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=b[i][n]/<span class="number">2</span>;j++)&#123;      <span class="comment">//Ã¶¾Ù×óÓÒ¸÷ÓÐ¼¸¸ö¸ÃÊý</span></span><br><span class="line">                <span class="keyword">int</span> cnt=j*<span class="number">2</span>;</span><br><span class="line">                <span class="keyword">int</span> l=lower_bound(b[i],b[i]+n,j)-b[i];      <span class="comment">//¶þ·Ö²éÕÒ×î×ó±ßµÚj´Î³öÏÖÕâ¸öÊýµÄÎ»ÖÃ</span></span><br><span class="line">                <span class="keyword">int</span> r=lower_bound(b[i],b[i]+n,b[i][n]-j+<span class="number">1</span>)-b[i];    <span class="comment">//¶þ·Ö²éÕÒ×îÓÒ±ßµÚj´Î³öÏÖÕâ¸öÊýµÄÎ»ÖÃ</span></span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">1</span>;k&lt;=<span class="number">26</span>;k++)&#123;         <span class="comment">//Ã¶¾ÙÖÐ¼äµÄÊý×Ö£»</span></span><br><span class="line">                    ans=max(ans,cnt+b[k][r<span class="number">-1</span>]-b[k][l]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您这么好看还看我的文章-------------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/c-match/" rel="tag"># c++ match</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+             
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+             
+               <a href="/2020/04/13/%E6%B4%9B%E8%B0%B7%20%E4%BC%A0%E6%99%BA%E6%9D%AF/" rel="next" title="洛谷 传智杯">
+                 洛谷 传智杯 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/IMG_20180913_151944.jpg"
+                alt="风尘" />
+            
+              <p class="site-author-name" itemprop="name">风尘</p>
+              <p class="site-description motion-element" itemprop="description">To show my love!</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7Carchive">
+              
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          <div id="music 163player">
+                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=480353&auto=1&height=66">
+                </iframe>
+          </div>
+      
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Codeforces-Round-634-Div-3"><span class="nav-number">1.</span> <span class="nav-text">Codeforces Round #634 (Div. 3)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A"><span class="nav-number">2.</span> <span class="nav-text">A</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B"><span class="nav-number">3.</span> <span class="nav-text">B</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C"><span class="nav-number">4.</span> <span class="nav-text">C</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#D"><span class="nav-number">5.</span> <span class="nav-text">D</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#E1-E2"><span class="nav-number">6.</span> <span class="nav-text">E1 E2</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+ # <span class="with-love">
+  <span class="with-love" id="heart">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">风尘</span>
+
+  
+</div>
+
+<!--
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+-->
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+<!--
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+-->
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共25.2k字</span>
+</div>
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: true,
+        notify: true,
+        appId: 'eodw57A3lq3NKLWPF9SvA8x4-gzGzoHsz',
+        appKey: 'ghJ7siYDtJAJ4j1O6inlyknP',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+  <!-- 雪花特效 -->
+  <script type="text/javascript">
+    var windowWidth = $(window).width();
+    if (windowWidth > 480) {
+      document.write('<script type="text/javascript" src="/js/src/snow.js"><\/script>');
+    }
+  </script>
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+
+<!-- 飘雪 -->
+<!-- <script type="text/javascript" src="//libs.baidu.com/jquery/1.8.3/jquery.min.js"></script> -->
+
