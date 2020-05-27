@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.lug.ustc.edu.cn/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="c++ match," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="我的修仙路" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="题目链接ABCDE A. Minimal Squaretime limit per test2 secondsmemory limit per test256 megabytesinputstandard inputoutputstandard outputFind the minimum area of a square land on which you can place two ident">
+<meta property="og:type" content="article">
+<meta property="og:title" content="codeforces round 644 div3">
+<meta property="og:url" content="http://yoursite.com/2020/05/27/codeforces%20round%20644%20div3/index.html">
+<meta property="og:site_name" content="我的修仙路">
+<meta property="og:description" content="题目链接ABCDE A. Minimal Squaretime limit per test2 secondsmemory limit per test256 megabytesinputstandard inputoutputstandard outputFind the minimum area of a square land on which you can place two ident">
+<meta property="article:published_time" content="2020-05-27T03:45:34.416Z">
+<meta property="article:modified_time" content="2020-05-27T03:46:18.024Z">
+<meta property="article:author" content="风尘">
+<meta property="article:tag" content="c++ match">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/05/27/codeforces round 644 div3/"/>
+
+
+
+
+
+  <title>codeforces round 644 div3 | 我的修仙路</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">我的修仙路</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-书籍">
+          <a href="/book/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            书籍
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/27/codeforces%20round%20644%20div3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="风尘">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/IMG_20180913_151944.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的修仙路">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">codeforces round 644 div3</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-27T11:45:34+08:00">
+                2020-05-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/05/27/codeforces%20round%20644%20div3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/27/codeforces%20round%20644%20div3/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.5k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  14
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>题目链接<br><strong><a href="https://codeforces.com/contest/1360/problem/A" target="_blank" rel="noopener">A</a></strong><br><strong><a href="https://codeforces.com/contest/1360/problem/B" target="_blank" rel="noopener">B</a></strong><br><strong><a href="https://codeforces.com/contest/1360/problem/C" target="_blank" rel="noopener">C</a></strong><br><strong><a href="https://codeforces.com/contest/1360/problem/D" target="_blank" rel="noopener">D</a></strong><br><strong><a href="https://codeforces.com/contest/1360/problem/E" target="_blank" rel="noopener">E</a></strong></p>
+<h2 id="A-Minimal-Square"><a href="#A-Minimal-Square" class="headerlink" title="A. Minimal Square"></a>A. Minimal Square</h2><p>time limit per test2 seconds<br>memory limit per test256 megabytes<br>inputstandard input<br>outputstandard output<br>Find the minimum area of a square land on which you can place two identical rectangular 𝑎×𝑏 houses. The sides of the houses should be parallel to the sides of the desired square land.</p>
+<p>Formally,</p>
+<p>You are given two identical rectangles with side lengths 𝑎 and 𝑏 (1≤𝑎,𝑏≤100) — positive integers (you are given just the sizes, but not their positions).<br>Find the square of the minimum area that contains both given rectangles. Rectangles can be rotated (both or just one), moved, but the sides of the rectangles should be parallel to the sides of the desired square.<br>Two rectangles can touch each other (side or corner), but cannot intersect. Rectangles can also touch the sides of the square but must be completely inside it. You can rotate the rectangles. Take a look at the examples for a better understanding.</p>
+<p>The picture shows a square that contains red and green rectangles.<br>Input<br>The first line contains an integer 𝑡 (1≤𝑡≤10000) —the number of test cases in the input. Then 𝑡 test cases follow.</p>
+<p>Each test case is a line containing two integers 𝑎, 𝑏 (1≤𝑎,𝑏≤100) — side lengths of the rectangles.</p>
+<p>Output<br>Print 𝑡 answers to the test cases. Each answer must be a single integer — minimal area of square land, that contains two rectangles with dimensions 𝑎×𝑏.</p>
+<p>Example<br>inputCopy<br>8<br>3 2<br>4 2<br>1 1<br>3 1<br>4 7<br>1 3<br>7 4<br>100 100<br>outputCopy<br>16<br>16<br>4<br>9<br>64<br>9<br>64<br>40000<br>Note<br>Below are the answers for the first two test cases:</p>
+<p>题意：给你两个个边长为m和n的矩形，问需要多大一个正方形，才可以将两个矩形放下去，且正方形每条边都靠着矩形的边</p>
+<p>题解：比较m，n的最小值min，和最大值max，比较2*min和max，取最大，即为正方形边长</p>
+<p>代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">int</span> a,b;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">	<span class="keyword">while</span>(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> ans,c,d;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b;</span><br><span class="line">		c=min(a,b);</span><br><span class="line">		d=max(a,b);</span><br><span class="line">		ans=max(<span class="number">2</span>*c,d);</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;ans*ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="B-Honest-Coach"><a href="#B-Honest-Coach" class="headerlink" title="B. Honest Coach"></a>B. Honest Coach</h2><p>time limit per test2 seconds<br>memory limit per test256 megabytes<br>inputstandard input<br>outputstandard output<br>There are 𝑛 athletes in front of you. Athletes are numbered from 1 to 𝑛 from left to right. You know the strength of each athlete — the athlete number 𝑖 has the strength 𝑠𝑖.</p>
+<p>You want to split all athletes into two teams. Each team must have at least one athlete, and each athlete must be exactly in one team.</p>
+<p>You want the strongest athlete from the first team to differ as little as possible from the weakest athlete from the second team. Formally, you want to split the athletes into two teams 𝐴 and 𝐵 so that the value |max(𝐴)−min(𝐵)| is as small as possible, where max(𝐴) is the maximum strength of an athlete from team 𝐴, and min(𝐵) is the minimum strength of an athlete from team 𝐵.</p>
+<p>For example, if 𝑛=5 and the strength of the athletes is 𝑠=[3,1,2,6,4], then one of the possible split into teams is:</p>
+<p>first team: 𝐴=[1,2,4],<br>second team: 𝐵=[3,6].<br>In this case, the value |max(𝐴)−min(𝐵)| will be equal to |4−3|=1. This example illustrates one of the ways of optimal split into two teams.</p>
+<p>Print the minimum value |max(𝐴)−min(𝐵)|.</p>
+<p>Input<br>The first line contains an integer 𝑡 (1≤𝑡≤1000) — the number of test cases in the input. Then 𝑡 test cases follow.</p>
+<p>Each test case consists of two lines.</p>
+<p>The first line contains positive integer 𝑛 (2≤𝑛≤50) — number of athletes.</p>
+<p>The second line contains 𝑛 positive integers 𝑠1,𝑠2,…,𝑠𝑛 (1≤𝑠𝑖≤1000), where 𝑠𝑖 — is the strength of the 𝑖-th athlete. Please note that 𝑠 values may not be distinct.</p>
+<p>Output<br>For each test case print one integer — the minimum value of |max(𝐴)−min(𝐵)| with the optimal split of all athletes into two teams. Each of the athletes must be a member of exactly one of the two teams.</p>
+<p>Example<br>inputCopy<br>5<br>5<br>3 1 2 6 4<br>6<br>2 1 3 2 4 3<br>4<br>7 9 3 1<br>2<br>1 1000<br>3<br>100 150 200<br>outputCopy<br>1<br>0<br>2<br>999<br>50<br>Note<br>The first test case was explained in the statement. In the second test case, one of the optimal splits is 𝐴=[2,1], 𝐵=[3,2,4,3], so the answer is |2−2|=0.</p>
+<p>题意：将一个数组分成两个，然后使得1数组的最大值，减二数组的最小值最小。</p>
+<p>题解：即求解一个有序数组，后一个减前一个的最小值</p>
+<p>代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">100</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">	<span class="keyword">while</span>(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> n;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;a[i];</span><br><span class="line">		&#125;</span><br><span class="line">		sort(a+<span class="number">1</span>,a+n+<span class="number">1</span>);</span><br><span class="line">		<span class="keyword">int</span> ans=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)</span><br><span class="line">			ans=min(ans,a[i]-a[i<span class="number">-1</span>]);</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="C-Similar-Pairs"><a href="#C-Similar-Pairs" class="headerlink" title="C. Similar Pairs"></a>C. Similar Pairs</h2><p>time limit per test2 seconds<br>memory limit per test256 megabytes<br>inputstandard input<br>outputstandard output<br>We call two numbers 𝑥 and 𝑦 similar if they have the same parity (the same remainder when divided by 2), or if |𝑥−𝑦|=1. For example, in each of the pairs (2,6), (4,3), (11,7), the numbers are similar to each other, and in the pairs (1,4), (3,12), they are not.</p>
+<p>You are given an array 𝑎 of 𝑛 (𝑛 is even) positive integers. Check if there is such a partition of the array into pairs that each element of the array belongs to exactly one pair and the numbers in each pair are similar to each other.</p>
+<p>For example, for the array 𝑎=[11,14,16,12], there is a partition into pairs (11,12) and (14,16). The numbers in the first pair are similar because they differ by one, and in the second pair because they are both even.</p>
+<p>Input<br>The first line contains a single integer 𝑡 (1≤𝑡≤1000) — the number of test cases. Then 𝑡 test cases follow.</p>
+<p>Each test case consists of two lines.</p>
+<p>The first line contains an even positive integer 𝑛 (2≤𝑛≤50) — length of array 𝑎.</p>
+<p>The second line contains 𝑛 positive integers 𝑎1,𝑎2,…,𝑎𝑛 (1≤𝑎𝑖≤100).</p>
+<p>Output<br>For each test case print:</p>
+<p>YES if the such a partition exists,<br>NO otherwise.<br>The letters in the words YES and NO can be displayed in any case.</p>
+<p>Example<br>inputCopy<br>7<br>4<br>11 14 16 12<br>2<br>1 8<br>4<br>1 1 1 1<br>4<br>1 2 5 6<br>2<br>12 13<br>6<br>1 6 3 10 5 8<br>6<br>1 12 3 10 5 8<br>outputCopy<br>YES<br>NO<br>YES<br>YES<br>YES<br>YES<br>NO<br>Note<br>The first test case was explained in the statement.</p>
+<p>In the second test case, the two given numbers are not similar.</p>
+<p>In the third test case, any partition is suitable.</p>
+<p>题意：相似数组一个二元组里头的东西相差为1，或者是对2取余后结果相同。问一个长的数组可不可以拆成若干个相似数组。</p>
+<p>题解：计算出长数组里头的奇偶数，各有多少个，然后再对数组排序，前后作差判断有没有为1的，则说明有一组可以凑成二元组，可消化一种非二元组的情况。判断奇数个数，与偶数个数皆成对存在即可</p>
+<p>代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">100</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">	<span class="keyword">while</span>(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> n;</span><br><span class="line">		<span class="keyword">int</span> b=<span class="number">0</span>,c=<span class="number">0</span>,d=<span class="number">0</span>;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;a[i];</span><br><span class="line">		sort(a+<span class="number">1</span>,a+n+<span class="number">1</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(a[i]&amp;<span class="number">1</span>)</span><br><span class="line">				b++;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				c++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)</span><br><span class="line">			<span class="keyword">if</span>(a[i]-a[i<span class="number">-1</span>]==<span class="number">1</span>)</span><br><span class="line">				d=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span>((b%<span class="number">2</span>==<span class="number">0</span> &amp;&amp; c%<span class="number">2</span>==<span class="number">0</span>) || ((b-d)%<span class="number">2</span>==<span class="number">0</span> &amp;&amp; (c-d)%<span class="number">2</span>==<span class="number">0</span>))</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">"YES"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">"NO"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="D-Buying-Shovels"><a href="#D-Buying-Shovels" class="headerlink" title="D. Buying Shovels"></a>D. Buying Shovels</h2><p>time limit per test2 seconds<br>memory limit per test256 megabytes<br>inputstandard input<br>outputstandard output<br>Polycarp wants to buy exactly 𝑛 shovels. The shop sells packages with shovels. The store has 𝑘 types of packages: the package of the 𝑖-th type consists of exactly 𝑖 shovels (1≤𝑖≤𝑘). The store has an infinite number of packages of each type.</p>
+<p>Polycarp wants to choose one type of packages and then buy several (one or more) packages of this type. What is the smallest number of packages Polycarp will have to buy to get exactly 𝑛 shovels?</p>
+<p>For example, if 𝑛=8 and 𝑘=7, then Polycarp will buy 2 packages of 4 shovels.</p>
+<p>Help Polycarp find the minimum number of packages that he needs to buy, given that he:</p>
+<p>will buy exactly 𝑛 shovels in total;<br>the sizes of all packages he will buy are all the same and the number of shovels in each package is an integer from 1 to 𝑘, inclusive.<br>Input<br>The first line contains an integer 𝑡 (1≤𝑡≤100) — the number of test cases in the input. Then, 𝑡 test cases follow, one per line.</p>
+<p>Each test case consists of two positive integers 𝑛 (1≤𝑛≤109) and 𝑘 (1≤𝑘≤109) — the number of shovels and the number of types of packages.</p>
+<p>Output<br>Print 𝑡 answers to the test cases. Each answer is a positive integer — the minimum number of packages.</p>
+<p>Example<br>inputCopy<br>5<br>8 7<br>8 1<br>6 10<br>999999733 999999732<br>999999733 999999733<br>outputCopy<br>2<br>8<br>1<br>999999733<br>1<br>Note<br>The answer to the first test case was explained in the statement.</p>
+<p>In the second test case, there is only one way to buy 8 shovels — 8 packages of one shovel.</p>
+<p>In the third test case, you need to buy a 1 package of 6 shovels.</p>
+<p>题意：给一个n，和一个k，问n能否由1-k的数构成。最少有由多少个这个数组成。</p>
+<p>题解：首先这个数会小于k，其次这个数i<em>i&lt;=n,然后如果能整除i，且i</em>k会大于n的话则，更新答案为i，否则更新答案为n/i；</p>
+<p>代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">	<span class="keyword">while</span>(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> n,k,a;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;k;</span><br><span class="line">		<span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=k&amp;&amp;i*i&lt;=n;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(n%i==<span class="number">0</span>)</span><br><span class="line">			a=n/i;</span><br><span class="line">			<span class="keyword">if</span>(a&lt;=k)</span><br><span class="line">			&#123;</span><br><span class="line">				ans=i;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			ans=a;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(ans!=<span class="number">0</span>)</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;n&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="E-Polygon"><a href="#E-Polygon" class="headerlink" title="E. Polygon"></a>E. Polygon</h2><p>time limit per test2 seconds<br>memory limit per test256 megabytes<br>inputstandard input<br>outputstandard output<br>Polygon is not only the best platform for developing problems but also a square matrix with side 𝑛, initially filled with the character 0.</p>
+<p>On the polygon, military training was held. The soldiers placed a cannon above each cell in the first row and a cannon to the left of each cell in the first column. Thus, exactly 2𝑛 cannons were placed.</p>
+<p>Initial polygon for 𝑛=4.<br>Cannons shoot character 1. At any moment of time, no more than one cannon is shooting. When a 1 flies out of a cannon, it flies forward (in the direction of the shot) until it collides with a polygon border or another 1. After that, it takes the cell in which it was before the collision and remains there. Take a look at the examples for better understanding.</p>
+<p>More formally:</p>
+<p>if a cannon stands in the row 𝑖, to the left of the first column, and shoots with a 1, then the 1 starts its flight from the cell (𝑖,1) and ends in some cell (𝑖,𝑗);<br>if a cannon stands in the column 𝑗, above the first row, and shoots with a 1, then the 1 starts its flight from the cell (1,𝑗) and ends in some cell (𝑖,𝑗).<br>For example, consider the following sequence of shots:</p>
+<ol>
+<li>Shoot the cannon in the row 2.                         2. Shoot the cannon in the row 2.                         3. Shoot the cannon in column 3.</li>
+</ol>
+<p>You have a report from the military training on your desk. This report is a square matrix with side length 𝑛 consisting of 0 and 1. You wonder if the training actually happened. In other words, is there a sequence of shots such that, after the training, you get the given matrix?</p>
+<p>Each cannon can make an arbitrary number of shots. Before the training, each cell of the polygon contains 0.</p>
+<p>Input<br>The first line contains an integer 𝑡 (1≤𝑡≤1000) — the number of test cases. Then 𝑡 test cases follow.</p>
+<p>Each test case starts with a line containing an integer 𝑛 (1≤𝑛≤50) — the size of the polygon.</p>
+<p>This is followed by 𝑛 lines of length 𝑛, consisting of 0 and 1 — the polygon matrix after the training.</p>
+<p>The total area of the matrices in all test cases in one test does not exceed 105.</p>
+<p>Output<br>For each test case print:</p>
+<p>YES if there is a sequence of shots leading to a given matrix;<br>NO if such a sequence does not exist.<br>The letters in the words YES and NO can be printed in any case.</p>
+<p>Example<br>inputCopy<br>5<br>4<br>0010<br>0011<br>0000<br>0000<br>2<br>10<br>01<br>2<br>00<br>00<br>4<br>0101<br>1111<br>0101<br>0111<br>4<br>0100<br>1110<br>0101<br>0111<br>outputCopy<br>YES<br>NO<br>YES<br>YES<br>NO<br>Note<br>The first test case was explained in the statement.</p>
+<p>The answer to the second test case is NO, since a 1 in a cell (1,1) flying out of any cannon would continue its flight further.</p>
+<p>题意：一个发射台从左发射，从上发射，然后问下列哪种方法是发射可以形成的。</p>
+<p>题解：<br>模拟判断</p>
+<p>代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">50</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">char</span> s[N][N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t,n;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">	<span class="keyword">while</span>(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;s[i]+<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">int</span> flag=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=n;i&gt;=<span class="number">1</span>;i--)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> h=n-i+<span class="number">1</span>;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=h;j&gt;=<span class="number">1</span>;j--)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>(s[h][j]==<span class="string">'1'</span> &amp;&amp; !(h==n || j==n || s[h+<span class="number">1</span>][j]==<span class="string">'1'</span> || s[h][j+<span class="number">1</span>]==<span class="string">'1'</span>))</span><br><span class="line">				&#123;</span><br><span class="line">					flag=<span class="number">0</span>;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=h;j&gt;=<span class="number">1</span>;j--)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>(s[j][h]==<span class="string">'1'</span> &amp;&amp; !(h==n || j==n || s[j+<span class="number">1</span>][h]==<span class="string">'1'</span> || s[j][h+<span class="number">1</span>]==<span class="string">'1'</span>))</span><br><span class="line">				&#123;</span><br><span class="line">					flag=<span class="number">0</span>;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(flag)</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">"YES"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">"NO"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您这么好看还看我的文章-------------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/c-match/" rel="tag"># c++ match</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+             
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+             
+               <a href="/2020/05/20/PAT%E7%94%B21008%20%E7%AE%80%E5%8D%95%E6%A8%A1%E6%8B%9F/" rel="next" title="PAT甲1008 简单模拟">
+                 PAT甲1008 简单模拟 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/IMG_20180913_151944.jpg"
+                alt="风尘" />
+            
+              <p class="site-author-name" itemprop="name">风尘</p>
+              <p class="site-description motion-element" itemprop="description">To show my love!</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7Carchive">
+              
+                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          <div id="music 163player">
+                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=480353&auto=1&height=66">
+                </iframe>
+          </div>
+      
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#A-Minimal-Square"><span class="nav-number">1.</span> <span class="nav-text">A. Minimal Square</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-Honest-Coach"><span class="nav-number">2.</span> <span class="nav-text">B. Honest Coach</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-Similar-Pairs"><span class="nav-number">3.</span> <span class="nav-text">C. Similar Pairs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#D-Buying-Shovels"><span class="nav-number">4.</span> <span class="nav-text">D. Buying Shovels</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#E-Polygon"><span class="nav-number">5.</span> <span class="nav-text">E. Polygon</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+ # <span class="with-love">
+  <span class="with-love" id="heart">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">风尘</span>
+
+  
+</div>
+
+<!--
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+-->
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+<!--
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+-->
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共35.4k字</span>
+</div>
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: true,
+        notify: true,
+        appId: 'eodw57A3lq3NKLWPF9SvA8x4-gzGzoHsz',
+        appKey: 'ghJ7siYDtJAJ4j1O6inlyknP',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+  <!-- 雪花特效 -->
+  <script type="text/javascript">
+    var windowWidth = $(window).width();
+    if (windowWidth > 480) {
+      document.write('<script type="text/javascript" src="/js/src/snow.js"><\/script>');
+    }
+  </script>
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+
+<!-- 飘雪 -->
+<!-- <script type="text/javascript" src="//libs.baidu.com/jquery/1.8.3/jquery.min.js"></script> -->
+
