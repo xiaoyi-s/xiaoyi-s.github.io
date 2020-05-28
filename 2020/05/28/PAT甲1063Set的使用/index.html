@@ -114,14 +114,14 @@
 
 
 
-<meta name="description" content="题目链接 代码： 1234567891011121314151617181920212223242526272829303132333435#include&lt;iostream&gt;#include&lt;set&gt;using namespace std;const int maxn&#x3D;1004;string s[maxn];string ans[maxn];set&lt;string&amp;g">
+<meta name="description" content="1063 1063 Set Similarity (25分)Given two sets of integers, the similarity of the sets is defined to be N​c​​ &#x2F;N​t​​ ×100%, where N​c​​  is the number of distinct common numbers shared by the two sets,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PAT甲1124 简单模拟">
-<meta property="og:url" content="http://yoursite.com/2020/05/20/PAT%E7%94%B21124%20%E7%AE%80%E5%8D%95%E6%A8%A1%E6%8B%9F/index.html">
+<meta property="og:title" content="PAT甲1063Set的使用">
+<meta property="og:url" content="http://yoursite.com/2020/05/28/PAT%E7%94%B21063Set%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="我的修仙路">
-<meta property="og:description" content="题目链接 代码： 1234567891011121314151617181920212223242526272829303132333435#include&lt;iostream&gt;#include&lt;set&gt;using namespace std;const int maxn&#x3D;1004;string s[maxn];string ans[maxn];set&lt;string&amp;g">
-<meta property="article:published_time" content="2020-05-20T13:08:19.741Z">
-<meta property="article:modified_time" content="2020-05-20T13:11:44.818Z">
+<meta property="og:description" content="1063 1063 Set Similarity (25分)Given two sets of integers, the similarity of the sets is defined to be N​c​​ &#x2F;N​t​​ ×100%, where N​c​​  is the number of distinct common numbers shared by the two sets,">
+<meta property="article:published_time" content="2020-05-28T12:23:49.509Z">
+<meta property="article:modified_time" content="2020-05-28T12:24:37.001Z">
 <meta property="article:author" content="风尘">
 <meta property="article:tag" content="PAT甲">
 <meta name="twitter:card" content="summary">
@@ -154,13 +154,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/05/20/PAT甲1124 简单模拟/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/05/28/PAT甲1063Set的使用/"/>
 
 
 
 
 
-  <title>PAT甲1124 简单模拟 | 我的修仙路</title>
+  <title>PAT甲1063Set的使用 | 我的修仙路</title>
   
 
 
@@ -317,7 +317,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/20/PAT%E7%94%B21124%20%E7%AE%80%E5%8D%95%E6%A8%A1%E6%8B%9F/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/28/PAT%E7%94%B21063Set%E7%9A%84%E4%BD%BF%E7%94%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="风尘">
@@ -334,7 +334,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">PAT甲1124 简单模拟</h1>
+          <h1 class="post-title" itemprop="name headline">PAT甲1063Set的使用</h1>
         
 
         <div class="post-meta">
@@ -346,8 +346,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-20T21:08:19+08:00">
-                2020-05-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-28T20:23:49+08:00">
+                2020-05-28
               </time>
             
 
@@ -365,8 +365,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/05/20/PAT%E7%94%B21124%20%E7%AE%80%E5%8D%95%E6%A8%A1%E6%8B%9F/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/20/PAT%E7%94%B21124%20%E7%AE%80%E5%8D%95%E6%A8%A1%E6%8B%9F/" itemprop="commentCount"></span>
+                <a href="/2020/05/28/PAT%E7%94%B21063Set%E7%9A%84%E4%BD%BF%E7%94%A8/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/28/PAT%E7%94%B21063Set%E7%9A%84%E4%BD%BF%E7%94%A8/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -388,7 +388,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  118
+                  402
                 </span>
               
 
@@ -404,7 +404,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -425,9 +425,15 @@
       
 
       
-        <p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805350803292160" target="_blank" rel="noopener">题目链接</a></p>
+        <p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805409175420928" target="_blank" rel="noopener">1063</a></p>
+<h2 id="1063-Set-Similarity-25分"><a href="#1063-Set-Similarity-25分" class="headerlink" title="1063 Set Similarity (25分)"></a>1063 Set Similarity (25分)</h2><p>Given two sets of integers, the similarity of the sets is defined to be N<br>​c<br>​​ /N<br>​t<br>​​ ×100%, where N<br>​c<br>​​  is the number of distinct common numbers shared by the two sets, and N<br>​t<br>​​  is the total number of distinct numbers in the two sets. Your job is to calculate the similarity of any given pair of sets.</p>
+<p>Input Specification:<br>Each input file contains one test case. Each case first gives a positive integer N (≤50) which is the total number of sets. Then N lines follow, each gives a set with a positive M (≤10<br>​4<br>​​ ) and followed by M integers in the range [0,10<br>​9<br>​​ ]. After the input of sets, a positive integer K (≤2000) is given, followed by K lines of queries. Each query gives a pair of set numbers (the sets are numbered from 1 to N). All the numbers in a line are separated by a space.</p>
+<p>Output Specification:<br>For each query, print in one line the similarity of the sets, in the percentage form accurate up to 1 decimal place.</p>
+<p>Sample Input:<br>3<br>3 99 87 101<br>4 87 101 5 87<br>7 99 101 18 5 135 18 99<br>2<br>1 2<br>1 3<br>Sample Output:<br>50.0%<br>33.3%</p>
+<p>题意：给你n个集合，然后输入q个查询，查询两个集合内，相同元素，和除相同元素外的和为多少</p>
+<p>题解：用set的find，find如果没找到则返回set的end，然后计算即可</p>
 <p>代码：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">1004</span>;</span><br><span class="line"><span class="built_in">string</span> s[maxn];</span><br><span class="line"><span class="built_in">string</span> ans[maxn];</span><br><span class="line"><span class="built_in">set</span>&lt;<span class="built_in">string</span>&gt; st;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> m,n,k;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;m&gt;&gt;n&gt;&gt;k;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;s[i];</span><br><span class="line">	<span class="keyword">if</span>(k&gt;m)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="string">"Keep going..."</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> i=k;</span><br><span class="line">		<span class="keyword">while</span>(i&lt;=m)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">string</span> name=s[i];</span><br><span class="line">			<span class="keyword">if</span>(st.find(s[i])!=st.end())</span><br><span class="line">				i++;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">cout</span>&lt;&lt;s[i]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">				st.insert(s[i]);</span><br><span class="line">				i+=n;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; st[<span class="number">100</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,k,t,q,x1,x2;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;k);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=k;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</span><br><span class="line">			st[i].insert(t);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;q);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=q;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;x1&gt;&gt;x2;</span><br><span class="line">		<span class="keyword">int</span> cnt=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt;::iterator it=st[x1].begin();it!=st[x1].end();it++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(st[x2].find(*it)!=st[x2].end())</span><br><span class="line">				cnt++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%.1f%\n"</span>,<span class="number">100.0</span>*cnt/(st[x1].size()+st[x2].size()-cnt));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -470,18 +476,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
              
-               <a href="/2020/05/20/PAT%E7%94%B21011%20%E7%AE%80%E5%8D%95%E6%A8%A1%E6%8B%9F/" rel="prev" title="PAT甲1011 简单模拟">
-                 <i class="fa fa-chevron-left"></i> PAT甲1011 简单模拟
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
              
-               <a href="/2020/05/20/PAT%E7%94%B21042%20%E7%AE%80%E5%8D%95%E6%A8%A1%E6%8B%9F/" rel="next" title="PAT甲1042 简单模拟">
-                 PAT甲1042 简单模拟 <i class="fa fa-chevron-right"></i>
+               <a href="/2020/05/27/PAT%E7%94%B21047Map%E7%9A%84%E4%BD%BF%E7%94%A8/" rel="next" title="PAT甲1047Map的使用">
+                 PAT甲1047Map的使用 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -537,8 +539,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -614,6 +625,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1063-Set-Similarity-25分"><span class="nav-number">1.</span> <span class="nav-text">1063 Set Similarity (25分)</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
