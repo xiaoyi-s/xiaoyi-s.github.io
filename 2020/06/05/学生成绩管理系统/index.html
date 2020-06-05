@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.lug.ustc.edu.cn/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="java学生成绩管理系统," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="我的修仙路" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="以上是系统大致功能的介绍MYSQL版本为8.2.0MYSQL + JAVA + SWING 编程实现的一个学生成绩管理系统软件MYSQL eclipse Navicat 学生成绩管理系统坑点eclipse新版MYSQL方式得变化eclipse与MYSQL之间的编码格式得一致https:&#x2F;&#x2F;blog.csdn.net&#x2F;weixin_44193041&#x2F;article&#x2F;details&#x2F;10657569">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学生成绩管理系统">
+<meta property="og:url" content="http://yoursite.com/2020/06/05/%E5%AD%A6%E7%94%9F%E6%88%90%E7%BB%A9%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/index.html">
+<meta property="og:site_name" content="我的修仙路">
+<meta property="og:description" content="以上是系统大致功能的介绍MYSQL版本为8.2.0MYSQL + JAVA + SWING 编程实现的一个学生成绩管理系统软件MYSQL eclipse Navicat 学生成绩管理系统坑点eclipse新版MYSQL方式得变化eclipse与MYSQL之间的编码格式得一致https:&#x2F;&#x2F;blog.csdn.net&#x2F;weixin_44193041&#x2F;article&#x2F;details&#x2F;10657569">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200605150106894.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200605151048918.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200605151140527.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200605151251941.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200605152231639.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200605152550937.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200605153337430.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200605153310422.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200605153654209.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200605153854645.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200605154424686.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200605154455292.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200605155134961.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200605155211564.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020060517005226.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020060517011213.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200605170254785.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200605170502929.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200605170840562.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70">
+<meta property="article:published_time" content="2020-06-05T10:39:55.971Z">
+<meta property="article:modified_time" content="2020-06-05T10:53:14.741Z">
+<meta property="article:author" content="风尘">
+<meta property="article:tag" content="java学生成绩管理系统">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200605150106894.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/06/05/学生成绩管理系统/"/>
+
+
+
+
+
+  <title>学生成绩管理系统 | 我的修仙路</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">我的修仙路</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-书籍">
+          <a href="/book/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            书籍
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/05/%E5%AD%A6%E7%94%9F%E6%88%90%E7%BB%A9%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="风尘">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/IMG_20180913_151944.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的修仙路">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">学生成绩管理系统</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-05T18:39:55+08:00">
+                2020-06-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/06/05/%E5%AD%A6%E7%94%9F%E6%88%90%E7%BB%A9%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/06/05/%E5%AD%A6%E7%94%9F%E6%88%90%E7%BB%A9%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  6.3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  31
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://img-blog.csdnimg.cn/20200605150106894.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70" alt="系统介绍"></p>
+<p>以上是系统大致功能的介绍<br>MYSQL版本为8.2.0<br><strong>MYSQL + JAVA + SWING 编程实现的一个学生成绩管理系统</strong><br>软件MYSQL eclipse Navicat</p>
+<h2 id="学生成绩管理系统"><a href="#学生成绩管理系统" class="headerlink" title="学生成绩管理系统"></a>学生成绩管理系统</h2><p><strong>坑点</strong><br>eclipse新版MYSQL方式得变化<br>eclipse与MYSQL之间的编码格式得一致<br><a href="https://blog.csdn.net/weixin_44193041/article/details/106575698" target="_blank" rel="noopener">https://blog.csdn.net/weixin_44193041/article/details/106575698</a><br><a href="https://blog.csdn.net/weixin_44193041/article/details/106575698" target="_blank" rel="noopener">连接</a></p>
+<p>新版MYSQL相对于旧版部分语句失效<br>所以使用MYSQL语句时得考虑新版<br><strong>Expression #2 of SELECT list is not in GROUP BY clause and contains nonaggre…</strong><br>问题如何解决<br>打开mysql输入以下语句即可解决<br>mysql&gt; SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,’ONLY_FULL_GROUP_BY’,’’)); </p>
+<p>具体原因<br>MySQL 5.7.5及以上功能依赖检测功能。如果启用了ONLY_FULL_GROUP_BY SQL模式（默认情况下），MySQL将拒绝选择列表，HAVING条件或ORDER BY列表的查询引用在GROUP BY子句中既未命名的非集合列，也不在功能上依赖于它们。（5.7.5之前，MySQL没有检测到功能依赖关系，默认情况下不启用ONLY_FULL_GROUP_BY。有关5.7.5之前的行为的说明，请参见“MySQL 5.6参考手册”。）</p>
+<p>该程序的数据库语句，详解<br><a href="https://blog.csdn.net/weixin_44193041/article/details/106576178" target="_blank" rel="noopener">https://blog.csdn.net/weixin_44193041/article/details/106576178</a><br><a href="https://blog.csdn.net/weixin_44193041/article/details/106576178" target="_blank" rel="noopener">数据库</a></p>
+<h2 id="系统管理模块"><a href="#系统管理模块" class="headerlink" title="系统管理模块"></a>系统管理模块</h2><p>系统管理模块实现了<br><strong>管理员的登陆</strong><br>用户信息</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> studentsystem.bean;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 一个用户类，包括用户名，密码，以及用户是否登陆添加其构造器</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String username;	<span class="comment">//用户名</span></span><br><span class="line">	<span class="keyword">private</span> String password;	<span class="comment">//密码</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> isLogin = <span class="number">0</span>;	<span class="comment">//用户是否登陆</span></span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getIsLogin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> isLogin;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setIsLogin</span><span class="params">(<span class="keyword">int</span> isLogin)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.isLogin = isLogin;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getUsername</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> username;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUsername</span><span class="params">(String username)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.username = username;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getPassword</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> password;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPassword</span><span class="params">(String password)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.password = password;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>用户登陆代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> studentsystem.frame;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> studentsystem.bean.User;</span><br><span class="line"><span class="keyword">import</span> studentsystem.dao.ManageHelper;</span><br><span class="line"><span class="keyword">import</span> studentsystem.util.WindowUtil;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.awt.Color;</span><br><span class="line"><span class="keyword">import</span> java.awt.Container;</span><br><span class="line"><span class="keyword">import</span> java.awt.Image;</span><br><span class="line"><span class="keyword">import</span> java.awt.event.ActionEvent;</span><br><span class="line"><span class="keyword">import</span> java.awt.event.ActionListener;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.imageio.ImageIO;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JButton;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JFrame;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JLabel;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JOptionPane;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JPasswordField;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JTextField;</span><br><span class="line"><span class="comment">//登陆界面</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StudentSystemLoginFrame</span> <span class="keyword">extends</span> <span class="title">JFrame</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span> JLabel username_Label;	<span class="comment">//用户名标签。</span></span><br><span class="line">	<span class="keyword">private</span> JLabel password_Label;	<span class="comment">//密码标签。</span></span><br><span class="line">	<span class="keyword">private</span> JTextField username_Text;	<span class="comment">//用户名文本域。</span></span><br><span class="line">	<span class="keyword">private</span> JPasswordField password_Text;	<span class="comment">//密码文本域。</span></span><br><span class="line">	<span class="keyword">private</span> JButton login_Button;	<span class="comment">//登陆按钮。</span></span><br><span class="line">	<span class="keyword">private</span> JButton register_Button;	<span class="comment">//注册按钮。</span></span><br><span class="line">	<span class="keyword">private</span> JFrame jf;	<span class="comment">//当前窗口 。</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">StudentSystemLoginFrame</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">super</span>(<span class="string">"学生成绩管理系统登录界面"</span>);</span><br><span class="line">		<span class="keyword">this</span>.jf = <span class="keyword">this</span>;</span><br><span class="line">		<span class="keyword">this</span>.setLayout(<span class="keyword">null</span>);<span class="comment">//设置为空布局。</span></span><br><span class="line">		<span class="keyword">this</span>.setSize(<span class="number">400</span>,<span class="number">300</span>);<span class="comment">//设置大小。</span></span><br><span class="line">		Container c = <span class="keyword">this</span>.getContentPane();</span><br><span class="line">		c.setBackground(Color.WHITE);<span class="comment">//设置背景颜色。</span></span><br><span class="line">		username_Label = <span class="keyword">new</span> JLabel(<span class="string">"用户名:"</span>);	<span class="comment">//创建"用户名"标签。</span></span><br><span class="line">		username_Label.setBounds(<span class="number">100</span>, <span class="number">60</span>, <span class="number">50</span>, <span class="number">20</span>);	<span class="comment">//设置"用户名"标签位置。</span></span><br><span class="line">		c.add(username_Label);	<span class="comment">//添加"用户名"标签。</span></span><br><span class="line">		</span><br><span class="line">		username_Text = <span class="keyword">new</span> JTextField();	<span class="comment">//创建"用户名"文本域。</span></span><br><span class="line">		username_Text.setBounds(<span class="number">160</span>, <span class="number">60</span>, <span class="number">120</span>, <span class="number">20</span>);	<span class="comment">//设置"用户名"文本域位置。</span></span><br><span class="line">		username_Text.grabFocus();<span class="comment">//获得光标。</span></span><br><span class="line">		c.add(username_Text);	<span class="comment">//添加"用户名"文本域。</span></span><br><span class="line">		</span><br><span class="line">		password_Label = <span class="keyword">new</span> JLabel(<span class="string">"密码:"</span>);	<span class="comment">//创建"密码"标签。</span></span><br><span class="line">		password_Label.setBounds(<span class="number">100</span>, <span class="number">140</span>, <span class="number">50</span>, <span class="number">20</span>);</span><br><span class="line">		c.add(password_Label);	<span class="comment">//添加"密码"标签。</span></span><br><span class="line">		</span><br><span class="line">		password_Text = <span class="keyword">new</span> JPasswordField();	<span class="comment">//创建"密码"文本域。</span></span><br><span class="line">		password_Text.setBounds(<span class="number">160</span>, <span class="number">140</span>, <span class="number">120</span>, <span class="number">20</span>);	<span class="comment">//设置"密码"文本域位置。</span></span><br><span class="line">		c.add(password_Text);	<span class="comment">//添加"密码"文本域。</span></span><br><span class="line">		 </span><br><span class="line">		login_Button = <span class="keyword">new</span> JButton(<span class="string">"登录"</span>);	<span class="comment">//创建"登录"按钮。</span></span><br><span class="line">		login_Button.setBounds(<span class="number">100</span>, <span class="number">210</span>, <span class="number">60</span>, <span class="number">20</span>);	<span class="comment">//设置"登录"按钮位置。</span></span><br><span class="line">		<span class="comment">//注册"登录"按钮事件监听。</span></span><br><span class="line">		login_Button.addActionListener(<span class="keyword">new</span> ActionListener() &#123;</span><br><span class="line">			</span><br><span class="line">			<span class="meta">@Override</span></span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent arg0)</span> </span>&#123;</span><br><span class="line">				String username = username_Text.getText().trim();</span><br><span class="line">				String password = <span class="keyword">new</span> String(password_Text.getPassword());</span><br><span class="line">				<span class="keyword">if</span>(username.equals(<span class="string">""</span>))&#123;</span><br><span class="line">					JOptionPane.showMessageDialog(jf, <span class="string">"用户名不能为空"</span>,<span class="string">""</span>,JOptionPane.WARNING_MESSAGE);</span><br><span class="line">					<span class="keyword">return</span> ;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span>(password.equals(<span class="string">""</span>))&#123;</span><br><span class="line">					JOptionPane.showMessageDialog(jf, <span class="string">"密码不能为空"</span>,<span class="string">""</span>,JOptionPane.WARNING_MESSAGE);</span><br><span class="line">					<span class="keyword">return</span> ;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="comment">//登录业务处理。</span></span><br><span class="line">				User user = <span class="keyword">new</span> User();<span class="comment">//创建用户对象</span></span><br><span class="line">				user.setUsername(username);</span><br><span class="line">				user.setPassword(password);</span><br><span class="line">				ManageHelper helper = <span class="keyword">new</span> ManageHelper();<span class="comment">//创建数据库业务处理对象</span></span><br><span class="line">				<span class="keyword">if</span>(helper.Login(user))&#123;	<span class="comment">//登陆业务处理</span></span><br><span class="line">					<span class="keyword">if</span>(helper.Check_IsLogin(user))&#123;</span><br><span class="line">						JOptionPane.showMessageDialog(jf, <span class="string">"重复登陆！"</span>,<span class="string">""</span>,JOptionPane.WARNING_MESSAGE);</span><br><span class="line">						<span class="keyword">return</span> ;</span><br><span class="line">					&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">						JOptionPane.showMessageDialog(jf, <span class="string">"登陆成功！"</span>);</span><br><span class="line">						jf.dispose();<span class="comment">//关闭当前窗口。</span></span><br><span class="line">						<span class="comment">//修改登陆情况</span></span><br><span class="line">						user.setIsLogin(<span class="number">1</span>);<span class="comment">//修改成为已经登陆。</span></span><br><span class="line">						helper.Update_IsLogin(user);</span><br><span class="line">						<span class="comment">//打开主界面</span></span><br><span class="line">						user.setPassword(<span class="string">""</span>);<span class="comment">//重置密码</span></span><br><span class="line">						StudentSystemMainFrame frame = <span class="keyword">new</span> StudentSystemMainFrame(user);</span><br><span class="line">						<span class="keyword">return</span> ;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">					JOptionPane.showMessageDialog(jf, <span class="string">"用户名或密码错误！"</span>);</span><br><span class="line">					 Reset();	<span class="comment">//重置</span></span><br><span class="line">					<span class="keyword">return</span> ;</span><br><span class="line">				&#125;</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">		c.add(login_Button);	<span class="comment">//添加"登录"按钮 。</span></span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		register_Button = <span class="keyword">new</span> JButton(<span class="string">"注册"</span>);	<span class="comment">//创建"注册"按钮。</span></span><br><span class="line">		register_Button.setBounds(<span class="number">250</span>, <span class="number">210</span>, <span class="number">60</span>, <span class="number">20</span>);	<span class="comment">//设置"注册"按钮位置。</span></span><br><span class="line">		<span class="comment">//注册"注册"按钮事件监听。</span></span><br><span class="line">		register_Button.addActionListener(<span class="keyword">new</span> ActionListener() &#123;</span><br><span class="line">			</span><br><span class="line">			<span class="meta">@Override</span></span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent e)</span> </span>&#123;</span><br><span class="line">				jf.dispose();	<span class="comment">//当前窗口关闭。</span></span><br><span class="line">				StudentSystemRegisterFrame studentSystemRegisterFrame = <span class="keyword">new</span> StudentSystemRegisterFrame();	<span class="comment">//打开注册界面		</span></span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">		c.add(register_Button);	<span class="comment">//添加"注册"按钮。</span></span><br><span class="line">		</span><br><span class="line">		<span class="keyword">this</span>.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span><br><span class="line">		<span class="keyword">this</span>.setResizable(<span class="keyword">false</span>);	<span class="comment">//设置大小不可改变。</span></span><br><span class="line">		WindowUtil.setFrameCenter(<span class="keyword">this</span>);<span class="comment">//设置窗口居中。</span></span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			Image img = ImageIO.read(<span class="keyword">this</span>.getClass().getResource(<span class="string">"/2.png"</span>));</span><br><span class="line">			<span class="keyword">this</span>.setIconImage(img);</span><br><span class="line">			</span><br><span class="line">		&#125; <span class="keyword">catch</span> (IOException e1) &#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">			e1.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">this</span>.setVisible(<span class="keyword">true</span>);	<span class="comment">//设置窗体可见。</span></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">		<span class="comment">//重置</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Reset</span><span class="params">()</span></span>&#123;</span><br><span class="line">			username_Text.setText(<span class="string">""</span>);</span><br><span class="line">			password_Text.setText(<span class="string">""</span>);</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20200605151048918.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70#pic_center" alt="登陆窗口"><br><img src="https://img-blog.csdnimg.cn/20200605151140527.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70#pic_center" alt="登陆成功"><br><strong>管理员的注册</strong><br>管理员注册代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> studentsystem.frame;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> studentsystem.bean.User;</span><br><span class="line"><span class="keyword">import</span> studentsystem.dao.ManageHelper;</span><br><span class="line"><span class="keyword">import</span> studentsystem.util.WindowUtil;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.awt.Color;</span><br><span class="line"><span class="keyword">import</span> java.awt.Container;</span><br><span class="line"><span class="keyword">import</span> java.awt.Image;</span><br><span class="line"><span class="keyword">import</span> java.awt.event.ActionEvent;</span><br><span class="line"><span class="keyword">import</span> java.awt.event.ActionListener;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.imageio.ImageIO;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JButton;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JFrame;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JLabel;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JOptionPane;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JPasswordField;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JTextField;</span><br><span class="line"><span class="comment">//注册界面</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StudentSystemRegisterFrame</span> <span class="keyword">extends</span> <span class="title">JFrame</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> JLabel username_Label;	<span class="comment">//用户名标签。</span></span><br><span class="line">	<span class="keyword">private</span> JLabel password_Label;	<span class="comment">//密码标签。</span></span><br><span class="line">	<span class="keyword">private</span> JLabel repassword_Label;	<span class="comment">//确认密码标签。</span></span><br><span class="line">	<span class="keyword">private</span> JTextField username_Text;	<span class="comment">//用户名文本域。</span></span><br><span class="line">	<span class="keyword">private</span> JPasswordField password_Text;	<span class="comment">//密码文本域。</span></span><br><span class="line">	<span class="keyword">private</span> JPasswordField repassword_Text;	<span class="comment">//确认密码文本域。</span></span><br><span class="line">	<span class="keyword">private</span> JButton register_Button;	<span class="comment">//注册按钮。</span></span><br><span class="line">	<span class="keyword">private</span> JButton cancel_Button;	<span class="comment">//取消按钮。</span></span><br><span class="line">	<span class="keyword">private</span> JFrame jf;	<span class="comment">//当前窗口 。</span></span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">StudentSystemRegisterFrame</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">super</span>(<span class="string">"学生成绩管理系统注册界面"</span>);</span><br><span class="line">		<span class="keyword">this</span>.jf = <span class="keyword">this</span>;</span><br><span class="line">		<span class="keyword">this</span>.setLayout(<span class="keyword">null</span>);<span class="comment">//设置为空布局。</span></span><br><span class="line">		<span class="keyword">this</span>.setSize(<span class="number">400</span>,<span class="number">300</span>);<span class="comment">//设置大小。</span></span><br><span class="line">		Container c = <span class="keyword">this</span>.getContentPane();</span><br><span class="line">		c.setBackground(Color.WHITE);<span class="comment">//设置背景颜色。</span></span><br><span class="line">		username_Label = <span class="keyword">new</span> JLabel(<span class="string">"用户名:"</span>);	<span class="comment">//创建"用户名"标签。</span></span><br><span class="line">		username_Label.setBounds(<span class="number">100</span>, <span class="number">60</span>, <span class="number">50</span>, <span class="number">20</span>);	<span class="comment">//设置"用户名"标签位置。</span></span><br><span class="line">		c.add(username_Label);	<span class="comment">//添加"用户名"标签。</span></span><br><span class="line">		</span><br><span class="line">		username_Text = <span class="keyword">new</span> JTextField();	<span class="comment">//创建"用户名"文本域。</span></span><br><span class="line">		username_Text.setBounds(<span class="number">160</span>, <span class="number">60</span>, <span class="number">120</span>, <span class="number">20</span>);	<span class="comment">//设置"用户名"文本域位置。</span></span><br><span class="line">		username_Text.grabFocus();<span class="comment">//获得光标。</span></span><br><span class="line">		c.add(username_Text);	<span class="comment">//添加"用户名"文本域。</span></span><br><span class="line">		</span><br><span class="line">		password_Label = <span class="keyword">new</span> JLabel(<span class="string">"密码:"</span>);	<span class="comment">//创建"密码"标签。</span></span><br><span class="line">		password_Label.setBounds(<span class="number">100</span>, <span class="number">110</span>, <span class="number">50</span>, <span class="number">20</span>);</span><br><span class="line">		c.add(password_Label);	<span class="comment">//添加"密码"标签。</span></span><br><span class="line">		</span><br><span class="line">		password_Text = <span class="keyword">new</span> JPasswordField();	<span class="comment">//创建"密码"文本域。</span></span><br><span class="line">		password_Text.setBounds(<span class="number">160</span>, <span class="number">110</span>, <span class="number">120</span>, <span class="number">20</span>);	<span class="comment">//设置"密码"文本域位置。</span></span><br><span class="line">		c.add(password_Text);	<span class="comment">//添加"密码"文本域。</span></span><br><span class="line">		</span><br><span class="line">		repassword_Label = <span class="keyword">new</span> JLabel(<span class="string">"确认密码"</span>);	<span class="comment">//创建"确认密码"标签。</span></span><br><span class="line">		repassword_Label.setBounds(<span class="number">100</span>, <span class="number">162</span>, <span class="number">70</span>, <span class="number">20</span>);	<span class="comment">//设置"确认密码"标签位置。</span></span><br><span class="line">		c.add(repassword_Label);	<span class="comment">//添加"确认密码"标签。</span></span><br><span class="line">		</span><br><span class="line">		repassword_Text = <span class="keyword">new</span> JPasswordField();	<span class="comment">//创建"确认密码"文本域。</span></span><br><span class="line">		repassword_Text.setBounds(<span class="number">160</span>, <span class="number">162</span>, <span class="number">120</span>, <span class="number">20</span>);	<span class="comment">//设置"确认密码"文本域位置。</span></span><br><span class="line">		c.add(repassword_Text); <span class="comment">//添加"确认密码"文本域。</span></span><br><span class="line">		</span><br><span class="line">		register_Button = <span class="keyword">new</span> JButton(<span class="string">"注册"</span>);	<span class="comment">//创建"注册"按钮。</span></span><br><span class="line">		register_Button.setBounds(<span class="number">90</span>, <span class="number">210</span>, <span class="number">60</span>, <span class="number">20</span>);	<span class="comment">//设置"注册"按钮位置。</span></span><br><span class="line">		<span class="comment">//注册"注册"按钮事件监听。</span></span><br><span class="line">		register_Button.addActionListener(<span class="keyword">new</span> ActionListener() &#123;</span><br><span class="line">			</span><br><span class="line">			<span class="meta">@Override</span></span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent e)</span> </span>&#123;</span><br><span class="line">				String username = username_Text.getText().trim();<span class="comment">//获得用户名。</span></span><br><span class="line">				String password = <span class="keyword">new</span> String(password_Text.getPassword());	<span class="comment">//获得密码。</span></span><br><span class="line">				String repassword = <span class="keyword">new</span> String(repassword_Text.getPassword());	<span class="comment">//获得确认密码。</span></span><br><span class="line">				<span class="keyword">if</span>(username.equals(<span class="string">""</span>))&#123;</span><br><span class="line">					JOptionPane.showMessageDialog(jf, <span class="string">"用户名不能为空！"</span>,<span class="string">""</span>,JOptionPane.WARNING_MESSAGE);</span><br><span class="line">					<span class="keyword">return</span> ;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span>(password.equals(<span class="string">""</span>))&#123;</span><br><span class="line">					JOptionPane.showMessageDialog(jf, <span class="string">"密码不能为空！"</span>,<span class="string">""</span>,JOptionPane.WARNING_MESSAGE);</span><br><span class="line">					<span class="keyword">return</span> ;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span>(repassword.equals(<span class="string">""</span>))&#123;</span><br><span class="line">					JOptionPane.showMessageDialog(jf, <span class="string">"确认密码不能为空！"</span>,<span class="string">""</span>,JOptionPane.WARNING_MESSAGE);</span><br><span class="line">					<span class="keyword">return</span> ;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span>(!password.equals(repassword))&#123;</span><br><span class="line">					JOptionPane.showMessageDialog(jf, <span class="string">"两次密码不一致！"</span>,<span class="string">""</span>,JOptionPane.WARNING_MESSAGE);</span><br><span class="line">					<span class="keyword">return</span> ;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="comment">//注册业务处理。</span></span><br><span class="line">				User user = <span class="keyword">new</span> User();<span class="comment">//创建用户对象</span></span><br><span class="line">				user.setUsername(username);</span><br><span class="line">				user.setPassword(password);</span><br><span class="line">				ManageHelper helper = <span class="keyword">new</span> ManageHelper();<span class="comment">//创建数据库业务处理对象</span></span><br><span class="line">				<span class="keyword">if</span>(helper.Register(user))&#123;<span class="comment">//注册处理</span></span><br><span class="line">					JOptionPane.showMessageDialog(jf, <span class="string">"注册成功！"</span>);</span><br><span class="line">					jf.dispose();<span class="comment">//关闭当前窗口</span></span><br><span class="line">					StudentSystemLoginFrame frame = <span class="keyword">new</span> StudentSystemLoginFrame();<span class="comment">//返回登陆页面。</span></span><br><span class="line">					<span class="keyword">return</span> ;</span><br><span class="line">				&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">					JOptionPane.showMessageDialog(jf, <span class="string">"注册失败！"</span>);</span><br><span class="line">					Reset();	<span class="comment">//重置</span></span><br><span class="line">					<span class="keyword">return</span> ; </span><br><span class="line">				&#125;</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">		c.add(register_Button);	<span class="comment">//添加"注册"按钮。</span></span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		cancel_Button = <span class="keyword">new</span> JButton(<span class="string">"取消"</span>);	<span class="comment">//创建"取消"按钮。</span></span><br><span class="line">		cancel_Button.setBounds(<span class="number">250</span>, <span class="number">210</span>, <span class="number">60</span>, <span class="number">20</span>);	<span class="comment">//设置"取消"按钮位置。</span></span><br><span class="line">		<span class="comment">//注册"取消"按钮事件监听。</span></span><br><span class="line">		cancel_Button.addActionListener(<span class="keyword">new</span> ActionListener() &#123;</span><br><span class="line">			</span><br><span class="line">			<span class="meta">@Override</span></span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent e)</span> </span>&#123;</span><br><span class="line">				<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">				jf.dispose();<span class="comment">//关闭当前页面。</span></span><br><span class="line">				StudentSystemLoginFrame studentSystemLoginFrame = <span class="keyword">new</span> StudentSystemLoginFrame();<span class="comment">//打开登陆页面。</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">		c.add(cancel_Button);	<span class="comment">//添加"取消"按钮。</span></span><br><span class="line">		</span><br><span class="line">		<span class="keyword">this</span>.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span><br><span class="line">		<span class="keyword">this</span>.setResizable(<span class="keyword">false</span>);	<span class="comment">//设置大小不可改变。</span></span><br><span class="line">		WindowUtil.setFrameCenter(<span class="keyword">this</span>);<span class="comment">//设置窗口居中。</span></span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			Image img = ImageIO.read(<span class="keyword">this</span>.getClass().getResource(<span class="string">"/2.png"</span>));</span><br><span class="line">			<span class="keyword">this</span>.setIconImage(img);</span><br><span class="line">			</span><br><span class="line">		&#125; <span class="keyword">catch</span> (IOException e1) &#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">			e1.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">this</span>.setVisible(<span class="keyword">true</span>);	<span class="comment">//设置窗体可见。</span></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//重置</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Reset</span><span class="params">()</span></span>&#123;</span><br><span class="line">		username_Text.setText(<span class="string">""</span>);</span><br><span class="line">		password_Text.setText(<span class="string">""</span>);</span><br><span class="line">		repassword_Text.setText(<span class="string">""</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20200605151251941.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70#pic_center" alt="注册界面"><br><strong>管理员的登陆状态判断</strong><br>防止其他人再次重复登陆<br><strong>修改管理员密码</strong><br>修改密码代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> studentsystem.frame;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> studentsystem.bean.User;</span><br><span class="line"><span class="keyword">import</span> studentsystem.dao.ManageHelper;</span><br><span class="line"><span class="keyword">import</span> studentsystem.util.WindowUtil;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.awt.Color;</span><br><span class="line"><span class="keyword">import</span> java.awt.Container;</span><br><span class="line"><span class="keyword">import</span> java.awt.event.ActionEvent;</span><br><span class="line"><span class="keyword">import</span> java.awt.event.ActionListener;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.swing.JButton;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JDialog;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JFrame;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JLabel;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JOptionPane;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JPasswordField;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JTextField;</span><br><span class="line"></span><br><span class="line"><span class="comment">//修改密码界面</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UpdatePasswordFrame</span> <span class="keyword">extends</span> <span class="title">JDialog</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> JLabel password_Label;	<span class="comment">//原密码标签。</span></span><br><span class="line">	<span class="keyword">private</span> JLabel newpassword_Label;	<span class="comment">//新密码标签。</span></span><br><span class="line">	<span class="keyword">private</span> JLabel repassword_Label;	<span class="comment">//确认密码标签。</span></span><br><span class="line">	<span class="keyword">private</span> JPasswordField password_Text;	<span class="comment">//原密码文本域。</span></span><br><span class="line">	<span class="keyword">private</span> JPasswordField newpassword_Text;	<span class="comment">//新密码文本域。</span></span><br><span class="line">	<span class="keyword">private</span> JPasswordField repassword_Text;	<span class="comment">//确认密码文本域。</span></span><br><span class="line">	<span class="keyword">private</span> JButton confirm_Button;	<span class="comment">//确认按钮。</span></span><br><span class="line">	<span class="keyword">private</span> JButton cancel_Button;	<span class="comment">//取消按钮。</span></span><br><span class="line">	<span class="keyword">private</span> JDialog jd;	<span class="comment">//当前窗口 。</span></span><br><span class="line">	<span class="keyword">private</span> User user;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> owner 它的父窗口</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> title 窗口名</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> modal 指定的模式窗口，还有非模式窗口</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">UpdatePasswordFrame</span><span class="params">(JFrame owner, String title, <span class="keyword">boolean</span> modal,User user)</span></span>&#123;</span><br><span class="line">		<span class="keyword">super</span>(owner, title, modal);</span><br><span class="line">		<span class="keyword">this</span>.user = user;</span><br><span class="line">		<span class="keyword">this</span>.jd = <span class="keyword">this</span>;</span><br><span class="line">		<span class="keyword">this</span>.setLayout(<span class="keyword">null</span>);<span class="comment">//设置为空布局。</span></span><br><span class="line">		<span class="keyword">this</span>.setSize(<span class="number">400</span>,<span class="number">300</span>);<span class="comment">//设置大小。</span></span><br><span class="line">		Container c = <span class="keyword">this</span>.getContentPane();</span><br><span class="line">		c.setBackground(Color.WHITE);<span class="comment">//设置背景颜色。</span></span><br><span class="line">		password_Label = <span class="keyword">new</span> JLabel(<span class="string">"原密码:"</span>);	<span class="comment">//创建"原密码"标签。</span></span><br><span class="line">		password_Label.setBounds(<span class="number">100</span>, <span class="number">60</span>, <span class="number">50</span>, <span class="number">20</span>);	<span class="comment">//设置"原密码"标签位置。</span></span><br><span class="line">		c.add(password_Label);	<span class="comment">//添加"密码"标签。</span></span><br><span class="line">		</span><br><span class="line">		password_Text = <span class="keyword">new</span> JPasswordField();	<span class="comment">//创建"原密码"文本域。</span></span><br><span class="line">		password_Text.setBounds(<span class="number">160</span>, <span class="number">60</span>, <span class="number">120</span>, <span class="number">20</span>);	<span class="comment">//设置"原密码"文本域位置。</span></span><br><span class="line">		password_Text.grabFocus();<span class="comment">//获得光标。</span></span><br><span class="line">		c.add(password_Text);	<span class="comment">//添加"密码"文本域。</span></span><br><span class="line">		</span><br><span class="line">		newpassword_Label = <span class="keyword">new</span> JLabel(<span class="string">"新密码:"</span>);	<span class="comment">//创建"新密码"标签。</span></span><br><span class="line">		newpassword_Label.setBounds(<span class="number">100</span>, <span class="number">110</span>, <span class="number">50</span>, <span class="number">20</span>);</span><br><span class="line">		c.add(newpassword_Label);	<span class="comment">//添加"新密码"标签。</span></span><br><span class="line">		</span><br><span class="line">		newpassword_Text = <span class="keyword">new</span> JPasswordField();	<span class="comment">//创建"新密码"文本域。</span></span><br><span class="line">		newpassword_Text.setBounds(<span class="number">160</span>, <span class="number">110</span>, <span class="number">120</span>, <span class="number">20</span>);	<span class="comment">//设置"新密码"文本域位置。</span></span><br><span class="line">		c.add(newpassword_Text);	<span class="comment">//添加"新密码"文本域。</span></span><br><span class="line">		</span><br><span class="line">		repassword_Label = <span class="keyword">new</span> JLabel(<span class="string">"确认密码"</span>);	<span class="comment">//创建"确认密码"标签。</span></span><br><span class="line">		repassword_Label.setBounds(<span class="number">100</span>, <span class="number">162</span>, <span class="number">70</span>, <span class="number">20</span>);	<span class="comment">//设置"确认密码"标签位置。</span></span><br><span class="line">		c.add(repassword_Label);	<span class="comment">//添加"确认密码"标签。</span></span><br><span class="line">		</span><br><span class="line">		repassword_Text = <span class="keyword">new</span> JPasswordField();	<span class="comment">//创建"确认密码"文本域。</span></span><br><span class="line">		repassword_Text.setBounds(<span class="number">160</span>, <span class="number">162</span>, <span class="number">120</span>, <span class="number">20</span>);	<span class="comment">//设置"确认密码"文本域位置。</span></span><br><span class="line">		c.add(repassword_Text); <span class="comment">//添加"确认密码"文本域。</span></span><br><span class="line">		</span><br><span class="line">		confirm_Button = <span class="keyword">new</span> JButton(<span class="string">"确认"</span>);	<span class="comment">//创建"确认"按钮。</span></span><br><span class="line">		confirm_Button.setBounds(<span class="number">90</span>, <span class="number">210</span>, <span class="number">60</span>, <span class="number">20</span>);	<span class="comment">//设置"确认"按钮位置。</span></span><br><span class="line">		<span class="comment">//注册"确认"按钮事件监听。</span></span><br><span class="line">		confirm_Button.addActionListener(<span class="keyword">new</span> ActionListener() &#123;</span><br><span class="line">			</span><br><span class="line">			<span class="meta">@Override</span></span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent e)</span> </span>&#123;</span><br><span class="line">				String password = <span class="keyword">new</span> String(password_Text.getPassword());</span><br><span class="line">				String repassword = <span class="keyword">new</span> String(repassword_Text.getPassword());</span><br><span class="line">				String newpassword = <span class="keyword">new</span> String(newpassword_Text.getPassword());</span><br><span class="line">				<span class="keyword">if</span>(password.equals(<span class="string">""</span>))&#123;</span><br><span class="line">					JOptionPane.showMessageDialog(jd, <span class="string">"原密码不能为空！"</span>,<span class="string">""</span>,JOptionPane.WARNING_MESSAGE);</span><br><span class="line">					<span class="keyword">return</span> ;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span>(newpassword.equals(<span class="string">""</span>))&#123;</span><br><span class="line">					JOptionPane.showMessageDialog(jd, <span class="string">"新密码不能为空！"</span>,<span class="string">""</span>,JOptionPane.WARNING_MESSAGE);</span><br><span class="line">					<span class="keyword">return</span> ;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span>(repassword.equals(<span class="string">""</span>))&#123;</span><br><span class="line">					JOptionPane.showMessageDialog(jd, <span class="string">"确认密码不能为空！"</span>,<span class="string">""</span>,JOptionPane.WARNING_MESSAGE);</span><br><span class="line">					<span class="keyword">return</span> ;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span>(repassword.equals(newpassword))&#123;</span><br><span class="line">					<span class="comment">//检查原密码是否正确</span></span><br><span class="line">					ManageHelper helper = <span class="keyword">new</span> ManageHelper();</span><br><span class="line">					user.setPassword(password);</span><br><span class="line">					<span class="keyword">if</span>(helper.Login(user))&#123;<span class="comment">//检查原密码是否正确</span></span><br><span class="line">						helper.update_Password(user, newpassword);	<span class="comment">//修改密码</span></span><br><span class="line">						JOptionPane.showMessageDialog(jd, <span class="string">"修改密码成功！"</span>);</span><br><span class="line">						jd.dispose();<span class="comment">//关闭当前窗口</span></span><br><span class="line">						<span class="keyword">return</span> ;</span><br><span class="line">					&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">						JOptionPane.showMessageDialog(jd,<span class="string">"原密码不正确！"</span>,<span class="string">""</span>,JOptionPane.WARNING_MESSAGE);</span><br><span class="line">						Reset();	<span class="comment">//重置</span></span><br><span class="line">						<span class="keyword">return</span> ;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">					JOptionPane.showMessageDialog(jd,<span class="string">"两次密码不一致"</span>,<span class="string">""</span>,JOptionPane.WARNING_MESSAGE);</span><br><span class="line">					Reset();	<span class="comment">//重置</span></span><br><span class="line">					<span class="keyword">return</span> ;</span><br><span class="line">				&#125;</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">		c.add(confirm_Button);	<span class="comment">//添加"确认"按钮。</span></span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		cancel_Button = <span class="keyword">new</span> JButton(<span class="string">"取消"</span>);	<span class="comment">//创建"取消"按钮。</span></span><br><span class="line">		cancel_Button.setBounds(<span class="number">250</span>, <span class="number">210</span>, <span class="number">60</span>, <span class="number">20</span>);	<span class="comment">//设置"取消"按钮位置。</span></span><br><span class="line">		<span class="comment">//注册"取消"按钮事件监听。</span></span><br><span class="line">		cancel_Button.addActionListener(<span class="keyword">new</span> ActionListener() &#123;</span><br><span class="line">			</span><br><span class="line">			<span class="meta">@Override</span></span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent e)</span> </span>&#123;</span><br><span class="line">				<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">				jd.dispose();<span class="comment">//关闭当前页面。</span></span><br><span class="line">			</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">		c.add(cancel_Button);	<span class="comment">//添加"取消"按钮。</span></span><br><span class="line">		</span><br><span class="line"></span><br><span class="line">		<span class="keyword">this</span>.setResizable(<span class="keyword">false</span>);	<span class="comment">//设置大小不可改变。</span></span><br><span class="line">		WindowUtil.setFrameCenter(<span class="keyword">this</span>);<span class="comment">//设置窗口居中。</span></span><br><span class="line">		<span class="keyword">this</span>.setVisible(<span class="keyword">true</span>);	<span class="comment">//设置窗体可见。</span></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//重置</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Reset</span><span class="params">()</span></span>&#123;</span><br><span class="line">		password_Text.setText(<span class="string">""</span>);</span><br><span class="line">		repassword_Text.setText(<span class="string">""</span>);</span><br><span class="line">		newpassword_Text.setText(<span class="string">""</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200605152231639.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70#pic_center" alt="修改密码"><br><strong>和退出登陆</strong><br>退出登陆在主界面中退出即可<br><img src="https://img-blog.csdnimg.cn/20200605152550937.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70#pic_center" alt="退出登陆界面"></p>
+<h2 id="教师管理模块"><a href="#教师管理模块" class="headerlink" title="教师管理模块"></a>教师管理模块</h2><p><img src="https://img-blog.csdnimg.cn/20200605153337430.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70" alt="学生管理"><br><strong>添加学生信息</strong><br><img src="https://img-blog.csdnimg.cn/20200605153310422.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>添加学生信息代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> studentsystem.frame;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> studentsystem.bean.Student;</span><br><span class="line"><span class="keyword">import</span> studentsystem.dao.ManageHelper;</span><br><span class="line"><span class="keyword">import</span> studentsystem.util.Tools;</span><br><span class="line"><span class="keyword">import</span> studentsystem.util.WindowUtil;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.awt.event.ActionEvent;</span><br><span class="line"><span class="keyword">import</span> java.awt.event.ActionListener;</span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Vector;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.swing.JButton;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JComboBox;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JDialog;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JFrame;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JLabel;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JOptionPane;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JTextField;</span><br><span class="line"><span class="comment">//添加学生界面</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AddStudentFrame</span> <span class="keyword">extends</span> <span class="title">JDialog</span></span>&#123;</span><br><span class="line">	 	<span class="keyword">private</span> JButton add_Button;	<span class="comment">//"添加"按钮。</span></span><br><span class="line">	    <span class="keyword">private</span> JButton cancel_Button;	<span class="comment">//"取消"按钮。</span></span><br><span class="line">	    <span class="keyword">private</span> JComboBox sex_Box;	<span class="comment">//"性别"选项。</span></span><br><span class="line">	    <span class="keyword">private</span> JComboBox major_Box;	<span class="comment">//"专业"选项。</span></span><br><span class="line">	    <span class="keyword">private</span> JComboBox department_Box;	<span class="comment">//"所属院系"选项。</span></span><br><span class="line">	    <span class="keyword">private</span> JLabel student_ID;    <span class="comment">//"学号"标签。</span></span><br><span class="line">	    <span class="keyword">private</span> JLabel student_Name;	<span class="comment">//"姓名"标签。</span></span><br><span class="line">	    <span class="keyword">private</span> JLabel sex_Label;	<span class="comment">//"性别"标签。</span></span><br><span class="line">	    <span class="keyword">private</span> JLabel classe_Label;	<span class="comment">//"班级"标签。</span></span><br><span class="line">	    <span class="keyword">private</span> JLabel grade_Label;	<span class="comment">//"年级标签"。</span></span><br><span class="line">	    <span class="keyword">private</span> JLabel major_Label;	<span class="comment">//"专业"标签。</span></span><br><span class="line">	    <span class="keyword">private</span> JLabel department_Label;	<span class="comment">//"所属院系"标签。</span></span><br><span class="line">	    <span class="keyword">private</span> JTextField student_IDText;	<span class="comment">//"学号"文本域。</span></span><br><span class="line">	    <span class="keyword">private</span> JTextField student_NameText;	<span class="comment">//"姓名"文本域。</span></span><br><span class="line">	    <span class="keyword">private</span> JComboBox classe_Box;	<span class="comment">//"班级"文本域。</span></span><br><span class="line">	    <span class="keyword">private</span> JComboBox grade_Box;	<span class="comment">//"年级"文本域。</span></span><br><span class="line">	    <span class="keyword">private</span> JDialog jd;	<span class="comment">//当前窗口。</span></span><br><span class="line">	    <span class="keyword">private</span> HashMap&lt;String, String&gt; departments;	<span class="comment">//所有院系集合</span></span><br><span class="line">	    <span class="keyword">private</span> HashMap&lt;String, String&gt; all_Major;	<span class="comment">//所有专业集合</span></span><br><span class="line">	    <span class="keyword">private</span> Vector&lt;String&gt; majors;	<span class="comment">//专业名称集合</span></span><br><span class="line">	    <span class="keyword">private</span> ManageHelper helper;	<span class="comment">//数据库业务处理对象</span></span><br><span class="line">	    <span class="keyword">private</span> Vector&lt;String&gt; classes;	<span class="comment">//班级集合</span></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> owner 它的父窗口</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> title 窗口名</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> modal 指定的模式窗口，还有非模式窗口</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">AddStudentFrame</span><span class="params">(JFrame owner, String title, <span class="keyword">boolean</span> modal)</span></span>&#123;</span><br><span class="line">		<span class="keyword">super</span>(owner, title, modal);</span><br><span class="line">		helper = <span class="keyword">new</span> ManageHelper();	<span class="comment">//创建数据库业务处理对象</span></span><br><span class="line">		</span><br><span class="line">		departments = <span class="keyword">this</span>.helper.getAllDepartment();	<span class="comment">//获得所有院系</span></span><br><span class="line">		all_Major = <span class="keyword">this</span>.helper.getAllMajor();	<span class="comment">//获得所有的专业</span></span><br><span class="line">		<span class="keyword">this</span>.jd = <span class="keyword">this</span>;</span><br><span class="line">		<span class="keyword">this</span>.setSize(<span class="number">350</span>,<span class="number">429</span>);	<span class="comment">//设置窗体大小。</span></span><br><span class="line">		<span class="keyword">this</span>.setLayout(<span class="keyword">null</span>);	<span class="comment">//设置空布局。</span></span><br><span class="line">		</span><br><span class="line">		student_ID = <span class="keyword">new</span> JLabel(<span class="string">"班号:"</span>);	</span><br><span class="line">		student_ID.setBounds(<span class="number">78</span>, <span class="number">48</span>, <span class="number">30</span>, <span class="number">20</span>);	</span><br><span class="line">		<span class="keyword">this</span>.add(student_ID);	</span><br><span class="line">		</span><br><span class="line">		student_IDText = <span class="keyword">new</span> JTextField();</span><br><span class="line">		student_IDText.setBounds(<span class="number">116</span>, <span class="number">48</span>, <span class="number">150</span>, <span class="number">20</span>);</span><br><span class="line">		<span class="keyword">this</span>.add(student_IDText);</span><br><span class="line">		</span><br><span class="line">		student_Name = <span class="keyword">new</span> JLabel(<span class="string">"姓名:"</span>);</span><br><span class="line">		student_Name.setBounds(<span class="number">78</span>, <span class="number">88</span>, <span class="number">30</span>, <span class="number">20</span>);</span><br><span class="line">		<span class="keyword">this</span>.add(student_Name);</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		student_NameText = <span class="keyword">new</span> JTextField();</span><br><span class="line">		student_NameText.setBounds(<span class="number">116</span>, <span class="number">88</span>, <span class="number">150</span>, <span class="number">20</span>);</span><br><span class="line">		<span class="keyword">this</span>.add(student_NameText);</span><br><span class="line">		</span><br><span class="line">		sex_Label = <span class="keyword">new</span> JLabel(<span class="string">"性别:"</span>);</span><br><span class="line">		sex_Label.setBounds(<span class="number">78</span>, <span class="number">128</span>, <span class="number">30</span>, <span class="number">20</span>);</span><br><span class="line">		<span class="keyword">this</span>.add(sex_Label);</span><br><span class="line">		</span><br><span class="line">		sex_Box = <span class="keyword">new</span> JComboBox(<span class="keyword">new</span> String[]&#123;<span class="string">""</span>,<span class="string">"男"</span>,<span class="string">"女"</span>&#125;);</span><br><span class="line">		sex_Box.setBounds(<span class="number">116</span>, <span class="number">128</span>, <span class="number">60</span>, <span class="number">20</span>);</span><br><span class="line">		<span class="keyword">this</span>.add(sex_Box);</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		grade_Label = <span class="keyword">new</span> JLabel(<span class="string">"年级:"</span>);	</span><br><span class="line">		grade_Label.setBounds(<span class="number">78</span>, <span class="number">168</span>, <span class="number">30</span>, <span class="number">20</span>);</span><br><span class="line">		<span class="keyword">this</span>.add(grade_Label);</span><br><span class="line">		</span><br><span class="line">		grade_Box = <span class="keyword">new</span> JComboBox&lt;String&gt;(Tools.CreateGrade());	<span class="comment">//需要获得获得年级选项</span></span><br><span class="line">		grade_Box.setBounds(<span class="number">116</span>, <span class="number">168</span>, <span class="number">150</span>, <span class="number">20</span>);</span><br><span class="line">		<span class="comment">//注册"年级选项"事件监听</span></span><br><span class="line">		grade_Box.addActionListener(<span class="keyword">new</span> ActionListener() &#123;</span><br><span class="line">			</span><br><span class="line">			<span class="meta">@Override</span></span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent arg0)</span> </span>&#123;</span><br><span class="line">				<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">				classe_Box.removeAllItems();<span class="comment">//移除"班级选项"的内容</span></span><br><span class="line">				String option = major_Box.getSelectedItem().toString();</span><br><span class="line">				String major_id = all_Major.get(option);	<span class="comment">//专业编号</span></span><br><span class="line">				String grade = grade_Box.getSelectedItem().toString();</span><br><span class="line">				<span class="keyword">if</span>(!grade.equals(<span class="string">""</span>))&#123;</span><br><span class="line">					 classes = helper.getAllClasse(grade,major_id);	<span class="comment">//获得班级</span></span><br><span class="line">					<span class="keyword">for</span>(String s : classes)&#123;</span><br><span class="line">						classe_Box.addItem(s);</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">		<span class="keyword">this</span>.add(grade_Box);</span><br><span class="line">		</span><br><span class="line">			</span><br><span class="line">		department_Label = <span class="keyword">new</span> JLabel(<span class="string">"院系:"</span>);</span><br><span class="line">		department_Label.setBounds(<span class="number">78</span>, <span class="number">208</span>, <span class="number">30</span>, <span class="number">20</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">this</span>.add(department_Label);</span><br><span class="line">		</span><br><span class="line">		department_Box = <span class="keyword">new</span> JComboBox(departments.keySet().toArray());<span class="comment">//获得键的集合</span></span><br><span class="line">		<span class="comment">//注册"院系"选项事件监听</span></span><br><span class="line">		department_Box.addActionListener(<span class="keyword">new</span> ActionListener() &#123;</span><br><span class="line">			</span><br><span class="line">			<span class="meta">@Override</span></span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent arg0)</span> </span>&#123;</span><br><span class="line">				major_Box.removeAllItems();<span class="comment">//移除"专业选项"的内容</span></span><br><span class="line">				String option = department_Box.getSelectedItem().toString();<span class="comment">//获得选项名称</span></span><br><span class="line">				String department_ID = departments.get(option);	<span class="comment">//获得院系编号</span></span><br><span class="line">				<span class="keyword">if</span>(!department_ID.equals(<span class="string">""</span>))&#123;</span><br><span class="line">					majors = helper.getMajor(department_ID);	<span class="comment">//获得专业</span></span><br><span class="line">					<span class="keyword">for</span>(String s : majors)&#123;</span><br><span class="line">						major_Box.addItem(s);</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">		department_Box.setBounds(<span class="number">116</span>, <span class="number">208</span>, <span class="number">150</span>, <span class="number">20</span>);</span><br><span class="line">		<span class="keyword">this</span>.add(department_Box);</span><br><span class="line"></span><br><span class="line">		major_Label = <span class="keyword">new</span> JLabel(<span class="string">"专业:"</span>);</span><br><span class="line">		major_Label.setBounds(<span class="number">78</span>, <span class="number">248</span>, <span class="number">30</span>, <span class="number">20</span>);	</span><br><span class="line">		<span class="keyword">this</span>.add(major_Label);</span><br><span class="line">		</span><br><span class="line">		major_Box = <span class="keyword">new</span> JComboBox(<span class="keyword">new</span> String[]&#123;<span class="string">""</span>&#125;);<span class="comment">//防止空指针异常</span></span><br><span class="line">		<span class="comment">//注册"专业"选项事件监听</span></span><br><span class="line">		major_Box.addActionListener(<span class="keyword">new</span> ActionListener() &#123;</span><br><span class="line">			</span><br><span class="line">			<span class="meta">@Override</span></span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent e)</span> </span>&#123;</span><br><span class="line">				<span class="keyword">if</span>(major_Box.getSelectedItem()!=<span class="keyword">null</span>)&#123;	<span class="comment">//防止空指针 </span></span><br><span class="line">					<span class="keyword">if</span>(!major_Box.getSelectedItem().toString().equals(<span class="string">""</span>))&#123;</span><br><span class="line">						<span class="keyword">if</span>(major_Box.getSelectedItem().toString().equals(<span class="string">""</span>) || grade_Box.getSelectedItem()==<span class="keyword">null</span> || grade_Box.getSelectedItem().toString().equals(<span class="string">""</span>))&#123;</span><br><span class="line">							JOptionPane.showMessageDialog(jd, <span class="string">"年级不能为空"</span>, <span class="string">""</span>, JOptionPane.WARNING_MESSAGE);</span><br><span class="line">							major_Box.setSelectedIndex(<span class="number">0</span>);	<span class="comment">//设置为空选项</span></span><br><span class="line">							<span class="keyword">return</span> ;</span><br><span class="line">						&#125;</span><br><span class="line">						classe_Box.removeAllItems();<span class="comment">//移除"班级选项"的内容</span></span><br><span class="line">						String option = major_Box.getSelectedItem().toString();</span><br><span class="line">						String major_id = all_Major.get(option);	<span class="comment">//专业编号</span></span><br><span class="line">						String grade = grade_Box.getSelectedItem().toString();</span><br><span class="line">						<span class="keyword">if</span>(!grade.equals(<span class="string">""</span>))&#123;</span><br><span class="line">							 classes = helper.getAllClasse(grade,major_id);	<span class="comment">//获得班级</span></span><br><span class="line">							<span class="keyword">for</span>(String s : classes)&#123;</span><br><span class="line">								classe_Box.addItem(s);</span><br><span class="line">							&#125;</span><br><span class="line">						&#125;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">		major_Box.setBounds(<span class="number">116</span>, <span class="number">248</span>, <span class="number">150</span>, <span class="number">20</span>);</span><br><span class="line">		<span class="keyword">this</span>.add(major_Box);</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		classe_Label = <span class="keyword">new</span> JLabel(<span class="string">"班级:"</span>);	<span class="comment">//需要获得班级选项</span></span><br><span class="line">		classe_Label.setBounds(<span class="number">78</span>, <span class="number">288</span>, <span class="number">30</span>, <span class="number">20</span>);	</span><br><span class="line">		<span class="keyword">this</span>.add(classe_Label);</span><br><span class="line">		</span><br><span class="line">		classe_Box = <span class="keyword">new</span> JComboBox(<span class="keyword">new</span> String[]&#123;<span class="string">""</span>&#125;);<span class="comment">//防止空指针异常</span></span><br><span class="line">		classe_Box.setBounds(<span class="number">116</span>, <span class="number">288</span>, <span class="number">150</span>, <span class="number">20</span>);</span><br><span class="line">		<span class="keyword">this</span>.add(classe_Box);</span><br><span class="line">		</span><br><span class="line">		add_Button = <span class="keyword">new</span> JButton(<span class="string">"添加"</span>);</span><br><span class="line">		add_Button.setBounds(<span class="number">70</span>, <span class="number">330</span>, <span class="number">60</span>, <span class="number">25</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//注册"确认"按钮事件监听</span></span><br><span class="line">		add_Button.addActionListener(<span class="keyword">new</span> ActionListener() &#123;</span><br><span class="line">			</span><br><span class="line">			<span class="meta">@Override</span> </span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent e)</span> </span>&#123;</span><br><span class="line">				Student student = <span class="keyword">new</span> Student();</span><br><span class="line">				String sid = student_IDText.getText().trim();</span><br><span class="line">				String name = student_NameText.getText().trim();</span><br><span class="line">				String sex = sex_Box.getSelectedItem().toString();</span><br><span class="line">				String classe = classe_Box.getSelectedItem().toString();</span><br><span class="line">				String grade = grade_Box.getSelectedItem().toString();</span><br><span class="line">				String department_ID = <span class="keyword">null</span>;</span><br><span class="line">				String major_ID = <span class="keyword">null</span>;</span><br><span class="line">				String department_Name = <span class="keyword">null</span>;</span><br><span class="line">				String major_Name = <span class="keyword">null</span>;</span><br><span class="line">				<span class="comment">//数据校验部分</span></span><br><span class="line">				<span class="keyword">if</span>(sid.equals(<span class="string">""</span>))&#123;</span><br><span class="line">					JOptionPane.showMessageDialog(jd, <span class="string">"班号不能为空！"</span>, <span class="string">""</span>, JOptionPane.WARNING_MESSAGE);</span><br><span class="line">					<span class="keyword">return</span> ;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span>(sid.length()!=<span class="number">2</span>)&#123;</span><br><span class="line">					JOptionPane.showMessageDialog(jd, <span class="string">"班号必须是两位数！"</span>, <span class="string">""</span>, JOptionPane.WARNING_MESSAGE);</span><br><span class="line">					student_IDText.setText(<span class="string">""</span>);</span><br><span class="line">					<span class="keyword">return</span> ;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span>(name.equals(<span class="string">""</span>))&#123;</span><br><span class="line">					JOptionPane.showMessageDialog(jd, <span class="string">"姓名不能为空！"</span>, <span class="string">""</span>, JOptionPane.WARNING_MESSAGE);</span><br><span class="line">					<span class="keyword">return</span> ;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span>(sex.equals(<span class="string">""</span>))&#123;</span><br><span class="line">					JOptionPane.showMessageDialog(jd, <span class="string">"性别不能为空！"</span>, <span class="string">""</span>, JOptionPane.WARNING_MESSAGE);</span><br><span class="line">					<span class="keyword">return</span> ;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span>(grade.equals(<span class="string">""</span>))&#123;</span><br><span class="line">					JOptionPane.showMessageDialog(jd, <span class="string">"年级不能为空！"</span>, <span class="string">""</span>, JOptionPane.WARNING_MESSAGE);</span><br><span class="line">					<span class="keyword">return</span> ;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span>(classe.equals(<span class="string">""</span>))&#123;</span><br><span class="line">					JOptionPane.showMessageDialog(jd, <span class="string">"班级不能为空！"</span>, <span class="string">""</span>, JOptionPane.WARNING_MESSAGE);</span><br><span class="line">					<span class="keyword">return</span> ;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span>(department_Box.getSelectedItem()==<span class="keyword">null</span>)&#123;	<span class="comment">//先检查再用</span></span><br><span class="line">					JOptionPane.showMessageDialog(jd, <span class="string">"院系不能为空！"</span>, <span class="string">""</span>, JOptionPane.WARNING_MESSAGE);</span><br><span class="line">					<span class="keyword">return</span> ;</span><br><span class="line">				&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">					department_Name = department_Box.getSelectedItem().toString();	<span class="comment">//获得院系名称</span></span><br><span class="line">					department_ID = departments.get(department_Name);	<span class="comment">//获得院系编号	</span></span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span>(department_ID.equals(<span class="string">""</span>))&#123;</span><br><span class="line">					JOptionPane.showMessageDialog(jd, <span class="string">"院系不能为空！"</span>, <span class="string">""</span>, JOptionPane.WARNING_MESSAGE);</span><br><span class="line">					<span class="keyword">return</span> ;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span>(major_Box.getSelectedItem()==<span class="keyword">null</span>)&#123;	<span class="comment">//先检查再用</span></span><br><span class="line">					JOptionPane.showMessageDialog(jd, <span class="string">"专业不能为空！"</span>, <span class="string">""</span>, JOptionPane.WARNING_MESSAGE);</span><br><span class="line">					<span class="keyword">return</span> ;</span><br><span class="line">				&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">					major_Name = major_Box.getSelectedItem().toString();<span class="comment">//获得专业名称</span></span><br><span class="line">					 major_ID = all_Major.get(major_Name);	<span class="comment">//获得专业编号</span></span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span>(major_ID.equals(<span class="string">""</span>))&#123;</span><br><span class="line">					JOptionPane.showMessageDialog(jd, <span class="string">"专业不能为空！"</span>, <span class="string">""</span>, JOptionPane.WARNING_MESSAGE);</span><br><span class="line">					<span class="keyword">return</span> ;</span><br><span class="line">				&#125;</span><br><span class="line">				String id = Tools.CreateID(grade, classe, major_ID, department_ID, sid);<span class="comment">//生成学号</span></span><br><span class="line">				student_ID.setText(<span class="string">"学号:"</span>);</span><br><span class="line">				student_IDText.setText(id);	<span class="comment">//设置学号文本域</span></span><br><span class="line">				JOptionPane.showMessageDialog(jd, <span class="string">"该学生的id为:"</span>+id);</span><br><span class="line">				student.setStudent_ID(id);</span><br><span class="line">				student.setStudent_Name(name);</span><br><span class="line">				student.setSex(sex);</span><br><span class="line">				student.setGrade(grade);</span><br><span class="line">				student.setClasse(classe);</span><br><span class="line">				student.setMajor_Name(major_Name);</span><br><span class="line">				student.setDepartment_Name(department_Name);</span><br><span class="line">				student.setMajor_ID(major_ID);</span><br><span class="line">				student.setDepartment_ID(department_ID);</span><br><span class="line">				<span class="keyword">if</span>(helper.addStudent(student))&#123;</span><br><span class="line">					JOptionPane.showMessageDialog(jd, <span class="string">"添加成功！"</span>);</span><br><span class="line">					jd.dispose();	<span class="comment">//关闭当前窗口</span></span><br><span class="line">					<span class="keyword">return</span> ;</span><br><span class="line">				&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">					JOptionPane.showMessageDialog(jd, <span class="string">"添加失败！"</span>, <span class="string">""</span>, JOptionPane.WARNING_MESSAGE);</span><br><span class="line">					jd.dispose();	<span class="comment">//关闭当前窗口</span></span><br><span class="line">					<span class="keyword">return</span> ;</span><br><span class="line">				&#125;</span><br><span class="line">				</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">		<span class="keyword">this</span>.add(add_Button);</span><br><span class="line">		</span><br><span class="line">		cancel_Button = <span class="keyword">new</span> JButton(<span class="string">"取消"</span>);</span><br><span class="line">		cancel_Button.setBounds(<span class="number">230</span>, <span class="number">330</span>, <span class="number">60</span>, <span class="number">25</span>);</span><br><span class="line">		<span class="comment">//注册"取消"按钮事件监听</span></span><br><span class="line">		cancel_Button.addActionListener(<span class="keyword">new</span> ActionListener() &#123;</span><br><span class="line">			</span><br><span class="line">			<span class="meta">@Override</span></span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent arg0)</span> </span>&#123;</span><br><span class="line">				jd.dispose();</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">		<span class="keyword">this</span>.add(cancel_Button);</span><br><span class="line">		</span><br><span class="line">		WindowUtil.setFrameCenter(<span class="keyword">this</span>);</span><br><span class="line">		<span class="keyword">this</span>.setResizable(<span class="keyword">false</span>);</span><br><span class="line">		<span class="keyword">this</span>.setVisible(<span class="keyword">true</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>查询学生信息</strong><br><img src="https://img-blog.csdnimg.cn/20200605153654209.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70" alt="查询学生"><br>查询学生信息代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> studentsystem.frame;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> studentsystem.model.StudentModel;</span><br><span class="line"><span class="keyword">import</span> studentsystem.util.CreateSql;</span><br><span class="line"><span class="keyword">import</span> studentsystem.util.WindowUtil;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.awt.BorderLayout;</span><br><span class="line"><span class="keyword">import</span> java.awt.Container;</span><br><span class="line"><span class="keyword">import</span> java.awt.event.ActionEvent;</span><br><span class="line"><span class="keyword">import</span> java.awt.event.ActionListener;</span><br><span class="line"><span class="keyword">import</span> java.util.Vector;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.swing.JButton;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JComboBox;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JDialog;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JFrame;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JLabel;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JOptionPane;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JPanel;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JScrollPane;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JTable;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JTextField;</span><br><span class="line"><span class="comment">//查询学生信息界面</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">QueryStudentFrame</span> <span class="keyword">extends</span> <span class="title">JDialog</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> JPanel jp1,jp2,jp3;	<span class="comment">//面板。</span></span><br><span class="line">	<span class="keyword">private</span> JLabel query_Label;	<span class="comment">//标签。</span></span><br><span class="line">	<span class="keyword">private</span> JButton query_Button;	<span class="comment">//"查询"按钮。</span></span><br><span class="line">	<span class="keyword">private</span> JComboBox query_List;	<span class="comment">//"查询"选项。</span></span><br><span class="line">	<span class="keyword">private</span> JButton preciseQuery_Button;	<span class="comment">//"精确查询"按钮。</span></span><br><span class="line">	<span class="keyword">private</span> JButton details_Button;	<span class="comment">//"详细信息"按钮。</span></span><br><span class="line">	<span class="keyword">private</span> JTextField query_Text;	<span class="comment">//"查询"文本域。</span></span><br><span class="line">	<span class="keyword">private</span> JTable jt;	<span class="comment">//表格。</span></span><br><span class="line">	<span class="keyword">private</span> JScrollPane jsp;	<span class="comment">//滚动条。</span></span><br><span class="line">	<span class="keyword">private</span> JDialog jd;	<span class="comment">//当前窗口。</span></span><br><span class="line">	<span class="keyword">private</span> StudentModel studentModel;<span class="comment">//学生数据模型类</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> Vector&lt;String&gt; query_Option;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">static</span> &#123;</span><br><span class="line">		query_Option = <span class="keyword">new</span> Vector&lt;String&gt;();</span><br><span class="line">		query_Option.add(<span class="string">"全部"</span>);</span><br><span class="line">		query_Option.add(<span class="string">"学号"</span>);</span><br><span class="line">		query_Option.add(<span class="string">"姓名"</span>);</span><br><span class="line">		query_Option.add(<span class="string">"性别"</span>);</span><br><span class="line">		query_Option.add(<span class="string">"班级"</span>);</span><br><span class="line">		query_Option.add(<span class="string">"年级"</span>);</span><br><span class="line">		query_Option.add(<span class="string">"专业"</span>);</span><br><span class="line">		query_Option.add(<span class="string">"院系"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> owner 它的父窗口</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> title 窗口名</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> modal 指定的模式窗口，还有非模式窗口</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">QueryStudentFrame</span><span class="params">(JFrame owner, String title, <span class="keyword">boolean</span> modal)</span></span>&#123;</span><br><span class="line">		<span class="keyword">super</span>(owner, title, modal);</span><br><span class="line">		<span class="keyword">this</span>.jd = <span class="keyword">this</span>;</span><br><span class="line">		Container c = <span class="keyword">this</span>.getContentPane();</span><br><span class="line">		</span><br><span class="line">		jp1 = <span class="keyword">new</span> JPanel();</span><br><span class="line">		query_Label = <span class="keyword">new</span> JLabel(<span class="string">"请输入查询信息:"</span>);</span><br><span class="line">		jp1.add(query_Label);</span><br><span class="line">		</span><br><span class="line">		query_Text = <span class="keyword">new</span> JTextField(<span class="number">10</span>);</span><br><span class="line">		jp1.add(query_Text);</span><br><span class="line">		</span><br><span class="line">		query_List = <span class="keyword">new</span> JComboBox&lt;String&gt;(query_Option);</span><br><span class="line">		jp1.add(query_List);</span><br><span class="line">		</span><br><span class="line">		query_Button = <span class="keyword">new</span> JButton(<span class="string">"查询"</span>);</span><br><span class="line">		<span class="comment">//注册"查询"按钮事件监听</span></span><br><span class="line">		query_Button.addActionListener(<span class="keyword">new</span> ActionListener() &#123;</span><br><span class="line">			</span><br><span class="line">			<span class="meta">@Override</span></span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent arg0)</span> </span>&#123;</span><br><span class="line">				String str = query_Text.getText().trim();	<span class="comment">//查询内容</span></span><br><span class="line">				String option = query_List.getSelectedItem().toString();	<span class="comment">//查询选项</span></span><br><span class="line">				String sql = CreateSql.getStudent_Sql(str, option);	<span class="comment">//获得sql语句</span></span><br><span class="line">				studentModel = <span class="keyword">new</span> StudentModel(sql,jd);<span class="comment">//构建新的数据模型类，并更新</span></span><br><span class="line">				jt.setModel(studentModel);<span class="comment">//更新Jtable</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">		jp1.add(query_Button);</span><br><span class="line">		</span><br><span class="line">		preciseQuery_Button = <span class="keyword">new</span> JButton(<span class="string">"多条件查询"</span>);</span><br><span class="line">		<span class="comment">//注册"多条件查询"按钮事件监听</span></span><br><span class="line">		preciseQuery_Button.addActionListener(<span class="keyword">new</span> ActionListener() &#123;</span><br><span class="line">			</span><br><span class="line">			<span class="meta">@Override</span></span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent e)</span> </span>&#123;</span><br><span class="line">				ConditionsQueryFrame frame = <span class="keyword">new</span> ConditionsQueryFrame(jd, <span class="string">"多条件查询"</span>, <span class="keyword">true</span>, jt);</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">		jp1.add(preciseQuery_Button);</span><br><span class="line">		c.add(jp1,BorderLayout.NORTH);	<span class="comment">//添加面板</span></span><br><span class="line">	</span><br><span class="line">		jp2 = <span class="keyword">new</span> JPanel();</span><br><span class="line">		jt = <span class="keyword">new</span> JTable();</span><br><span class="line">		String sql = CreateSql.getStudent_Sql(<span class="keyword">null</span>, <span class="string">"全部"</span>);<span class="comment">//查询全部内容</span></span><br><span class="line">		studentModel = <span class="keyword">new</span> StudentModel(sql,jd);<span class="comment">//构建新的数据模型类，并更新</span></span><br><span class="line">		jt.setModel(studentModel);</span><br><span class="line">		</span><br><span class="line">	</span><br><span class="line">		</span><br><span class="line">		jsp = <span class="keyword">new</span> JScrollPane(jt);</span><br><span class="line">		jp2.add(jsp);</span><br><span class="line">		c.add(jp2,BorderLayout.CENTER);	<span class="comment">//添加面板</span></span><br><span class="line">		</span><br><span class="line">		jp3 = <span class="keyword">new</span> JPanel();</span><br><span class="line">		details_Button = <span class="keyword">new</span> JButton(<span class="string">"详细信息"</span>);</span><br><span class="line">		<span class="comment">//注册"详细信息"按钮事件监听</span></span><br><span class="line">		details_Button.addActionListener(<span class="keyword">new</span> ActionListener() &#123;</span><br><span class="line">			</span><br><span class="line">			<span class="meta">@Override</span></span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent arg0)</span> </span>&#123;</span><br><span class="line">				<span class="keyword">int</span> rowNum = jt.getSelectedRow();</span><br><span class="line">				<span class="keyword">if</span>(rowNum==-<span class="number">1</span>)&#123;</span><br><span class="line">					JOptionPane.showMessageDialog(jd, <span class="string">"请选择一行！"</span>, <span class="string">""</span>, JOptionPane.WARNING_MESSAGE);</span><br><span class="line">					<span class="keyword">return</span> ;</span><br><span class="line">				&#125;</span><br><span class="line">				DetailsFrame detailsFrame = <span class="keyword">new</span> DetailsFrame(jd, <span class="string">"详细学生信息"</span>, <span class="keyword">true</span>,rowNum,studentModel);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">		jp3.add(details_Button);</span><br><span class="line">		c.add(jp3,BorderLayout.SOUTH);</span><br><span class="line">	</span><br><span class="line">		<span class="keyword">this</span>.setSize(<span class="number">600</span>,<span class="number">540</span>);</span><br><span class="line">		<span class="keyword">this</span>.setResizable(<span class="keyword">false</span>);</span><br><span class="line">		WindowUtil.setFrameCenter(<span class="keyword">this</span>);<span class="comment">//设置窗体居中。</span></span><br><span class="line">		<span class="keyword">this</span>.setVisible(<span class="keyword">true</span>);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200605153854645.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70" alt="显示详细信息"><br>显示详细信息代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> studentsystem.frame;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.awt.event.ActionEvent;</span><br><span class="line"><span class="keyword">import</span> java.awt.event.ActionListener;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> studentsystem.model.StudentModel;</span><br><span class="line"><span class="keyword">import</span> studentsystem.util.WindowUtil;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.swing.JButton;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JDialog;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JFrame;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JLabel;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JTextField;</span><br><span class="line"></span><br><span class="line"><span class="comment">//详细信息界面</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DetailsFrame</span> <span class="keyword">extends</span> <span class="title">JDialog</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> JButton confirm_Button;	<span class="comment">//"确认"按钮。</span></span><br><span class="line">    <span class="keyword">private</span> JTextField sex_Text;	<span class="comment">//"性别"选项。</span></span><br><span class="line">    <span class="keyword">private</span> JTextField major_Text;	<span class="comment">//"专业"选项。</span></span><br><span class="line">    <span class="keyword">private</span> JTextField department_Text;	<span class="comment">//"所属院系"选项。</span></span><br><span class="line">    <span class="keyword">private</span> JLabel student_ID;  <span class="comment">//"学号"标签。</span></span><br><span class="line">    <span class="keyword">private</span> JLabel student_Name;	<span class="comment">//"姓名"标签。</span></span><br><span class="line">    <span class="keyword">private</span> JLabel sex_Label;	<span class="comment">//"性别"标签。</span></span><br><span class="line">    <span class="keyword">private</span> JLabel classe_Label;	<span class="comment">//"班级"标签。</span></span><br><span class="line">    <span class="keyword">private</span> JLabel grade_Label;	<span class="comment">//"年级标签"。</span></span><br><span class="line">    <span class="keyword">private</span> JLabel major_Label;	<span class="comment">//"专业"标签。</span></span><br><span class="line">    <span class="keyword">private</span> JLabel department_Label;	<span class="comment">//"所属院系"标签。</span></span><br><span class="line">    <span class="keyword">private</span> JTextField student_IDText;	<span class="comment">//"学号"文本域。</span></span><br><span class="line">    <span class="keyword">private</span> JTextField student_NameText;	<span class="comment">//"姓名"文本域。</span></span><br><span class="line">    <span class="keyword">private</span> JTextField classe_Text;	<span class="comment">//"班级"文本域。</span></span><br><span class="line">    <span class="keyword">private</span> JTextField grade_Text;	<span class="comment">//"年级"文本域。</span></span><br><span class="line">    <span class="keyword">private</span> StudentModel sm;	<span class="comment">//传入的学生数据模型</span></span><br><span class="line">    <span class="keyword">private</span> JDialog jd;	<span class="comment">//当前窗口。</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> owner 它的父窗口</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> title 窗口名</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> modal 指定的模式窗口，还有非模式窗口</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">DetailsFrame</span><span class="params">(JDialog owner, String title, <span class="keyword">boolean</span> modal, <span class="keyword">int</span> rowNum,StudentModel sm)</span></span>&#123;</span><br><span class="line">	<span class="keyword">super</span>(owner, title, modal);</span><br><span class="line">	<span class="keyword">this</span>.sm = sm;	<span class="comment">//传入学生数据模型</span></span><br><span class="line">	<span class="keyword">this</span>.jd = <span class="keyword">this</span>;</span><br><span class="line">	<span class="keyword">this</span>.setSize(<span class="number">350</span>,<span class="number">429</span>);	<span class="comment">//设置窗体大小。</span></span><br><span class="line">	<span class="keyword">this</span>.setLayout(<span class="keyword">null</span>);	<span class="comment">//设置空布局。</span></span><br><span class="line">	</span><br><span class="line">	student_ID = <span class="keyword">new</span> JLabel(<span class="string">"学号:"</span>);	</span><br><span class="line">	student_ID.setBounds(<span class="number">78</span>, <span class="number">48</span>, <span class="number">30</span>, <span class="number">20</span>);	</span><br><span class="line">	<span class="keyword">this</span>.add(student_ID);	</span><br><span class="line">	</span><br><span class="line">	student_IDText = <span class="keyword">new</span> JTextField();</span><br><span class="line">	student_IDText.setEditable(<span class="keyword">false</span>);	<span class="comment">//不可编辑</span></span><br><span class="line">	student_IDText.setText(sm.getValueAt(rowNum, <span class="number">0</span>).toString());	<span class="comment">//获取学号并显示</span></span><br><span class="line">	student_IDText.setBounds(<span class="number">116</span>, <span class="number">48</span>, <span class="number">150</span>, <span class="number">20</span>);</span><br><span class="line">	<span class="keyword">this</span>.add(student_IDText);</span><br><span class="line">	</span><br><span class="line">	student_Name = <span class="keyword">new</span> JLabel(<span class="string">"姓名:"</span>);</span><br><span class="line">	student_Name.setBounds(<span class="number">78</span>, <span class="number">88</span>, <span class="number">30</span>, <span class="number">20</span>);</span><br><span class="line">	<span class="keyword">this</span>.add(student_Name);</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	student_NameText = <span class="keyword">new</span> JTextField();</span><br><span class="line">	student_NameText.setBounds(<span class="number">116</span>, <span class="number">88</span>, <span class="number">150</span>, <span class="number">20</span>);</span><br><span class="line">	student_NameText.setEditable(<span class="keyword">false</span>);<span class="comment">//不可编辑</span></span><br><span class="line">	student_NameText.setText(sm.getValueAt(rowNum, <span class="number">1</span>).toString());	<span class="comment">//设置学生姓名并显示</span></span><br><span class="line">	<span class="keyword">this</span>.add(student_NameText);</span><br><span class="line">	</span><br><span class="line">	sex_Label = <span class="keyword">new</span> JLabel(<span class="string">"性别:"</span>);</span><br><span class="line">	sex_Label.setBounds(<span class="number">78</span>, <span class="number">128</span>, <span class="number">30</span>, <span class="number">20</span>);</span><br><span class="line">	<span class="keyword">this</span>.add(sex_Label);</span><br><span class="line">	</span><br><span class="line">	sex_Text = <span class="keyword">new</span> JTextField();</span><br><span class="line">	sex_Text.setBounds(<span class="number">116</span>, <span class="number">128</span>, <span class="number">60</span>, <span class="number">20</span>);</span><br><span class="line">	sex_Text.setEditable(<span class="keyword">false</span>);<span class="comment">//不可编辑</span></span><br><span class="line">	sex_Text.setText(sm.getValueAt(rowNum, <span class="number">2</span>).toString());	<span class="comment">//设置学生性别并显示</span></span><br><span class="line">	<span class="keyword">this</span>.add(sex_Text);</span><br><span class="line">	</span><br><span class="line">	grade_Label = <span class="keyword">new</span> JLabel(<span class="string">"年级:"</span>);</span><br><span class="line">	grade_Label.setBounds(<span class="number">78</span>, <span class="number">168</span>, <span class="number">30</span>, <span class="number">20</span>);</span><br><span class="line">	<span class="keyword">this</span>.add(grade_Label);</span><br><span class="line">	</span><br><span class="line">	grade_Text = <span class="keyword">new</span> JTextField();</span><br><span class="line">	grade_Text.setBounds(<span class="number">116</span>, <span class="number">168</span>, <span class="number">150</span>, <span class="number">20</span>);</span><br><span class="line">	grade_Text.setEditable(<span class="keyword">false</span>);</span><br><span class="line">	grade_Text.setText(sm.getValueAt(rowNum, <span class="number">3</span>).toString());	<span class="comment">//设置年级并显示</span></span><br><span class="line">	<span class="keyword">this</span>.add(grade_Text);</span><br><span class="line">	</span><br><span class="line">	classe_Label = <span class="keyword">new</span> JLabel(<span class="string">"班级:"</span>);</span><br><span class="line">	classe_Label.setBounds(<span class="number">78</span>, <span class="number">208</span>, <span class="number">30</span>, <span class="number">20</span>);</span><br><span class="line">	<span class="keyword">this</span>.add(classe_Label);</span><br><span class="line">	</span><br><span class="line">	classe_Text = <span class="keyword">new</span> JTextField();</span><br><span class="line">	classe_Text.setBounds(<span class="number">116</span>, <span class="number">208</span>, <span class="number">150</span>, <span class="number">20</span>);</span><br><span class="line">	classe_Text.setEditable(<span class="keyword">false</span>);</span><br><span class="line">	classe_Text.setText(sm.getValueAt(rowNum, <span class="number">4</span>).toString());</span><br><span class="line">	<span class="keyword">this</span>.add(classe_Text);</span><br><span class="line">		</span><br><span class="line">	department_Label = <span class="keyword">new</span> JLabel(<span class="string">"院系:"</span>);</span><br><span class="line">	department_Label.setBounds(<span class="number">78</span>, <span class="number">248</span>, <span class="number">30</span>, <span class="number">20</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">this</span>.add(department_Label);</span><br><span class="line">	</span><br><span class="line">	department_Text = <span class="keyword">new</span> JTextField();</span><br><span class="line">	department_Text.setEditable(<span class="keyword">false</span>);</span><br><span class="line">	department_Text.setText(sm.getValueAt(rowNum, <span class="number">5</span>).toString());</span><br><span class="line">	department_Text.setBounds(<span class="number">116</span>, <span class="number">248</span>, <span class="number">150</span>, <span class="number">20</span>);</span><br><span class="line">	<span class="keyword">this</span>.add(department_Text);</span><br><span class="line"></span><br><span class="line">	major_Label = <span class="keyword">new</span> JLabel(<span class="string">"专业:"</span>);</span><br><span class="line">	major_Label.setBounds(<span class="number">78</span>, <span class="number">288</span>, <span class="number">30</span>, <span class="number">20</span>);</span><br><span class="line">	<span class="keyword">this</span>.add(major_Label);</span><br><span class="line">	</span><br><span class="line">	major_Text = <span class="keyword">new</span> JTextField();</span><br><span class="line">	major_Text.setEditable(<span class="keyword">false</span>);</span><br><span class="line">	major_Text.setBounds(<span class="number">116</span>, <span class="number">288</span>, <span class="number">150</span>, <span class="number">20</span>);</span><br><span class="line">	major_Text.setText(sm.getValueAt(rowNum, <span class="number">6</span>).toString());</span><br><span class="line">	<span class="keyword">this</span>.add(major_Text);</span><br><span class="line">	</span><br><span class="line">	confirm_Button = <span class="keyword">new</span> JButton(<span class="string">"确认"</span>);</span><br><span class="line">	<span class="comment">//注册"确定"按钮事件监听</span></span><br><span class="line">	confirm_Button.addActionListener(<span class="keyword">new</span> ActionListener() &#123;</span><br><span class="line">		</span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent e)</span> </span>&#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">			jd.dispose();<span class="comment">//关闭当前窗口</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br><span class="line">	confirm_Button.setBounds(<span class="number">150</span>, <span class="number">330</span>, <span class="number">60</span>, <span class="number">25</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">this</span>.add(confirm_Button);</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	WindowUtil.setFrameCenter(<span class="keyword">this</span>);</span><br><span class="line">	<span class="keyword">this</span>.setResizable(<span class="keyword">false</span>);</span><br><span class="line">	<span class="keyword">this</span>.setVisible(<span class="keyword">true</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>修改学生信息</strong><br>根据查询条件或者选中的条件来修改，所选中的学生<br><img src="https://img-blog.csdnimg.cn/20200605154424686.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70" alt="修改学生信息"><br><strong>删除学生信息</strong><br><img src="https://img-blog.csdnimg.cn/20200605154455292.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70" alt="删除学生信息"><br>根据查询条件或者选中的条件来删除，所选中的学生<br><strong>查询 修改 删除学生 信息时都具有条件查询和多条件查询的功能</strong><br>查询和多条件查询的代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> studentsystem.frame;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> studentsystem.dao.ManageHelper;</span><br><span class="line"><span class="keyword">import</span> studentsystem.model.StudentModel;</span><br><span class="line"><span class="keyword">import</span> studentsystem.util.CreateSql;</span><br><span class="line"><span class="keyword">import</span> studentsystem.util.WindowUtil;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.awt.event.ActionEvent;</span><br><span class="line"><span class="keyword">import</span> java.awt.event.ActionListener;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.swing.JButton;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JDialog;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JLabel;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JOptionPane;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JTable;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JTextField;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//多条件查询界面</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConditionsQueryFrame</span> <span class="keyword">extends</span> <span class="title">JDialog</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> JLabel student_ID;    <span class="comment">//"学号"标签</span></span><br><span class="line">    <span class="keyword">private</span> JLabel student_Name;	<span class="comment">//"姓名"标签</span></span><br><span class="line">    <span class="keyword">private</span> JLabel sex_Label;	<span class="comment">//"性别"标签。l</span></span><br><span class="line">    <span class="keyword">private</span> JLabel classe_Label;	<span class="comment">//"班级"标签</span></span><br><span class="line">    <span class="keyword">private</span> JLabel grade_Label;	<span class="comment">//"年级标签"</span></span><br><span class="line">    <span class="keyword">private</span> JLabel major_Label;	<span class="comment">//"专业"标签</span></span><br><span class="line">    <span class="keyword">private</span> JLabel department_Label;	<span class="comment">//"所属院系"标签</span></span><br><span class="line">    <span class="keyword">private</span> JTextField student_IDText;	<span class="comment">//"学号"文本域</span></span><br><span class="line">    <span class="keyword">private</span> JTextField student_NameText;	<span class="comment">//"姓名"文本域</span></span><br><span class="line">    <span class="keyword">private</span> JTextField sex_Text;	<span class="comment">//性别选项</span></span><br><span class="line">    <span class="keyword">private</span> JTextField grade_Text;	<span class="comment">//年级选项</span></span><br><span class="line">    <span class="keyword">private</span> JTextField department_Text;	<span class="comment">//系别</span></span><br><span class="line">    <span class="keyword">private</span> JTextField major_Text;	<span class="comment">//专业</span></span><br><span class="line">    <span class="keyword">private</span> JTextField classe_Text;	<span class="comment">//班级</span></span><br><span class="line">    <span class="keyword">private</span> JButton conditions_button;	<span class="comment">//多条件查询按钮</span></span><br><span class="line">    <span class="keyword">private</span> ManageHelper helper;	<span class="comment">//数据库业务处理对象</span></span><br><span class="line">    <span class="keyword">private</span> JDialog jd;	<span class="comment">//当前窗口</span></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> owner 它的父窗口</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> title 窗口名</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> modal 指定的模式窗口，还有非模式窗口</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ConditionsQueryFrame</span><span class="params">(JDialog owner, String title, <span class="keyword">boolean</span> modal,JTable jt)</span></span>&#123;</span><br><span class="line">    	<span class="keyword">super</span>(owner, title, modal);</span><br><span class="line">    	<span class="keyword">this</span>.jd = <span class="keyword">this</span>;</span><br><span class="line">    	<span class="keyword">this</span>.setLayout(<span class="keyword">null</span>);</span><br><span class="line">    	</span><br><span class="line">    	student_ID = <span class="keyword">new</span> JLabel(<span class="string">"学号:"</span>);</span><br><span class="line">    	student_ID.setBounds(<span class="number">29</span>, <span class="number">19</span>, <span class="number">30</span>, <span class="number">20</span>);</span><br><span class="line">    	<span class="keyword">this</span>.add(student_ID);</span><br><span class="line">    	</span><br><span class="line">    	student_IDText = <span class="keyword">new</span> JTextField();</span><br><span class="line">    	student_IDText.setBounds(<span class="number">65</span>, <span class="number">19</span>, <span class="number">100</span>, <span class="number">20</span>);</span><br><span class="line">    	<span class="keyword">this</span>.add(student_IDText);</span><br><span class="line">    	</span><br><span class="line">    	student_Name = <span class="keyword">new</span> JLabel(<span class="string">"姓名:"</span>);</span><br><span class="line">    	student_Name.setBounds(<span class="number">200</span>, <span class="number">19</span>, <span class="number">30</span>, <span class="number">20</span>);</span><br><span class="line">    	<span class="keyword">this</span>.add(student_Name);</span><br><span class="line">    	</span><br><span class="line">    	student_NameText = <span class="keyword">new</span> JTextField();</span><br><span class="line">    	student_NameText.setBounds(<span class="number">240</span>, <span class="number">19</span>, <span class="number">100</span>, <span class="number">20</span>);</span><br><span class="line">    	<span class="keyword">this</span>.add(student_NameText);</span><br><span class="line">    	</span><br><span class="line">    	sex_Label = <span class="keyword">new</span> JLabel(<span class="string">"性别:"</span>);</span><br><span class="line">    	sex_Label.setBounds(<span class="number">29</span>, <span class="number">50</span>, <span class="number">30</span>, <span class="number">20</span>);</span><br><span class="line">    	<span class="keyword">this</span>.add(sex_Label);</span><br><span class="line">    	</span><br><span class="line">    	sex_Text = <span class="keyword">new</span> JTextField();</span><br><span class="line">    	sex_Text.setBounds(<span class="number">65</span>, <span class="number">50</span>, <span class="number">100</span>, <span class="number">20</span>);</span><br><span class="line">    	<span class="keyword">this</span>.add(sex_Text);</span><br><span class="line">    	</span><br><span class="line">    	grade_Label = <span class="keyword">new</span> JLabel(<span class="string">"年级:"</span>);</span><br><span class="line">    	grade_Label.setBounds(<span class="number">200</span>, <span class="number">50</span>, <span class="number">30</span>, <span class="number">20</span>);</span><br><span class="line">    	<span class="keyword">this</span>.add(grade_Label);</span><br><span class="line">    	</span><br><span class="line">    	grade_Text = <span class="keyword">new</span> JTextField();</span><br><span class="line">    	grade_Text.setBounds(<span class="number">240</span>, <span class="number">50</span>, <span class="number">100</span>, <span class="number">20</span>);</span><br><span class="line">    	<span class="keyword">this</span>.add(grade_Text);</span><br><span class="line">    	</span><br><span class="line">    	department_Label = <span class="keyword">new</span> JLabel(<span class="string">"院系:"</span>);</span><br><span class="line">    	department_Label.setBounds(<span class="number">29</span>, <span class="number">83</span>, <span class="number">30</span>, <span class="number">20</span>);</span><br><span class="line">    	<span class="keyword">this</span>.add(department_Label);</span><br><span class="line">    	</span><br><span class="line">    	department_Text = <span class="keyword">new</span> JTextField();</span><br><span class="line">    	department_Text.setBounds(<span class="number">65</span>, <span class="number">83</span>, <span class="number">100</span>, <span class="number">20</span>);</span><br><span class="line">    	<span class="keyword">this</span>.add(department_Text);</span><br><span class="line">    	</span><br><span class="line">    	major_Label = <span class="keyword">new</span> JLabel(<span class="string">"专业:"</span>);</span><br><span class="line">    	major_Label.setBounds(<span class="number">200</span>, <span class="number">83</span>, <span class="number">30</span>, <span class="number">20</span>);</span><br><span class="line">    	<span class="keyword">this</span>.add(major_Label);</span><br><span class="line">    	</span><br><span class="line">    	major_Text = <span class="keyword">new</span> JTextField();</span><br><span class="line">    	major_Text.setBounds(<span class="number">240</span>, <span class="number">83</span>, <span class="number">100</span>, <span class="number">20</span>);</span><br><span class="line">    	<span class="keyword">this</span>.add(major_Text);</span><br><span class="line">    	</span><br><span class="line">    	classe_Label = <span class="keyword">new</span> JLabel(<span class="string">"班级:"</span>);</span><br><span class="line">    	classe_Label.setBounds(<span class="number">29</span>,<span class="number">116</span>, <span class="number">30</span>, <span class="number">20</span>);</span><br><span class="line">    	<span class="keyword">this</span>.add(classe_Label);</span><br><span class="line">    	</span><br><span class="line">    	classe_Text = <span class="keyword">new</span> JTextField();</span><br><span class="line">    	classe_Text.setBounds(<span class="number">65</span>, <span class="number">116</span>, <span class="number">100</span>, <span class="number">20</span>);</span><br><span class="line">    	<span class="keyword">this</span>.add(classe_Text);</span><br><span class="line">    	</span><br><span class="line">    	conditions_button = <span class="keyword">new</span> JButton(<span class="string">"多条件查询"</span>);</span><br><span class="line">    	conditions_button.setBounds(<span class="number">230</span>, <span class="number">130</span>, <span class="number">100</span>, <span class="number">30</span>);</span><br><span class="line">    	<span class="comment">//注册"多条件查询"按钮事件监听</span></span><br><span class="line">    	conditions_button.addActionListener(<span class="keyword">new</span> ActionListener() &#123;</span><br><span class="line">			</span><br><span class="line">			<span class="meta">@Override</span></span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">actionPerformed</span><span class="params">(ActionEvent arg0)</span> </span>&#123;</span><br><span class="line">				String id = student_IDText.getText().trim();</span><br><span class="line">				String name = student_NameText.getText().trim();</span><br><span class="line">				String sex = sex_Text.getText().trim();</span><br><span class="line">				String grade = grade_Text.getText().trim();</span><br><span class="line">				String department = department_Text.getText().trim();</span><br><span class="line">				String major = major_Text.getText().trim();</span><br><span class="line">				String classe = classe_Text.getText().trim();</span><br><span class="line">				<span class="keyword">if</span>(id.equals(<span class="string">""</span>)&amp;&amp;name.equals(<span class="string">""</span>)&amp;&amp;sex.equals(<span class="string">""</span>)&amp;&amp;grade.equals(<span class="string">""</span>)&amp;&amp;department.equals(<span class="string">""</span>)&amp;&amp;major.equals(<span class="string">""</span>)&amp;&amp;classe.equals(<span class="string">""</span>))&#123;</span><br><span class="line">					JOptionPane.showMessageDialog(jd, <span class="string">"条件不能为空！"</span>, <span class="string">""</span>, JOptionPane.WARNING_MESSAGE);</span><br><span class="line">					<span class="keyword">return</span> ;</span><br><span class="line">				&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">					String sql = CreateSql.getConditions_Sql(id, name, sex, grade, department, major, classe);</span><br><span class="line">					StudentModel sm = <span class="keyword">new</span> StudentModel(sql,jd);</span><br><span class="line">					jt.setModel(sm);</span><br><span class="line">					jd.dispose();</span><br><span class="line">				&#125;</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">    	<span class="keyword">this</span>.add(conditions_button);</span><br><span class="line">    	</span><br><span class="line">    	</span><br><span class="line">    	<span class="keyword">this</span>.setSize(<span class="number">411</span>, <span class="number">222</span>);</span><br><span class="line">    	<span class="comment">//	设置窗体大小不可调整</span></span><br><span class="line">    	<span class="keyword">this</span>.setResizable(<span class="keyword">false</span>);</span><br><span class="line">    	WindowUtil.setFrameCenter(<span class="keyword">this</span>);</span><br><span class="line">    	<span class="keyword">this</span>.setVisible(<span class="keyword">true</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>后续代码放程序包里主要讲设计思路</strong></p>
+<h2 id="成绩管理模块"><a href="#成绩管理模块" class="headerlink" title="成绩管理模块"></a>成绩管理模块</h2><p><strong>成绩添加</strong><br>添加成绩：设置多条件窗口，及查询窗口，表格监听，当选中表格的一行时，可以添加成绩<br><img src="https://img-blog.csdnimg.cn/20200605155134961.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70" alt="添加学生成绩"><br>提示该学生已经有成绩了<br>当选中表格的一行已经有成绩时，提示<br><img src="https://img-blog.csdnimg.cn/20200605155211564.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70" alt="提示已经有成绩了"><br><strong>成绩修改</strong><br><img src="https://img-blog.csdnimg.cn/2020060517005226.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70" alt="成绩修改"><br><strong>成绩查询</strong><br><img src="https://img-blog.csdnimg.cn/2020060517011213.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70" alt="查询成绩"><br>多条件查询<br><img src="https://img-blog.csdnimg.cn/20200605170254785.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70" alt="多条件查询"><br><strong>成绩统计</strong><br><img src="https://img-blog.csdnimg.cn/20200605170502929.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70" alt="成绩统计"></p>
+<h2 id="帮助模块"><a href="#帮助模块" class="headerlink" title="帮助模块"></a>帮助模块</h2><p><img src="https://img-blog.csdnimg.cn/20200605170840562.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5MzA0MQ==,size_16,color_FFFFFF,t_70" alt="帮助"></p>
+<p><strong>在浏览器打开帮助的网站，就可以进入我的博客，获得帮助啦。</strong><br>功能如有错误欢迎指正<br>欢迎留言共同学习</p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您这么好看还看我的文章-------------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java%E5%AD%A6%E7%94%9F%E6%88%90%E7%BB%A9%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" rel="tag"># java学生成绩管理系统</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+             
+               <a href="/2020/06/05/mysql8.0.20%E6%A1%A5%E6%8E%A5%E6%96%B9%E5%BC%8F/" rel="prev" title="mysql8.0.20桥接方式">
+                 <i class="fa fa-chevron-left"></i> mysql8.0.20桥接方式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+             
+               <a href="/2020/05/29/PAT%E7%94%B21022Set%E7%9A%84%E4%BD%BF%E7%94%A8/" rel="next" title="PAT甲1022Set的使用">
+                 PAT甲1022Set的使用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/IMG_20180913_151944.jpg"
+                alt="风尘" />
+            
+              <p class="site-author-name" itemprop="name">风尘</p>
+              <p class="site-description motion-element" itemprop="description">To show my love!</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7Carchive">
+              
+                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          <div id="music 163player">
+                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=480353&auto=1&height=66">
+                </iframe>
+          </div>
+      
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#学生成绩管理系统"><span class="nav-number">1.</span> <span class="nav-text">学生成绩管理系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统管理模块"><span class="nav-number">2.</span> <span class="nav-text">系统管理模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#教师管理模块"><span class="nav-number">3.</span> <span class="nav-text">教师管理模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#成绩管理模块"><span class="nav-number">4.</span> <span class="nav-text">成绩管理模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#帮助模块"><span class="nav-number">5.</span> <span class="nav-text">帮助模块</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+ # <span class="with-love">
+  <span class="with-love" id="heart">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">风尘</span>
+
+  
+</div>
+
+<!--
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+-->
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+<!--
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+-->
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共46.7k字</span>
+</div>
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: true,
+        notify: true,
+        appId: 'eodw57A3lq3NKLWPF9SvA8x4-gzGzoHsz',
+        appKey: 'ghJ7siYDtJAJ4j1O6inlyknP',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+  <!-- 雪花特效 -->
+  <script type="text/javascript">
+    var windowWidth = $(window).width();
+    if (windowWidth > 480) {
+      document.write('<script type="text/javascript" src="/js/src/snow.js"><\/script>');
+    }
+  </script>
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+
+<!-- 飘雪 -->
+<!-- <script type="text/javascript" src="//libs.baidu.com/jquery/1.8.3/jquery.min.js"></script> -->
+
