@@ -101,7 +101,7 @@
 
 
 
-  <meta name="keywords" content="c++ match," />
+  <meta name="keywords" content="PAT甲," />
 
 
 
@@ -114,16 +114,16 @@
 
 
 
-<meta name="description" content="题目链接D Codeforces Round #628 (Div.2)D,思路：构造公式构造前，先了解几个异或的小知识。 1) 交换律: a ^ b &#x3D; b ^ a2) 结合律: a ^ b ^ c &#x3D; a ^ (b ^ c) &#x3D; (a^b) ^c可以知道一个结论 d &#x3D; a ^ b ^ c  –&gt; a &#x3D; b ^ c ^ d3) 自反性: a ^ b ^ a &#x3D;b ; a ^ b ^ b">
+<meta name="description" content="PAT甲1035题目链接1035 Password (20分)To prepare for PAT, the judge sometimes has to generate random passwords for the users. The problem is that there are always some confusing passwords since it is hard to">
 <meta property="og:type" content="article">
-<meta property="og:title" content="cf_628_div2">
-<meta property="og:url" content="http://yoursite.com/2020/03/16/cf_628_div2/index.html">
+<meta property="og:title" content="PAT甲1035字符串">
+<meta property="og:url" content="http://yoursite.com/2020/06/12/PAT%E7%94%B21035%E5%AD%97%E7%AC%A6%E4%B8%B2/index.html">
 <meta property="og:site_name" content="我的修仙路">
-<meta property="og:description" content="题目链接D Codeforces Round #628 (Div.2)D,思路：构造公式构造前，先了解几个异或的小知识。 1) 交换律: a ^ b &#x3D; b ^ a2) 结合律: a ^ b ^ c &#x3D; a ^ (b ^ c) &#x3D; (a^b) ^c可以知道一个结论 d &#x3D; a ^ b ^ c  –&gt; a &#x3D; b ^ c ^ d3) 自反性: a ^ b ^ a &#x3D;b ; a ^ b ^ b">
-<meta property="article:published_time" content="2020-03-16T13:51:35.763Z">
-<meta property="article:modified_time" content="2020-03-16T13:51:35.764Z">
+<meta property="og:description" content="PAT甲1035题目链接1035 Password (20分)To prepare for PAT, the judge sometimes has to generate random passwords for the users. The problem is that there are always some confusing passwords since it is hard to">
+<meta property="article:published_time" content="2020-06-12T04:17:33.327Z">
+<meta property="article:modified_time" content="2020-06-12T05:17:05.650Z">
 <meta property="article:author" content="风尘">
-<meta property="article:tag" content="c++ match">
+<meta property="article:tag" content="PAT甲">
 <meta name="twitter:card" content="summary">
 
 
@@ -154,13 +154,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/03/16/cf_628_div2/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/06/12/PAT甲1035字符串/"/>
 
 
 
 
 
-  <title>cf_628_div2 | 我的修仙路</title>
+  <title>PAT甲1035字符串 | 我的修仙路</title>
   
 
 
@@ -317,7 +317,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/16/cf_628_div2/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/12/PAT%E7%94%B21035%E5%AD%97%E7%AC%A6%E4%B8%B2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="风尘">
@@ -334,7 +334,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">cf_628_div2</h1>
+          <h1 class="post-title" itemprop="name headline">PAT甲1035字符串</h1>
         
 
         <div class="post-meta">
@@ -346,8 +346,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-16T21:51:35+08:00">
-                2020-03-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-12T12:17:33+08:00">
+                2020-06-12
               </time>
             
 
@@ -365,8 +365,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/03/16/cf_628_div2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/16/cf_628_div2/" itemprop="commentCount"></span>
+                <a href="/2020/06/12/PAT%E7%94%B21035%E5%AD%97%E7%AC%A6%E4%B8%B2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/06/12/PAT%E7%94%B21035%E5%AD%97%E7%AC%A6%E4%B8%B2/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -388,7 +388,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  443
+                  547
                 </span>
               
 
@@ -404,7 +404,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  3
                 </span>
               
             </div>
@@ -425,13 +425,15 @@
       
 
       
-        <p>题目链接<br><a href="https://codeforces.ml/contest/1325/problem/D" target="_blank" rel="noopener">D</a></p>
-<h2 id="Codeforces-Round-628-Div-2"><a href="#Codeforces-Round-628-Div-2" class="headerlink" title="Codeforces Round #628 (Div.2)"></a>Codeforces Round #628 (Div.2)</h2><p>D,思路：构造公式<br>构造前，先了解几个异或的小知识。</p>
-<p>1) 交换律: a ^ b = b ^ a<br>2) 结合律: a ^ b ^ c = a ^ (b ^ c) = (a^b) ^c<br>可以知道一个结论 d = a ^ b ^ c  –&gt; a = b ^ c ^ d<br>3) 自反性: a ^ b ^ a =b ; a ^ b ^ b = a;</p>
-<p>题意 ：有u , v ；求一最短数组，使得数组元素之和为v,数组元素异或为u;<br>若不存在，则输出-1</p>
-<p>题解开始了，易知 a + b = a ^ b + 2<em>(a&amp;b) 这个构造还是不太会啊<br>令 x = a&amp;b，a+b=v ,a^b=u;则x = (u-v)/2;则[u,x,x]必是其中一组解；现在考虑有没有，比3长度更短的数组，考虑特殊情况，当u&gt;v时，无解，因为等式不成立，当u == v时长度为1，解为u，其它情况，判断[u+x,x]，是否符合条件，则必须满足(u+x+x) = (u+x)&amp;x + (u+x) ^ x –&gt;  (u+x+x) = u ^ x + x + u&amp;x  –&gt; (u+x) = u ^ x + u&amp;x 并且得满足 (u+x) = u ^ x + 2</em>(u&amp;x) 所以 u&amp;x 必须为0 才存在数组长度为二，此时解为[u+x,x]；</p>
+        <h2 id="PAT甲1035"><a href="#PAT甲1035" class="headerlink" title="PAT甲1035"></a>PAT甲1035</h2><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805454989803520" target="_blank" rel="noopener">题目链接</a><br>1035 Password (20分)<br>To prepare for PAT, the judge sometimes has to generate random passwords for the users. The problem is that there are always some confusing passwords since it is hard to distinguish 1 (one) from l (L in lowercase), or 0 (zero) from O (o in uppercase). One solution is to replace 1 (one) by @, 0 (zero) by %, l by L, and O by o. Now it is your job to write a program to check the accounts generated by the judge, and to help the juge modify the confusing passwords.</p>
+<p>Input Specification:<br>Each input file contains one test case. Each case contains a positive integer N (≤1000), followed by N lines of accounts. Each account consists of a user name and a password, both are strings of no more than 10 characters with no space.</p>
+<p>Output Specification:<br>For each test case, first print the number M of accounts that have been modified, then print in the following M lines the modified accounts info, that is, the user names and the corresponding modified passwords. The accounts must be printed in the same order as they are read in. If no account is modified, print in one line There are N accounts and no account is modified where N is the total number of accounts. However, if N is one, you must print There is 1 account and no account is modified instead.</p>
+<p>Sample Input 1:<br>3<br>Team000002 Rlsp0dfa<br>Team000003 perfectpwd<br>Team000001 R1spOdfa<br>Sample Output 1:<br>2<br>Team000002 RLsp%dfa<br>Team000001 R@spodfa<br>Sample Input 2:<br>1<br>team110 abcdefg332<br>Sample Output 2:<br>There is 1 account and no account is modified<br>Sample Input 3:<br>2<br>team110 abcdefg222<br>team220 abcdefg333<br>Sample Output 3:<br>There are 2 accounts and no account is modified</p>
+<p>题意：<br>给n个用户的账户和密码，将密码中的1改为@，0改为%，l改为L，O改为o</p>
+<p>题解：纯粹模拟即可，注意</p>
+<p>坑点：注意账户1和多个输出的区别，还有得先输出总共有多少个账户的密码需要修改</p>
 <p>代码：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sc(x) scanf(<span class="meta-string">"%lld"</span>,&amp;x);</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pf printf</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(i,s,e) for(int i=s;i&lt;=e;i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> dep(i,e,s) for(int i=e;i&gt;=s;i--)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SIS std::ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line">ll u,v,x;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	SIS;</span><br><span class="line">	<span class="comment">//¼ÓËÙcin/cout</span></span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;u&gt;&gt;v;</span><br><span class="line">	<span class="keyword">if</span>(u&gt;v || u%<span class="number">2</span>!=v%<span class="number">2</span>)&#123;</span><br><span class="line">		pf(<span class="string">"-1\n"</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;<span class="keyword">else</span> <span class="keyword">if</span>(u==v)&#123;</span><br><span class="line">		<span class="keyword">if</span>(!u)</span><br><span class="line">			pf(<span class="string">"0"</span>);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			pf(<span class="string">"1 %d\n"</span>,u);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	x=(v-u)/<span class="number">2</span>;</span><br><span class="line">	<span class="keyword">if</span>(u&amp;x)</span><br><span class="line">		pf(<span class="string">"3\n%lld %lld %lld"</span>,u,x,x);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		pf(<span class="string">"2\n%lld %lld"</span>,(u^x),x);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">string</span> d[<span class="number">1010</span>],p[<span class="number">1010</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	<span class="keyword">int</span> k=n;</span><br><span class="line">	<span class="keyword">int</span> flag,cnt=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(n--)</span><br><span class="line">	&#123;</span><br><span class="line">		flag=<span class="number">0</span>;</span><br><span class="line">		<span class="built_in">string</span> id,passwd;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;id&gt;&gt;passwd;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;passwd.size();i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(passwd[i]==<span class="string">'1'</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				flag=<span class="number">1</span>;</span><br><span class="line">				passwd[i]=<span class="string">'@'</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(passwd[i]==<span class="string">'0'</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				flag=<span class="number">1</span>;</span><br><span class="line">				passwd[i]=<span class="string">'%'</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(passwd[i]==<span class="string">'l'</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				flag=<span class="number">1</span>;</span><br><span class="line">				passwd[i]=<span class="string">'L'</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(passwd[i]==<span class="string">'O'</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				flag=<span class="number">1</span>;</span><br><span class="line">				passwd[i]=<span class="string">'o'</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(flag==<span class="number">1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			d[cnt]=id;</span><br><span class="line">			p[cnt]=passwd;	</span><br><span class="line">			cnt++;	</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(cnt==<span class="number">0</span> &amp;&amp; k&gt;<span class="number">1</span>)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"There are %d accounts and no account is modified"</span>,k);</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(cnt==<span class="number">0</span> &amp;&amp; k==<span class="number">1</span>)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"There is 1 account and no account is modified"</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;cnt&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;cnt;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;d[i]&lt;&lt;<span class="string">" "</span>&lt;&lt;p[i]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -461,7 +463,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/c-match/" rel="tag"># c++ match</a>
+            <a href="/tags/PAT%E7%94%B2/" rel="tag"># PAT甲</a>
           
         </div>
       
@@ -474,8 +476,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
              
-               <a href="/2020/03/17/%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9B59/" rel="prev" title="牛客练习赛59">
-                 <i class="fa fa-chevron-left"></i> 牛客练习赛59
+               <a href="/2020/06/12/PAT%E7%94%B21005%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="prev" title="PAT甲1005字符串">
+                 <i class="fa fa-chevron-left"></i> PAT甲1005字符串
               </a>
             
           </div>
@@ -484,8 +486,8 @@
 
           <div class="post-nav-prev post-nav-item">
              
-               <a href="/2020/03/15/%E8%93%9D%E6%A1%A5%E6%A0%A1%E5%86%85%E8%AE%AD%E7%BB%83%E8%B5%9B/" rel="next" title="蓝桥校内训练赛">
-                 蓝桥校内训练赛 <i class="fa fa-chevron-right"></i>
+               <a href="/2020/06/12/PAT%E7%94%B21112%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="next" title="PAT甲1112字符串">
+                 PAT甲1112字符串 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -637,7 +639,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Codeforces-Round-628-Div-2"><span class="nav-number">1.</span> <span class="nav-text">Codeforces Round #628 (Div.2)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#PAT甲1035"><span class="nav-number">1.</span> <span class="nav-text">PAT甲1035</span></a></li></ol></div>
             
 
           </div>
