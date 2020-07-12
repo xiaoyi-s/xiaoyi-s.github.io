@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.lug.ustc.edu.cn/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="c++ match," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="我的修仙路" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="Codeforces Round #655 (Div. 2)A. Omkar and CompletionA题time limit per test1 secondmemory limit per test256 megabytesinputstandard inputoutputstandard outputYou have been blessed as a child of Omkar. T">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codeforces Round #655 (Div. 2)">
+<meta property="og:url" content="http://yoursite.com/2020/07/12/Codeforces%20Round%20#655%20(Div.%202)/index.html">
+<meta property="og:site_name" content="我的修仙路">
+<meta property="og:description" content="Codeforces Round #655 (Div. 2)A. Omkar and CompletionA题time limit per test1 secondmemory limit per test256 megabytesinputstandard inputoutputstandard outputYou have been blessed as a child of Omkar. T">
+<meta property="article:published_time" content="2020-07-12T08:00:11.115Z">
+<meta property="article:modified_time" content="2020-07-12T08:00:53.025Z">
+<meta property="article:author" content="风尘">
+<meta property="article:tag" content="c++ match">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/07/12/Codeforces Round #655 (Div. 2)/"/>
+
+
+
+
+
+  <title>Codeforces Round #655 (Div. 2) | 我的修仙路</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">我的修仙路</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-书籍">
+          <a href="/book/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            书籍
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/12/Codeforces%20Round%20#655%20(Div.%202)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="风尘">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/IMG_20180913_151944.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的修仙路">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Codeforces Round #655 (Div. 2)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-12T16:00:11+08:00">
+                2020-07-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/07/12/Codeforces%20Round%20#655%20(Div.%202)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/07/12/Codeforces%20Round%20#655%20(Div.%202)/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.4k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Codeforces-Round-655-Div-2"><a href="#Codeforces-Round-655-Div-2" class="headerlink" title="Codeforces Round #655 (Div. 2)"></a>Codeforces Round #655 (Div. 2)</h2><h2 id="A-Omkar-and-Completion"><a href="#A-Omkar-and-Completion" class="headerlink" title="A. Omkar and Completion"></a>A. Omkar and Completion</h2><p><a href="https://codeforces.com/contest/1372/problem/A" target="_blank" rel="noopener">A题</a><br>time limit per test1 second<br>memory limit per test256 megabytes<br>inputstandard input<br>outputstandard output<br>You have been blessed as a child of Omkar. To express your gratitude, please solve this problem for Omkar!</p>
+<p>An array 𝑎 of length 𝑛 is called complete if all elements are positive and don’t exceed 1000, and for all indices 𝑥,𝑦,𝑧 (1≤𝑥,𝑦,𝑧≤𝑛), 𝑎𝑥+𝑎𝑦≠𝑎𝑧 (not necessarily distinct).</p>
+<p>You are given one integer 𝑛. Please find any complete array of length 𝑛. It is guaranteed that under given constraints such array exists.</p>
+<p>Input<br>Each test contains multiple test cases. The first line contains 𝑡 (1≤𝑡≤1000)  — the number of test cases. Description of the test cases follows.</p>
+<p>The only line of each test case contains one integer 𝑛 (1≤𝑛≤1000).</p>
+<p>It is guaranteed that the sum of 𝑛 over all test cases does not exceed 1000.</p>
+<p>Output<br>For each test case, print a complete array on a single line. All elements have to be integers between 1 and 1000 and for all indices 𝑥,𝑦,𝑧 (1≤𝑥,𝑦,𝑧≤𝑛) (not necessarily distinct), 𝑎𝑥+𝑎𝑦≠𝑎𝑧 must hold.</p>
+<p>If multiple solutions exist, you may print any.</p>
+<p>Example<br>inputCopy<br>2<br>5<br>4<br>outputCopy<br>1 5 3 77 12<br>384 384 44 44<br>Note<br>It can be shown that the outputs above are valid for each test case. For example, 44+44≠384.</p>
+<p>Below are some examples of arrays that are NOT complete for the 1st test case:</p>
+<p>[1,2,3,4,5]</p>
+<p>Notice that 𝑎1+𝑎2=𝑎3.</p>
+<p>[1,3000,1,300,1]</p>
+<p>Notice that 𝑎2=3000&gt;1000.</p>
+<p>题意：给你给t组测试数据，一个数组长度为n使得任意两个数的和不会在数组中出现。</p>
+<p>题解：显然数组元素都相同就可以了。</p>
+<p>代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,t;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">	<span class="keyword">while</span>(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="number">1</span>&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="B-Omkar-and-Last-Class-of-Math"><a href="#B-Omkar-and-Last-Class-of-Math" class="headerlink" title="B. Omkar and Last Class of Math"></a>B. Omkar and Last Class of Math</h2><p><a href="https://codeforces.com/contest/1372/problem/B" target="_blank" rel="noopener">B题</a><br>time limit per test1 second<br>memory limit per test256 megabytes<br>inputstandard input<br>outputstandard output<br>In Omkar’s last class of math, he learned about the least common multiple, or 𝐿𝐶𝑀. 𝐿𝐶𝑀(𝑎,𝑏) is the smallest positive integer 𝑥 which is divisible by both 𝑎 and 𝑏.</p>
+<p>Omkar, having a laudably curious mind, immediately thought of a problem involving the 𝐿𝐶𝑀 operation: given an integer 𝑛, find positive integers 𝑎 and 𝑏 such that 𝑎+𝑏=𝑛 and 𝐿𝐶𝑀(𝑎,𝑏) is the minimum value possible.</p>
+<p>Can you help Omkar solve his ludicrously challenging math problem?</p>
+<p>Input<br>Each test contains multiple test cases. The first line contains the number of test cases 𝑡 (1≤𝑡≤10). Description of the test cases follows.</p>
+<p>Each test case consists of a single integer 𝑛 (2≤𝑛≤109).</p>
+<p>Output<br>For each test case, output two positive integers 𝑎 and 𝑏, such that 𝑎+𝑏=𝑛 and 𝐿𝐶𝑀(𝑎,𝑏) is the minimum possible.</p>
+<p>Example<br>inputCopy<br>3<br>4<br>6<br>9<br>outputCopy<br>2 2<br>3 3<br>3 6<br>Note<br>For the first test case, the numbers we can choose are 1,3 or 2,2. 𝐿𝐶𝑀(1,3)=3 and 𝐿𝐶𝑀(2,2)=2, so we output 2 2.</p>
+<p>For the second test case, the numbers we can choose are 1,5, 2,4, or 3,3. 𝐿𝐶𝑀(1,5)=5, 𝐿𝐶𝑀(2,4)=4, and 𝐿𝐶𝑀(3,3)=3, so we output 3 3.</p>
+<p>For the third test case, 𝐿𝐶𝑀(3,6)=6. It can be shown that there are no other pairs of numbers which sum to 9 that have a lower 𝐿𝐶𝑀.</p>
+<p>题意：给你t组测试数据，给你个数n，你需要输出满足a+b=n，且a和b的最大公约数最小。输出a和b</p>
+<p>题解：<br>计算n的约数，从2开始，如果存在，输出n/i,n-n/i；即可，如果不存在，说明为质数输出1和n-1即可。特判2.</p>
+<p>代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t,n;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">	<span class="keyword">while</span>(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">		<span class="keyword">int</span> flag=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">if</span>(n==<span class="number">2</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">"1 1"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i*i&lt;=n;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(n%i==<span class="number">0</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				flag=<span class="number">1</span>;</span><br><span class="line">				<span class="keyword">int</span> ans1=n/i;</span><br><span class="line">				<span class="keyword">int</span> ans2=n-n/i;</span><br><span class="line">				<span class="built_in">cout</span>&lt;&lt;ans1&lt;&lt;<span class="string">" "</span>&lt;&lt;ans2&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(!flag)</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="number">1</span>&lt;&lt;<span class="string">" "</span>&lt;&lt;n<span class="number">-1</span>&lt;&lt;<span class="built_in">endl</span>;	</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="C-Omkar-and-Baseball"><a href="#C-Omkar-and-Baseball" class="headerlink" title="C. Omkar and Baseball"></a>C. Omkar and Baseball</h2><p><a href="https://codeforces.com/contest/1372/problem/C" target="_blank" rel="noopener">C题</a><br>time limit per test2 seconds<br>memory limit per test256 megabytes<br>inputstandard input<br>outputstandard output<br>Patrick likes to play baseball, but sometimes he will spend so many hours hitting home runs that his mind starts to get foggy! Patrick is sure that his scores across 𝑛 sessions follow the identity permutation (ie. in the first game he scores 1 point, in the second game he scores 2 points and so on). However, when he checks back to his record, he sees that all the numbers are mixed up!</p>
+<p>Define a special exchange as the following: choose any subarray of the scores and permute elements such that no element of subarray gets to the same position as it was before the exchange. For example, performing a special exchange on [1,2,3] can yield [3,1,2] but it cannot yield [3,2,1] since the 2 is in the same position.</p>
+<p>Given a permutation of 𝑛 integers, please help Patrick find the minimum number of special exchanges needed to make the permutation sorted! It can be proved that under given constraints this number doesn’t exceed 1018.</p>
+<p>An array 𝑎 is a subarray of an array 𝑏 if 𝑎 can be obtained from 𝑏 by deletion of several (possibly, zero or all) elements from the beginning and several (possibly, zero or all) elements from the end.</p>
+<p>Input<br>Each test contains multiple test cases. The first line contains the number of test cases 𝑡 (1≤𝑡≤100). Description of the test cases follows.</p>
+<p>The first line of each test case contains integer 𝑛 (1≤𝑛≤2⋅105)  — the length of the given permutation.</p>
+<p>The second line of each test case contains 𝑛 integers 𝑎1,𝑎2,…,𝑎𝑛 (1≤𝑎𝑖≤𝑛)  — the initial permutation.</p>
+<p>It is guaranteed that the sum of 𝑛 over all test cases does not exceed 2⋅105.</p>
+<p>Output<br>For each test case, output one integer: the minimum number of special exchanges needed to sort the permutation.</p>
+<p>Example<br>inputCopy<br>2<br>5<br>1 2 3 4 5<br>7<br>3 2 4 5 1 6 7<br>outputCopy<br>0<br>2<br>Note<br>In the first permutation, it is already sorted so no exchanges are needed.</p>
+<p>It can be shown that you need at least 2 exchanges to sort the second permutation.</p>
+<p>[3,2,4,5,1,6,7]<br>Perform special exchange on range (1,5)</p>
+<p>[4,1,2,3,5,6,7]<br>Perform special exchange on range (1,4)</p>
+<p>[1,2,3,4,5,6,7]</p>
+<p>题意：给你个序列，每次你可以选择一段子序列，里面元素互换。使得顺序为从小到大。</p>
+<p>题解：最小需要几次互换。顺序好了的0次，当前后顺序好了，中间顺序为全为乱，不含已经相同的值时，1次。当所有都不含相同值是也是一次。当有相同值，中间，也有不同值时，两次。</p>
+<p>代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">2e5</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> a[maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t,n;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">	<span class="keyword">while</span>(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">		<span class="keyword">int</span> flag1=<span class="number">0</span>,flag2=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;a[i];</span><br><span class="line">		<span class="comment">/*	if(a[i]==i)</span></span><br><span class="line"><span class="comment">			&#123;</span></span><br><span class="line"><span class="comment">				flag1=1;</span></span><br><span class="line"><span class="comment">			&#125;</span></span><br><span class="line"><span class="comment">			else if(a[i]!=i)</span></span><br><span class="line"><span class="comment">			&#123;</span></span><br><span class="line"><span class="comment">				flag2=1;</span></span><br><span class="line"><span class="comment">			&#125;*/</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> pos1=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">int</span> pos2=n;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(a[i]==i)</span><br><span class="line">			&#123;</span><br><span class="line">				pos1=i;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=n;i&gt;=<span class="number">1</span>;i--)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(a[i]==i)</span><br><span class="line">			&#123;</span><br><span class="line">				pos2=i;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=pos1+<span class="number">1</span>;i&lt;=pos2<span class="number">-1</span>;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(a[i]==i)</span><br><span class="line">			&#123;</span><br><span class="line">				flag1=<span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(a[i]!=i)</span><br><span class="line">			&#123;</span><br><span class="line">				flag2=<span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(flag1==<span class="number">1</span> &amp;&amp; flag2==<span class="number">1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="number">2</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>((flag1==<span class="number">1</span> &amp;&amp; flag2==<span class="number">0</span>) || pos1&gt;pos2)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="number">0</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="number">1</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您这么好看还看我的文章-------------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/c-match/" rel="tag"># c++ match</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+             
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+             
+               <a href="/2020/06/12/PAT%E7%94%B21140%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="next" title="PAT甲1140字符串">
+                 PAT甲1140字符串 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/IMG_20180913_151944.jpg"
+                alt="风尘" />
+            
+              <p class="site-author-name" itemprop="name">风尘</p>
+              <p class="site-description motion-element" itemprop="description">To show my love!</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7Carchive">
+              
+                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          <div id="music 163player">
+                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=480353&auto=1&height=66">
+                </iframe>
+          </div>
+      
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Codeforces-Round-655-Div-2"><span class="nav-number">1.</span> <span class="nav-text">Codeforces Round #655 (Div. 2)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-Omkar-and-Completion"><span class="nav-number">2.</span> <span class="nav-text">A. Omkar and Completion</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-Omkar-and-Last-Class-of-Math"><span class="nav-number">3.</span> <span class="nav-text">B. Omkar and Last Class of Math</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-Omkar-and-Baseball"><span class="nav-number">4.</span> <span class="nav-text">C. Omkar and Baseball</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+ # <span class="with-love">
+  <span class="with-love" id="heart">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">风尘</span>
+
+  
+</div>
+
+<!--
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+-->
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+<!--
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+-->
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共50.6k字</span>
+</div>
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: true,
+        notify: true,
+        appId: 'eodw57A3lq3NKLWPF9SvA8x4-gzGzoHsz',
+        appKey: 'ghJ7siYDtJAJ4j1O6inlyknP',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+  <!-- 雪花特效 -->
+  <script type="text/javascript">
+    var windowWidth = $(window).width();
+    if (windowWidth > 480) {
+      document.write('<script type="text/javascript" src="/js/src/snow.js"><\/script>');
+    }
+  </script>
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<script type="text/javascript" src="/js/src/clicksocialvalue.js"></script>
+<!-- 飘雪 -->
+<!-- <script type="text/javascript" src="//libs.baidu.com/jquery/1.8.3/jquery.min.js"></script> -->
+
