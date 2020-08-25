@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-08-25T09:25:46.912Z</updated>
+  <updated>2020-08-25T09:27:19.684Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/2020/08/25/show/"/>
     <id>http://yoursite.com/2020/08/25/show/</id>
     <published>2020-08-25T09:01:04.606Z</published>
-    <updated>2020-08-25T09:25:46.912Z</updated>
+    <updated>2020-08-25T09:27:19.684Z</updated>
     
-    <content type="html"><![CDATA[<!DOCTYPE html><html lang="en"><head>    <meta charset="UTF-8">    <title>额额</title><meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="我的修仙路" type="application/atom+xml"></head><body><div class="class1">    <audio autoplay controls loop>        <source src="text2audio.mp3" type="audio/ogg">    </audio></div><script>    var name = prompt("name","");    while(name!=="1215xiaoyi")        alert("error");    if(name == "1215xiaoyi")        document.write("<p1>"+true+"</p1>");</script></body></html>]]></content>
+    <content type="html"><![CDATA[<!DOCTYPE html><html lang="en"><head>    <meta charset="UTF-8">    <title>额额</title><meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="我的修仙路" type="application/atom+xml"></head><body><div class="class1">    <audio autoplay controls loop>        <source src="text2audio.mp3" type="audio/ogg">    </audio></div><script>    var name = prompt("password","");    while(name!=="1215xiaoyi"){        alert("error");        name = prompt("input again","");    }    if(name == "1215xiaoyi")        document.write("<p1>"+true+"</p1>");</script></body></html>]]></content>
     
     <summary type="html">
     

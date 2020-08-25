@@ -12,9 +12,11 @@
     </audio>
 </div>
 <script>
-    var name = prompt("name","");
-    while(name!=="1215xiaoyi")
+    var name = prompt("password","");
+    while(name!=="1215xiaoyi"){
         alert("error");
+        name = prompt("input again","");
+    }
     if(name == "1215xiaoyi")
         document.write("<p1>"+true+"</p1>");
 </script>
