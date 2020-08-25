@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-07-12T08:00:53.025Z</updated>
+  <updated>2020-08-25T09:01:04.607Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>show</title>
+    <link href="http://yoursite.com/2020/08/25/show/"/>
+    <id>http://yoursite.com/2020/08/25/show/</id>
+    <published>2020-08-25T09:01:04.606Z</published>
+    <updated>2020-08-25T09:01:04.607Z</updated>
+    
+    <content type="html"><![CDATA[<!DOCTYPE html><html lang="en"><head>    <meta charset="UTF-8">    <title>额额</title><meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="我的修仙路" type="application/atom+xml"></head><body><div class="class1">    <audio autoplay controls loop>        <source src="text2audio.mp3" type="audio/ogg">    </audio></div></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;额额&lt;/title&gt;
+&lt;meta name=&quot;generator&quot; content=&quot;Hexo 4.2.0&quot;&gt;&lt;link r
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>codeforces round 655 div2</title>
@@ -468,31 +495,6 @@
       
       
         &lt;p&gt;&lt;a href=&quot;https://pintia.cn/problem-sets/994805342720868352/problems/994805504927186944&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;题目链接&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;代码
-      
-    
-    </summary>
-    
-    
-    
-      <category term="PAT甲" scheme="http://yoursite.com/tags/PAT%E7%94%B2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PAT甲1124 简单模拟</title>
-    <link href="http://yoursite.com/2020/05/20/PAT%E7%94%B21124%20%E7%AE%80%E5%8D%95%E6%A8%A1%E6%8B%9F/"/>
-    <id>http://yoursite.com/2020/05/20/PAT%E7%94%B21124%20%E7%AE%80%E5%8D%95%E6%A8%A1%E6%8B%9F/</id>
-    <published>2020-05-20T13:08:19.741Z</published>
-    <updated>2020-05-20T13:11:44.818Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805350803292160" target="_blank" rel="noopener">题目链接</a></p><p>代码：</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">1004</span>;</span><br><span class="line"><span class="built_in">string</span> s[maxn];</span><br><span class="line"><span class="built_in">string</span> ans[maxn];</span><br><span class="line"><span class="built_in">set</span>&lt;<span class="built_in">string</span>&gt; st;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> m,n,k;</span><br><span class="line"><span class="built_in">cin</span>&gt;&gt;m&gt;&gt;n&gt;&gt;k;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line"><span class="built_in">cin</span>&gt;&gt;s[i];</span><br><span class="line"><span class="keyword">if</span>(k&gt;m)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;<span class="string">"Keep going..."</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">int</span> i=k;</span><br><span class="line"><span class="keyword">while</span>(i&lt;=m)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">string</span> name=s[i];</span><br><span class="line"><span class="keyword">if</span>(st.find(s[i])!=st.end())</span><br><span class="line">i++;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;s[i]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">st.insert(s[i]);</span><br><span class="line">i+=n;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;a href=&quot;https://pintia.cn/problem-sets/994805342720868352/problems/994805350803292160&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;题目链接&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;代码
       
     
